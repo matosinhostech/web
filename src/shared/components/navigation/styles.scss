@@ -1,0 +1,365 @@
+@import "../../styles/variables.scss";
+
+.nav {
+  top: 0.1px;
+  margin: 0 -4rem;
+  display: flex;
+  justify-content: space-between;
+  // background: linear-gradient(
+  //   0deg,
+  //   rgba(0, 183, 240, 0) 0%,
+  //   rgba(0, 183, 240, 1) 50%
+  // );
+  background: #00b7f0;
+  z-index: 5;
+  padding: 1.5rem 4rem;
+  position: fixed;
+  width: calc(100% - 4rem);
+}
+
+.nav.eventPage,
+.nav.videosPage {
+  background: $light-gray;
+}
+
+.wave.eventPage,
+.drawer.eventPage,
+.wave.videosPage,
+.drawer.videosPage {
+  background: $edgy-red;
+  fill: $edgy-red;
+}
+
+.nav.bluePage {
+  background: $light-blue;
+}
+
+.wave.bluePage,
+.drawer.bluePage {
+  background: $light-blue;
+  fill: $light-blue;
+}
+
+.nav.manifestoPage {
+  background: $edgy-red;
+}
+
+.wave.manifestoPage,
+.drawer.manifestoPage {
+  background: $edgy-red;
+  fill: $edgy-red;
+}
+
+.nav.partnerPage {
+  background: $edgy-red;
+}
+
+.wave.partnerPage,
+.drawer.partnerPage {
+  background: $edgy-black;
+  fill: $edgy-black;
+}
+
+
+.nav.partnersPage {
+  background: $edgy-black;
+}
+
+.wave.partnersPage,
+.drawer.partnersPage {
+  background: $edgy-black;
+  fill: $edgy-black;
+}
+
+.nav.homePageAlt,
+.nav.homePage {
+  background: $edgy-black;
+  // transition: background-color 150ms ease-in-out;
+}
+
+.wave.homePage,
+.drawer.homePage,
+.wave.homePageAlt,
+.drawer.homePageAlt {
+  background: $edgy-red;
+  fill: $edgy-red;
+}
+
+.logo {
+  width: 4rem;
+}
+
+.desktop {
+  display: none;
+}
+
+.mobile {
+  display: flex;
+}
+
+.desktop > a:before {
+  margin-right: 7px;
+  width: 30px;
+  height: 1px;
+  display: none;
+  background-color: $light-gray;
+  content: "";
+}
+
+.menu {
+  font-size: 2rem;
+  font-weight: 600;
+  cursor: pointer;
+
+  &:first-child.eventPage {
+    color: $edgy-black;
+    margin-top: -0.5rem;
+  }
+
+  &:first-child.eventPage.open {
+    color: $light-gray;
+  }
+
+  &:first-child.videosPage {
+    color: $edgy-black;
+    margin-top: -0.5rem;
+  }
+
+  &:first-child.videosPage.open {
+    color: $light-gray;
+  }
+
+  &:first-child.bluePage {
+    color: $light-gray;
+    margin-top: -0.5rem;
+  }
+
+  &:first-child.bluePage.open {
+    color: $light-gray;
+  }
+
+  &:first-child.manifestoPage {
+    color: $light-gray;
+    margin-top: -0.5rem;
+  }
+
+  &:first-child.manifestoPage.open {
+    color: $light-gray;
+  }
+
+  &:first-child.partnerPage {
+    color: $light-gray;
+    margin-top: -0.5rem;
+  }
+
+  &:first-child.partnerPage.open {
+    color: $light-gray;
+  }
+
+  &:first-child.partnersPage {
+    color: $light-gray;
+    margin-top: -0.5rem;
+  }
+
+  &:first-child.partnersPage.open {
+    color: $light-gray;
+  }
+
+  &:first-child.homePage,
+  &:first-child.homePageAlt {
+    color: $light-gray;
+    margin-top: -0.5rem;
+  }
+
+  &:first-child.homePage.open,
+  &:first-child.homePageAlt.open {
+    color: $light-gray;
+  }
+}
+
+.drawer {
+  top: 0;
+  width: 100vw;
+  height: calc(100vh - 12rem);
+  position: absolute;
+  background: $light-blue;
+  left: 0;
+  padding-left: 0;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(-130%);
+  transition: all 1s ease-in-out;
+  z-index: -1;
+  padding: 12rem 0 0 4rem;
+  margin-left: 0;
+}
+
+.open {
+  transform: translateX(0);
+}
+
+.drawer > a {
+  color: $light-gray;
+  text-decoration: none;
+  font-size: 2rem;
+  padding-bottom: 1rem;
+  transition: all 0.1s ease-in;
+  position: relative;
+  font-weight: 400;
+}
+
+a[aria-current="page"] {
+  font-weight: 800;
+}
+
+.nav-socials {
+  position: absolute;
+  bottom: 6rem;
+  left: 4rem;
+
+  &.eventPage > div > a > svg {
+    color: $edgy-black;
+  }
+
+  &.open.eventPage > div > a > svg {
+    color: $light-gray;
+  }
+
+  &.videosPage > div > a > svg {
+    color: $edgy-black;
+  }
+
+  &.open.videosPage > div > a > svg {
+    color: $light-gray;
+  }
+
+  &.bluePage > div > a > svg {
+    color: $light-gray;
+  }
+
+  &.open.bluePage > div > a > svg {
+    color: $light-gray;
+  }
+
+  &.manifestoPage > div > a > svg {
+    color: $light-gray;
+  }
+
+  &.open.manifestoPage > div > a > svg {
+    color: $light-gray;
+  }
+
+  &.partnerPage > div > a > svg {
+    color: $light-gray;
+  }
+
+  &.open.partnerPage > div > a > svg {
+    color: $light-gray;
+  }
+
+  &.partnersPage > div > a > svg {
+    color: $light-gray;
+  }
+
+  &.open.partnersPage > div > a > svg {
+    color: $light-gray;
+  }
+
+  &.homePage > div > a > svg,
+  &.homePageAlt > div > a > svg {
+    color: $light-gray;
+  }
+
+  &.open.homePage > div > a > svg,
+  &.open.homePageAlt > div > a > svg {
+    color: $light-gray;
+  }
+}
+
+// Desktop
+@media (min-width: 1281px) {
+  .nav {
+    position: sticky;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-width: 12rem;
+    width: 12rem;
+    // margin: 0 -1px;
+    margin: 0;
+    padding: 2rem 0rem 2rem 2rem;
+    height: calc(100vh - 4rem);
+  }
+
+  .mobile {
+    display: none;
+  }
+
+  .desktop {
+    display: flex;
+    flex-direction: column;
+    padding-top: 8rem;
+  }
+
+  .desktop.eventPage > a,
+  .desktop.videosPage > a {
+    color: $edgy-black;
+  }
+
+  .desktop.bluePage > a {
+    color: $light-gray;
+  }
+
+  .desktop.manifestoPage > a {
+    color: $light-gray;
+  }
+
+  .desktop.partnerPage > a {
+    color: $light-gray;
+  }
+
+  .desktop.partnersPage > a {
+    color: $light-gray;
+  }
+
+  .desktop.homePage > a {
+    color: $light-gray;
+  }
+
+  .desktop.homePageAlt > a {
+    color: $edgy-black;
+  }
+
+  .nav.homePageAlt {
+    background: $light-gray;
+  }
+
+  .nav-socials.homePageAlt > div > a > svg {
+    color: $edgy-black;
+  }
+
+  .desktop > a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding-bottom: 1rem;
+    transition: all 0.1s ease-in;
+    position: relative;
+    cursor: pointer;
+    font-weight: 200;
+    width: fit-content;
+  }
+
+  .desktop > a:hover {
+    padding-left: 10px;
+    font-weight: 800;
+  }
+
+  .logo {
+    width: 6rem;
+  }
+
+  .nav-socials {
+    position: absolute;
+    bottom: 1rem;
+    left: 2rem;
+  }
+}

@@ -1,0 +1,384 @@
+@import "shared/styles/variables.scss";
+
+body {
+  margin: 0;
+  font-family: "Manrope";
+}
+
+.partnerContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin-top: 6rem;
+}
+
+.partnersContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  border: 0;
+}
+
+.partnerMain {
+  flex: 60%;
+  background: $edgy-red;
+  color: $light-gray;
+  display: flex;
+  flex-direction: column;
+  padding: 0 2rem;
+}
+
+.partnersMain {
+  flex: 60%;
+  background: $edgy-black;
+  color: $light-gray;
+  display: flex;
+  flex-direction: column;
+  padding: 0 2rem;
+}
+
+.partners-content {
+  flex: 100%;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  text-align: left;
+  padding-top: 6.3rem;
+}
+
+.partner-content {
+  flex: 100%;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  text-align: left;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.partner-logo {
+  padding: 0;
+  min-height: 15rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & > a {
+    width: 100%;
+  }
+}
+
+.partner-logo a img {
+  max-height: 8rem;
+  max-width: 75%;
+}
+
+.partner-socials {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  flex-grow: 1;
+  padding-bottom: 6rem;
+}
+
+.partner-socials ul {
+  padding: 0em;
+}
+
+.partner-socials ul li {
+  display: inline-block;
+  justify-content: center;
+}
+
+.partner-socials > div > a > svg {
+  color: $light-gray;
+  padding-right: 2rem;
+  font-size: 3.5rem;
+  display: inline;
+}
+
+.partner-name h1 {
+  font-weight: 600;
+  font-size: 3rem;
+}
+
+.partner-mission {
+  font-size: 5vw;
+  padding: 2rem 0rem 2rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: relative;
+  margin-bottom: 2rem;
+
+  & > span {
+    padding-left: 11vw;
+  }
+}
+
+.partner-description {
+  padding: 5rem 2rem;
+  background: $light-gray;
+  color: $edgy-black;
+  margin: 0 -2rem;
+  font-size: 6vw;
+}
+
+.partnerArrowDown {
+  position: absolute;
+  width: 20vw;
+  left: 0;
+  bottom: 0;
+  max-height: 7rem;
+  margin: 1rem -1rem;
+}
+
+.image {
+  max-height: 75%;
+  margin: 0 -2rem;
+  object-fit: cover;
+}
+
+.outcomes {
+  z-index: 1;
+}
+
+.outcomes ul {
+  padding-left: 0;
+  display: flex;
+  margin: 0;
+  flex-direction: column;
+  padding: 0rem 2rem 2rem;
+}
+
+.outcomes ul li {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  text-align: center;
+}
+
+.outcomes ul li:hover {
+  background-color: $light-gray;
+  color: $light-blue;
+}
+
+.outcomes ul li span {
+  font-size: 2rem;
+}
+
+.outcomes-row {
+  width: calc(100% - 4rem);
+  padding: 2rem 2rem;
+  background: $light-gray;
+  color: $edgy-red;
+  margin-top: -3rem;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5rem;
+}
+
+.outcomes-row:last-child {
+  margin-bottom: -2rem;
+}
+
+.outcomes-number {
+  font-size: 15vw;
+  font-weight: 600;
+}
+
+.outcomes-text {
+  padding-bottom: 2rem;
+  font-size: 5vw;
+}
+
+.partnerMatrix {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(60%, 0.75fr));
+  grid-gap: 0.75rem;
+  gap: 0.75rem;
+}
+
+.sponsorMatrix {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
+  grid-gap: 0.75rem;
+  gap: 0.75rem;
+}
+
+.sponsors > .sponsorMatrix > *,
+.sponsors > .partnerMatrix > * {
+  width: 100%;
+}
+
+.card-invite {
+  background-color: $edgy-black;
+  border: 2px dashed $light-gray;
+  font-size: 4vw;
+  font-weight: bold;
+  text-align: left;
+  justify-content: flex-end;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.card-invite .invite-message {
+  padding: 0 0 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.mail a {
+  text-decoration: underline;
+  color: $light-gray;
+}
+
+.partner-name {
+  display: flex;
+  flex-direction: row;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sponsors-title,
+.media-title {
+  font-weight: 900;
+  font-size: 43px;
+}
+
+.carousel-item .card-link,
+.carousel-item .arrow {
+  display: none;
+}
+
+.carousel-item .card .content {
+  margin: 5px;
+}
+
+// Desktop
+@media (min-width: 1281px) {
+  .partnerContainer {
+    margin-top: 0;
+    flex-direction: row;
+  }
+
+  .partnersContainer {
+    flex-direction: row;
+  }
+
+  .partnerMain {
+    flex: 70% 1;
+    flex-direction: row;
+    overflow: auto;
+    padding: 0;
+  }
+
+  .partnersMain {
+    flex: 70%;
+    flex-direction: row;
+    overflow: auto;
+    padding: 0 2rem 0 0;
+  }
+
+  .sponsors,
+  .media {
+    padding: 5.1rem 2rem 0;
+  }
+
+  .card-invite {
+    font-size: 2vw;
+  }
+
+  .sponsors-title,
+  .media-title {
+    margin-bottom: 0;
+    font-size: 43px;
+    padding: 0 0 2rem;
+  }
+
+  .secondImage {
+    margin: -8rem 0rem 0 -2rem;
+  }
+
+  .sponsorMatrix {
+    grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
+  }
+
+  .partnerMatrix {
+    grid-template-columns: repeat(auto-fit, minmax(20%, 0.3fr));
+  }
+
+  .partner-description {
+    padding: 12rem;
+    font-size: 2rem;
+  }
+
+  .partner-logo > a {
+    text-align: right;
+    padding-right: 2rem;
+  }
+
+  .partner-socials {
+    align-self: flex-end;
+    padding-bottom: 1rem;
+  }
+
+  .partner-socials > div > a > svg {
+    font-size: 2.5rem;
+  }
+
+  .partnerArrowDown {
+    position: absolute;
+    left: 0rem;
+    bottom: 0;
+    max-height: 6rem;
+    width: 6rem;
+    margin: 1rem -1rem;
+  }
+
+  .partner-mission {
+    justify-content: flex-start;
+    font-size: 2rem;
+
+    & > span {
+      padding-left: 5rem;
+      width: 40rem;
+      text-align: left;
+    }
+  }
+
+  .partner-content {
+    height: calc(100vh - 12rem);
+    overflow: scroll;
+    padding: 12rem 0rem 0 2rem;
+  }
+
+  .outcomes {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .outcomes-text {
+    font-size: 1rem;
+  }
+
+  .outcomes-number {
+    font-size: 4rem;
+  }
+
+  .outcomes-row {
+    min-width: 17%;
+    width: 17%;
+    background: #e13b3a;
+    color: #efefef;
+  }
+
+  .outcomes-row:last-child {
+    margin-bottom: 5rem;
+  }
+}

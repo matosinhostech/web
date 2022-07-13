@@ -1,0 +1,443 @@
+@import "shared/styles/variables.scss";
+
+body {
+  margin: 0;
+  font-family: "Manrope";
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.home-main {
+  flex: 60%;
+  background: $edgy-black;
+  color: $light-gray;
+  display: flex;
+  flex-direction: column;
+  padding: 8rem 2rem 0;
+}
+
+.hero {
+  flex: 40%;
+  background-image: url(assets/images/background/beach-red.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.intro {
+  flex: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.top {
+  font-size: 2.5em;
+  padding-bottom: 2rem;
+}
+
+.bottom {
+  padding-bottom: 3rem;
+  display: flex;
+  align-items: center;
+}
+
+.homeArrowRight {
+  position: absolute;
+  width: 30%;
+  max-height: 7rem;
+}
+
+.serving {
+  margin-left: 40%;
+}
+
+.highlight {
+  color: $edgy-red;
+}
+
+.upcomingEvent {
+  background: $light-gray;
+  margin: 0 -2rem;
+  color: $edgy-black;
+  padding: 2rem 2rem 0;
+}
+
+.upcomingEventTitle {
+  font-size: 2.4rem;
+  font-weight: 600;
+  padding: 1rem 0;
+}
+
+.upcomingEventBanner {
+  position: relative;
+
+  & > img {
+    width: 100%;
+  }
+}
+
+.upcomingEventDate {
+  position: absolute;
+  left: 0;
+  top: 1rem;
+  color: #efefef;
+  margin: 0 0px 0 -5px;
+  background: $edgy-red;
+  padding: 0.5rem 1rem;
+  border-radius: 0.1rem;
+  font-weight: 200;
+}
+
+.upcomingEventAuthorDate {
+  padding: 1rem 0;
+}
+
+.upcomingEventAuthor {
+  color: $edgy-red;
+  padding: 1rem 0;
+  font-size: 0.8rem;
+  display: inline;
+}
+
+.upcomingEventAuthor > a {
+  font-weight: 400;
+  color: inherit;
+  text-decoration: none;
+}
+
+.upcomingEventHour {
+  color: $edgy-red;
+  position: relative;
+  font-size: 0.8rem;
+  padding: 0 1rem;
+  display: inline;
+
+  &:before {
+    content: "";
+    width: 1rem;
+    position: absolute;
+    border: 1px solid $edgy-red;
+    top: 0.6rem;
+  }
+
+  & > span {
+    padding: 0 2rem;
+  }
+}
+
+.upcomingEventName {
+  font-size: 2rem;
+}
+
+.upcomingEventClaim {
+  height: 3rem;
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  position: relative;
+  justify-content: space-between;
+
+  & > a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  & > img {
+    cursor: pointer;
+  }
+}
+
+.claimMessage {
+  font-size: 1.2rem;
+  position: relative;
+  cursor: pointer;
+
+  &:before {
+    content: "";
+    width: 100%;
+    border-top: 10px solid rgba(225, 59, 58, 0.5);
+    position: absolute;
+    bottom: 0;
+  }
+}
+
+.claimArrowRight {
+  width: 2rem;
+}
+
+.justBorder {
+  -webkit-text-stroke: 1px $light-gray; /* width and color */
+  color: $edgy-black;
+}
+
+.bottomHomePlaceholder {
+  background-image: url("assets/images/background/anemona-red.jpg");
+  background-size: cover;
+  height: 20vh;
+  opacity: 1;
+  margin-top: 2rem;
+}
+
+.onlyDesktop {
+  display: none;
+}
+
+.getTicketFormWrapper {
+  margin-top: 2rem;
+  font-family: "Manrope";
+  background: #141921;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 4rem 2rem;
+
+  & > .form {
+    width: 100%;
+  }
+
+  & > .form > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.getTicketButton {
+  margin-bottom: 3rem;
+
+  > button {
+    width: 50%;
+    border: 0;
+    height: 3rem;
+    font-size: 1rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    color: #efefef;
+    background: #131921;
+
+    &:disabled {
+      background: #c3c4c6;
+      color: #3d4248;
+      pointer-events: none;
+    }
+
+    &:hover {
+      background: $edgy-red;
+      color: #e8e8e8;
+    }
+  }
+}
+
+.getTicketInput {
+  height: 25px;
+  width: 90%;
+  margin-bottom: 1rem;
+  font-size: 16px;
+  padding: 1rem;
+  background: #efefef;
+  border: 0;
+  border-left: 0.2rem solid #131921;
+  color: #131921;
+}
+
+.getTicketInput:focus,
+.getTicketInput:focus-visible {
+  outline: transparent auto 0;
+}
+
+.getTicketError {
+  font-size: 13px;
+  color: #e13b3a;
+}
+
+.getTicketSuccess {
+  font-size: 13px;
+  color: #4bb543;
+}
+
+.getTicketReCaptcha {
+  padding-bottom: 50px;
+}
+
+// Desktop
+@media (min-width: 1281px) {
+  .onlyDesktop {
+    display: inline;
+  }
+
+  .container {
+    flex-direction: row;
+    // border-left: 2rem solid white;
+  }
+
+  .event > a {
+    font-size: 3rem;
+    text-decoration: none;
+    color: $light-gray;
+    font-weight: 900;
+  }
+
+  .intro {
+    justify-content: flex-start;
+    padding-top: 14rem;
+    max-width: 50rem;
+    padding-right: 3rem;
+    padding-top: 13rem;
+    z-index: 2;
+  }
+
+  .home-main {
+    flex: 70%;
+    flex-direction: row;
+    padding: 0;
+  }
+
+  .hero {
+    flex: 30%;
+  }
+
+  .menu {
+    padding: 4rem 2rem;
+  }
+
+  .top {
+    padding-bottom: 4rem;
+    font-size: 4.5em;
+  }
+
+  .bottom {
+    font-size: 25px;
+    padding-bottom: 4rem;
+    position: relative;
+  }
+
+  .home-full {
+    flex: 1;
+    height: 100%;
+    overflow: scroll;
+  }
+
+  .home-full > .introFull,
+  .home-full > .upcomingEventFull {
+    display: flex;
+    min-height: 50rem;
+    overflow: hidden;
+  }
+
+  .homeArrowRight {
+    width: 20%;
+  }
+
+  .serving {
+    margin-left: 20%;
+    max-width: 25rem;
+  }
+
+  .upcomingEvent {
+    margin: 0;
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    padding: 2rem 0 calc(20vh + 2rem) 2rem;
+  }
+
+  .upcomingEvent > div:not(:last-child) {
+    max-width: 49rem;
+  }
+
+  .upcomingEventFull {
+    width: 100%;
+    background: $light-gray;
+  }
+
+  .bottomHomePlaceholder {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+
+  .getTicketFormWrapper {
+    max-width: 45rem !important;
+
+    & > form {
+      width: 100%;
+    }
+  }
+
+  .getTicketButton {
+    margin-bottom: 0;
+  }
+
+  .getTicketInput {
+    height: 25px;
+    width: 50%;
+    margin-bottom: 1rem;
+    font-size: 16px;
+    padding: 1rem;
+    background: #efefef;
+    border: 0;
+    border-left: 0.2rem solid #131921;
+    color: #131921;
+  }
+
+  .ocean {
+    height: 2rem;
+    width: 100%;
+    z-index: 1;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: $edgy-black;
+  }
+
+  .wave1 {
+    background: url("../../assets/images/wave.svg") repeat-x;
+    position: absolute;
+    top: -198px;
+    width: 6400px;
+    height: 198px;
+    animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+    transform: translate3d(0, 0, 0);
+  }
+
+  .wave2 {
+    background: url("../../assets/images/wave.svg") repeat-x;
+    position: absolute;
+    top: -198px;
+    width: 6400px;
+    height: 198px;
+    animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+    transform: translate3d(0, 0, 0);
+  }
+
+  .wave2 {
+    top: -175px;
+    animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) -0.125s infinite, swell 7s ease -1.25s infinite;
+    opacity: 1;
+  }
+
+  @keyframes wave {
+    0% {
+      margin-left: 0;
+    }
+    100% {
+      margin-left: -1600px;
+    }
+  }
+
+  @keyframes swell {
+    0%,
+    100% {
+      transform: translate3d(0, -25px, 0);
+    }
+    50% {
+      transform: translate3d(0, 5px, 0);
+    }
+  }
+}

@@ -1,0 +1,529 @@
+@import "shared/styles/variables.scss";
+
+.videosContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin-top: 6rem;
+}
+
+.videosMain {
+  flex: 60%;
+  background: $light-gray;
+  color: $edgy-black;
+  display: flex;
+  flex-direction: column;
+  padding: 0 2rem;
+}
+
+.videos {
+  width: 100%;
+  position: relative;
+}
+
+.topSection {
+  height: 20rem;
+  padding-bottom: 2rem;
+  margin: 0 -2rem;
+  background: $light-gray;
+}
+
+.event {
+  display: flex;
+  position: relative;
+  height: 20rem;
+}
+
+.eventHero {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: auto;
+  z-index: -1;
+}
+
+.eventHero > img {
+  height: auto;
+  width: 100%;
+}
+
+.eventTitle {
+  font-weight: 200;
+  font-size: 30px;
+}
+
+.eventInfo {
+  width: 100%;
+  padding: 2rem;
+  color: $light-gray;
+  background: $edgy-black;
+}
+
+.eventAuthor {
+  font-size: 13px;
+}
+
+.eventAuthor > a {
+  color: inherit;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.eventDescription {
+  display: none;
+}
+
+.eventWatch {
+  background: $light-gray;
+  color: #00b7f0;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.eventPlay {
+  padding-right: 10px;
+}
+
+.sliderArrowLeft,
+.sliderArrowRight {
+  display: none;
+}
+
+.nowPlayingInfo {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding-top: 2rem;
+}
+
+.nowPlayingTitle {
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.nowPlayingDescription {
+  font-size: 15px;
+  margin-top: 1rem;
+  white-space: break-spaces;
+  font-weight: 300;
+}
+
+.nowPlayingRight {
+  margin-top: 3rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-bottom: 2rem;
+}
+
+.nowPlayingAuthorImg {
+  width: 100%;
+}
+
+.nowPlayingAuthorImg > img {
+  width: 100%;
+}
+
+.nowPlayingAuthor {
+  margin-top: 1rem;
+}
+
+.nowPlayingAuthor > a {
+  font-weight: 700;
+  color: inherit;
+  text-decoration: none;
+}
+
+.nowPlayingDate {
+  font-size: 12px;
+  color: $gray;
+}
+
+.showMiniPlayer > div {
+  width: 100% !important;
+  height: 30vh !important;
+  left: 0 !important;
+  background: black;
+  z-index: 5;
+  bottom: 0 !important;
+  position: fixed;
+}
+
+div[data-swipeable] {
+  overflow: hidden !important;
+}
+
+.allEvents {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0;
+  border-top: 2px solid black;
+  padding-top: 2rem;
+}
+
+.eventButton {
+  margin-right: 1%;
+  flex: 1 0 15%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.eventButtonImage {
+  position: relative;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.eventButtonImage > img {
+  justify-content: space-between;
+  margin: 0;
+  width: 100%;
+  max-width: 100vw;
+  border: 0;
+}
+
+.eventButtonTitle {
+  font-size: 3vw;
+}
+
+.eventButtonTitle:hover {
+  cursor: pointer;
+  color: $edgy-red;
+}
+
+.eventButtonDuration {
+  position: absolute;
+  right: 0;
+  bottom: 0.4rem;
+  color: $light-gray;
+  margin: 0.5rem;
+  background: rgba(225, 59, 58, 0.8);
+  padding: 0.1rem 0.4rem;
+  border-radius: 0.2rem;
+}
+
+.eventButtonTitle {
+  font-weight: 200;
+  font-size: 3vw;
+  padding: 0 0;
+}
+
+.eventButtonInfo {
+  width: 100%;
+}
+
+.eventButtonAuthor {
+  font-size: 2vw;
+  color: $edgy-red;
+}
+
+.eventButtonAuthor > a {
+  color: inherit;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.eventButtonDate {
+  color: $gray;
+  font-size: 0.8rem;
+}
+
+.activeBanner {
+  opacity: 1 !important;
+}
+
+.bottomPlaceholder {
+  background-image: url("assets/images/background/anemona-red.jpg");
+  background-size: cover;
+  height: 30vh;
+  opacity: 1;
+}
+
+.sliderPagination {
+  position: absolute;
+  height: 3rem;
+  bottom: 0;
+  right: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.sliderPaginationDot.active {
+  opacity: 1;
+}
+
+.sliderPaginationDot {
+  width: 0.5rem;
+  background: #fefefe;
+  height: 0.5rem;
+  margin: 0 0.5rem;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.eventAuthorDate {
+  padding: 1rem 0;
+}
+
+.eventAuthor {
+  color: $edgy-red;
+  padding: 1rem 0;
+  font-size: 0.8rem;
+  display: inline;
+}
+
+.eventAuthor > a {
+  font-weight: 400;
+}
+
+.eventDate {
+  color: $gray;
+  position: relative;
+  font-size: 0.8rem;
+  padding: 0 1rem;
+  display: inline;
+
+  &:before {
+    content: "";
+    width: 1rem;
+    position: absolute;
+    border: 1px solid $light-gray;
+    top: 0.6rem;
+  }
+
+  & > span {
+    padding: 0 2rem;
+  }
+}
+
+.eventWatch {
+  width: 105px;
+  border-radius: 0;
+  color: $edgy-black;
+  text-align: center;
+  padding: 1rem 2rem;
+  cursor: pointer;
+}
+
+.slider {
+  position: relative;
+}
+
+// Desktop
+@media (min-width: 1281px) {
+  .videos {
+    width: calc(100vw - 13.8rem);
+  }
+
+  .videosContainer {
+    flex-direction: row;
+    margin-top: 0;
+  }
+
+  .bottomPlaceholder {
+    background-image: url("assets/images/background/anemona-red.jpg");
+    background-size: cover;
+    height: 30vh;
+    opacity: 1;
+    margin-top: 0;
+  }
+
+  .videosMain {
+    flex-direction: row;
+    padding: 0 2rem 0 0;
+  }
+
+  .topSection {
+    height: 60vh;
+    margin: 0;
+    padding-bottom: 0;
+    position: relative;
+  }
+
+  .bottomSection {
+    padding: 0;
+  }
+
+  .sliderArrowLeft,
+  .sliderArrowRight {
+    display: inline;
+    position: absolute;
+    top: 25vh;
+    font-size: 100px;
+    z-index: 1;
+    cursor: pointer;
+    opacity: 0.5;
+    padding: 0 20px;
+    width: 4rem;
+  }
+
+  .sliderArrowRight {
+    right: 2rem;
+  }
+
+  .sliderArrowLeft {
+    left: 2rem;
+  }
+
+  .sliderArrowLeft:hover,
+  .sliderArrowRight:hover {
+    opacity: 1;
+  }
+
+  .event {
+    display: flex;
+    height: 60vh;
+    margin: -5px;
+    padding: 5px;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .eventTitle {
+    font-weight: 600;
+    color: $light-gray;
+    font-size: 2rem;
+  }
+
+  .eventHero {
+    height: 100%;
+    width: 100%;
+  }
+
+  .eventHero > img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .eventButtonImage > img {
+    width: 100%;
+  }
+
+  .eventInfo {
+    width: 50%;
+    padding: 0 0 0 2rem;
+    margin-top: 0;
+  }
+
+  .eventDescription {
+    display: flex;
+    padding: 1rem 0;
+    width: 80%;
+    font-size: 1.2rem;
+    color: $light-gray;
+  }
+
+  .nowPlayingInfo {
+    flex-direction: row-reverse;
+    text-align: left;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding-top: 3rem;
+  }
+
+  .nowPlayingLeft {
+    width: 100%;
+    margin-right: 12rem;
+    padding-bottom: 3rem;
+    padding-left: 2rem;
+  }
+
+  .nowPlayingRight {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0;
+    align-items: flex-start;
+    width: auto;
+  }
+
+  .nowPlayingAuthorImg {
+    text-align: left;
+    width: 15rem;
+  }
+
+  .showMiniPlayer > div {
+    width: 35% !important;
+    height: 30% !important;
+    right: 0 !important;
+    z-index: 5;
+    left: 0rem !important;
+    bottom: 0 !important;
+    position: fixed;
+  }
+
+  .allEvents {
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: row;
+    margin: 3rem 0 0;
+    padding-top: 0;
+    border: 0;
+  }
+
+  .eventInfo {
+    background: none;
+  }
+
+  .eventButton {
+    flex-direction: column;
+    margin-bottom: 0;
+    align-items: flex-start;
+    margin-right: 3rem;
+    margin-bottom: 3rem;
+    flex: 1 0 30%;
+  }
+
+  .eventButtonImage {
+    width: auto;
+    margin-right: 0;
+  }
+
+  .eventDate {
+    font-size: 1.2rem;
+
+    &:before {
+      width: 4rem;
+      top: 0.8rem;
+    }
+
+    & > span {
+      padding: 0 5rem;
+    }
+  }
+
+  .eventAuthor {
+    font-size: 1.2rem;
+  }
+
+  .sliderPagination {
+    width: 100%;
+    right: 0;
+  }
+
+  .nowPlayingAuthor {
+    margin-top: 0;
+  }
+
+  .nowPlayingDate {
+    margin-bottom: 1rem;
+  }
+
+  .eventButtonTitle {
+    font-size: 15px;
+  }
+
+  .eventButtonAuthor {
+    font-size: 13px;
+  }
+}

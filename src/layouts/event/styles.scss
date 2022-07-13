@@ -1,0 +1,610 @@
+@import "shared/styles/variables.scss";
+
+.eventContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin-top: 6rem;
+}
+
+.eventMain {
+  flex: 60%;
+  background: $light-gray;
+  color: $edgy-black;
+  display: flex;
+  flex-direction: column;
+  padding: 0 2rem;
+}
+
+.eventLayoutWrapper {
+  > .eventLayout {
+    > .eventLayoutVenue {
+      > img {
+        width: 100%;
+      }
+    }
+
+    > .eventContent {
+      display: flex;
+      flex-direction: column-reverse;
+      position: relative;
+
+      > .left {
+        width: 100%;
+        padding-right: 0;
+  
+        > .title {
+          margin-bottom: 2rem;
+          font-size: 2rem;
+        }
+
+        > .speakers {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          margin-bottom: 1rem;
+
+          > span {
+            width: 100%;
+          }
+        }
+
+        > .venue {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+
+          > span {
+            width: 100%;
+          }
+        }
+  
+        > .description {
+          margin-top: 2rem;
+        }
+  
+        > hr {
+          margin: 3rem 0 !important;
+          border-top: 2px solid #131921 !important;
+          display: block !important;
+        }
+  
+        > .schedule {
+          > .schedule-slot {
+            > .schedule-time {
+              font-size: 0.9rem;
+              position: relative;
+              color: gray;
+              padding-left: 1.5rem;
+  
+              &:before {
+                content: "";
+                position: absolute;
+                width: 0.7rem;
+                height: 0.7rem;
+                top: 0.2rem;
+                left: 0;
+                background: black;
+                border-radius: 2rem;
+              }
+            }
+  
+            > .schedule-title {
+              font-weight: 600;
+              margin-left: 0.25rem;
+              padding-left: 1rem;
+              font-size: 1.1rem;
+              height: 5rem;
+              border-left: 3px solid black;
+            }
+  
+            > .dashed {
+              border-left: 3px dashed gray;
+            }
+          }
+        }
+  
+        > .speaker-details {
+          display: flex;
+  
+          > .speaker {
+            width: calc(50% - 1rem);
+
+            &:first-child {
+              margin-right: 1rem;
+            }
+  
+            &:last-child {
+              margin-left: 1rem;
+            }
+            
+            > .speaker-name {
+              margin: 0.5rem 0 1rem;
+              font-size: 1.2rem;
+            }
+  
+            > .speaker-bio {
+              font-size: 0.8rem;
+            }
+  
+            > .speaker-image {
+              > img {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+
+      > .right {
+        > .ticket {
+          position: relative;
+          margin-right: 0;
+          background: #131921;
+          border-radius: 1rem;
+          padding: 2rem;
+          top: 2rem;
+          margin-bottom: 4rem;
+
+          > .ticket-top {
+            > .ticket-header {
+              display: flex;
+              justify-content: space-between;
+
+              > .ticket-logo {
+                width: 5rem;
+
+                > img {
+                  width: 100%;
+                }
+              }
+
+              > .date {
+                text-align: center;
+
+                > .month {
+                  color: #9a9da0;
+                  margin-bottom: -7px;
+                }
+  
+                > .day {
+                  color: #e8e8e8;
+                  font-size: 36px;
+                  font-weight: bold;
+                }
+  
+                > .year {
+                  color: #9a9da0;
+                  line-height: 1;
+                  margin-top: -3px;
+                }
+              }
+            }
+          }
+
+          > .ticket-center {
+            width: 100%;
+            padding: 3rem 1rem 2rem;
+            margin: 0 -1rem;
+            border-bottom: 1px #e8e8e8 dashed;
+            position: relative;
+  
+            &:before {
+              content: "";
+              width: 3rem;
+              height: 3rem;
+              left: -2.5rem;
+              bottom: -1.5rem;
+              border-radius: 2rem;
+              background: #efefef;
+              position: absolute;
+            }
+  
+            &:after {
+              content: "";
+              width: 3rem;
+              height: 3rem;
+              right: -2.5rem;
+              bottom: -1.5rem;
+              border-radius: 2rem;
+              background: #efefef;
+              position: absolute;
+            }
+  
+            > .ticket-name {
+              width: 75%;
+              font-size: 28px;
+              color: #e8e8e8;
+            }
+          }
+  
+          > .ticket-bottom {
+            margin-top: 1rem;
+  
+            > .ticket-location {
+              margin: 1rem 0;
+  
+              > .label {
+                font-size: 0.8rem;
+                color: #9a9da0;
+              }
+  
+              > .value {
+                color: #e8e8e8;
+                margin-top: 0.2rem;
+                font-size: 1.2rem;
+              }
+            }
+  
+            > .ticket-time {
+              display: flex;
+              justify-content: space-between;
+              margin: 2rem 0;
+  
+              > .left,
+              > .right {
+                > .label {
+                  font-size: 0.8rem;
+                  color: #9a9da0;
+                }
+  
+                > .value {
+                  color: #e8e8e8;
+                  margin-top: 0.2rem;
+                  font-size: 1.2rem;
+                }
+              }
+            }
+  
+            > .ticket-claim {
+              > button {
+                width: 100%;
+                border: 0;
+                height: 3rem;
+                font-size: 1rem;
+                cursor: pointer;
+                background: #e8e8e8;
+  
+                &:disabled {
+                  background: #c3c4c6;
+                  color: #3d4248;
+                  pointer-events: none;
+                }
+  
+                &:hover {
+                  background: $edgy-red;
+                  color: #e8e8e8;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      > .status-message {
+        position: absolute;
+        bottom: 0px;
+        justify-content: center;
+        width: calc(100% - 2rem);
+        background: #131921;
+        align-items: center;
+        display: flex;
+        margin-right: 11rem;
+        padding: 1rem;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.hyperlink {
+  font-weight: bold;
+  cursor: pointer;
+  color: $edgy-red;
+  text-decoration: none;
+}
+
+.spinner {
+  font-size: 1.3rem;
+  animation: spin infinite 3s linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+// Desktop
+@media (min-width: 1281px) {
+  .eventLayoutWrapper {
+    width: calc(100vw - 13.8rem);
+  }
+
+  .eventMain {
+    padding: 0;
+  }
+
+  .eventLayout {
+    margin-right: 2rem;
+    margin-top: 2rem;
+  }
+
+  .eventLayoutVenue {
+    width: 100%;
+
+    & > img {
+      width: 100%;
+      max-height: 24rem;
+      object-fit: cover;
+    }
+  }
+
+  .eventContainer {
+    flex-direction: row;
+    margin-top: 0;
+  }
+
+  .eventMain {
+    flex-direction: row;
+    padding: 0 0 0 0;
+  }
+
+  .eventContent {
+    display: flex;
+    flex-direction: row!important;
+    margin-top: 3rem;
+    position: relative;
+
+    > .left {
+      width: 60% !important;
+      padding-right: 4rem !important;
+
+      > .title {
+        margin-bottom: 2rem;
+        font-size: 2rem;
+      }
+
+      > .description {
+        margin-top: 2rem;
+      }
+
+      > hr {
+        margin: 3rem 0 !important;
+        border-top: 2px solid #131921 !important;
+        display: block !important;
+      }
+
+      > .schedule {
+        > .schedule-slot {
+          > .schedule-time {
+            font-size: 0.9rem;
+            position: relative;
+            color: gray;
+            padding-left: 1.5rem;
+
+            &:before {
+              content: "";
+              position: absolute;
+              width: 0.7rem;
+              height: 0.7rem;
+              top: 0.2rem;
+              left: 0;
+              background: black;
+              border-radius: 2rem;
+            }
+          }
+
+          > .schedule-title {
+            font-weight: 600;
+            margin-left: 0.25rem;
+            padding-left: 1rem;
+            font-size: 1.1rem;
+            height: 5rem;
+            border-left: 3px solid black;
+          }
+
+          > .dashed {
+            border-left: 3px dashed gray;
+          }
+        }
+      }
+
+      > .speaker-details {
+        display: flex;
+
+        > .speaker {
+          width: 33%!important;
+
+          &:first-child {;
+            margin: 0 4rem 0 0!important;
+          }
+
+          &:last-child {
+            margin: 0 4rem 0 0!important;
+          }
+
+          > .speaker-name {
+            margin: 0.5rem 0 1rem;
+          }
+
+          > .speaker-bio {
+            font-size: 0.8rem;
+          }
+
+          > .speaker-image {
+            > img {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+
+    > .right {
+      width: 40%;
+      position: relative;
+
+      > .ticket {
+        position: sticky!important;
+        margin-right: 2rem!important;
+        background: #131921!important;
+        border-radius: 1rem!important;
+        padding: 2rem!important;
+        top: 2rem!important;
+        margin-bottom: 4rem!important;
+
+        > .ticket-top {
+          display: flex;
+
+          > .ticket-header {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+
+            > .ticket-logo {
+              width: 5rem;
+
+              > img {
+                width: 100%;
+              }
+            }
+
+            > .date {
+              text-align: center;
+
+              > .month {
+                color: #9a9da0;
+                margin-bottom: -7px;
+              }
+
+              > .day {
+                color: #e8e8e8;
+                font-size: 36px;
+                font-weight: bold;
+              }
+
+              > .year {
+                color: #9a9da0;
+                line-height: 1;
+                margin-top: -3px;
+              }
+            }
+          }
+        }
+
+        > .ticket-center {
+          width: 100%;
+          padding: 3rem 1rem 2rem;
+          margin: 0 -1rem;
+          border-bottom: 1px #e8e8e8 dashed;
+          position: relative;
+
+          &:before {
+            content: "";
+            width: 3rem;
+            height: 3rem;
+            left: -2.5rem;
+            bottom: -1.5rem;
+            border-radius: 2rem;
+            background: #efefef;
+            position: absolute;
+          }
+
+          &:after {
+            content: "";
+            width: 3rem;
+            height: 3rem;
+            right: -2.5rem;
+            bottom: -1.5rem;
+            border-radius: 2rem;
+            background: #efefef;
+            position: absolute;
+          }
+
+          > .ticket-name {
+            width: 75%;
+            font-size: 28px;
+            color: #e8e8e8;
+          }
+        }
+
+        > .ticket-bottom {
+          margin-top: 1rem;
+
+          > .ticket-location {
+            margin: 1rem 0;
+
+            > .label {
+              font-size: 0.8rem;
+              color: #9a9da0;
+            }
+
+            > .value {
+              color: #e8e8e8;
+              margin-top: 0.2rem;
+              font-size: 1.2rem;
+            }
+          }
+
+          > .ticket-time {
+            display: flex;
+            justify-content: space-between;
+            margin: 2rem 0;
+
+            > .left,
+            > .right {
+              > .label {
+                font-size: 0.8rem;
+                color: #9a9da0;
+              }
+
+              > .value {
+                color: #e8e8e8;
+                margin-top: 0.2rem;
+                font-size: 1.2rem;
+              }
+            }
+          }
+
+          > .ticket-claim {
+            > button {
+              width: 100%;
+              border: 0;
+              height: 3rem;
+              font-size: 1rem;
+              cursor: pointer;
+              background: #e8e8e8;
+
+              &:disabled {
+                background: #c3c4c6;
+                color: #3d4248;
+                pointer-events: none;
+              }
+
+              &:hover {
+                background: $edgy-red;
+                color: #e8e8e8;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    > .status-message {
+      position: absolute;
+      bottom: 0px;
+      justify-content: center;
+      width: calc(100% - 2rem);
+      background: #131921;
+      align-items: center;
+      display: flex;
+      margin-right: 11rem;
+      padding: 1rem;
+    }
+  }
+}
