@@ -16,7 +16,7 @@ const Links = (path) => {
 
   return (
     <>
-      <Link onClick={handleNavigate} to="/event">Next Event</Link>
+      {/* <Link onClick={handleNavigate} to="/event">Next Event</Link> */}
       <Link onClick={handleNavigate} to="/manifesto">Manifesto</Link>
       <Link onClick={handleNavigate} to="/partners">Partners</Link>
       <Link onClick={handleNavigate} to="/videos">Videos</Link>
@@ -43,7 +43,7 @@ const Navigation = ({ path, page = 'bluePage' }) => {
     }
   }, []);
 
-  const isMobile = width <= 1281;
+  const isMobile = width <= 1025;
 
   const handleMenuClick = useCallback(() => {
     if (!isDrawerOpen) {

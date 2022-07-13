@@ -3,7 +3,7 @@ import useMediaQuery from "shared/hooks/useMediaQuery";
 
 const Accordion = ({ title, content }) => {
   const [isActive, setIsActive] = useState(false);
-  const isDesktop = useMediaQuery('(min-width: 1281px)');
+  const isDesktop = useMediaQuery('(min-width: 1025px)');
 
   return (
     <div className="accordion-item">

@@ -22,7 +22,7 @@ body {
 
 .hero {
   flex: 40%;
-  background-image: url(assets/images/background/beach-red.jpg);
+  background-image: url(assets/images/background/mercado-red.jpg);
   background-size: cover;
   background-position: center;
 }
@@ -37,22 +37,22 @@ body {
 .top {
   font-size: 2.5em;
   padding-bottom: 2rem;
+  max-width: 600px;
 }
 
 .bottom {
   padding-bottom: 3rem;
   display: flex;
   align-items: center;
+  justify-content: flex-start;
 }
 
 .homeArrowRight {
-  position: absolute;
-  width: 30%;
   max-height: 7rem;
 }
 
 .serving {
-  margin-left: 40%;
+  max-width: 350px;
 }
 
 .highlight {
@@ -265,8 +265,32 @@ body {
   padding-bottom: 50px;
 }
 
+.call-out-container {
+  background: rgb(19 25 33 / 90%);
+  display: flex;
+  padding: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.highlight-gradient-text {
+  font-weight: 700;
+  font-size: 2rem;
+  padding-right: 0.5rem;
+  line-height: 2.5rem;
+  background: -webkit-linear-gradient(180deg, rgb(239, 239, 239) 20%, rgb(239, 239, 239) 35%, rgb(225, 59, 58) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.deadline {
+  width:100%;
+  text-align: center;
+  padding-right: 0.5rem;
+}
+
 // Desktop
-@media (min-width: 1281px) {
+@media (min-width: 1025px) {
   .onlyDesktop {
     display: inline;
   }
@@ -285,10 +309,10 @@ body {
 
   .intro {
     justify-content: flex-start;
-    padding-top: 14rem;
-    max-width: 50rem;
+    max-width: 20rem;
     padding-right: 3rem;
-    padding-top: 13rem;
+    padding-left: 2rem;
+    padding-top: 14rem;
     z-index: 2;
   }
 
@@ -299,20 +323,48 @@ body {
   }
 
   .hero {
-    flex: 30%;
+    flex: 30% 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding-left: 10rem;
   }
+
+  .call-out-container {
+    display: block;
+    background: rgb(19 25 33 / 90%);
+    margin-top: 1rem;
+    width: 350px;
+    padding: 1rem 2rem;
+    box-shadow: -20px 20px 0px 0px #ffabab;
+}
+
+  .call-out-container:hover {
+    box-shadow: -20px 20px 0px 0px #e13b3a;
+    cursor: pointer;
+  }
+
+  .highlight-gradient-text {
+    font-weight: 700;
+    font-size: 3rem;
+    line-height: 2.5rem;
+    background: -webkit-linear-gradient(180deg, rgb(239, 239, 239) 20%, rgb(239, 239, 239) 35%, rgb(225, 59, 58) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
   .menu {
     padding: 4rem 2rem;
   }
 
   .top {
-    padding-bottom: 4rem;
-    font-size: 4.5em;
+    padding-bottom: 3rem;
+    font-size: 2.4em;
   }
 
   .bottom {
-    font-size: 25px;
+    font-size: 15px;
     padding-bottom: 4rem;
     position: relative;
   }
@@ -335,7 +387,7 @@ body {
   }
 
   .serving {
-    margin-left: 20%;
+    margin-left: 10px;
     max-width: 25rem;
   }
 
@@ -348,7 +400,7 @@ body {
   }
 
   .upcomingEvent > div:not(:last-child) {
-    max-width: 49rem;
+    max-width: 47rem;
   }
 
   .upcomingEventFull {
@@ -421,6 +473,8 @@ body {
     animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) -0.125s infinite, swell 7s ease -1.25s infinite;
     opacity: 1;
   }
+
+
 
   @keyframes wave {
     0% {

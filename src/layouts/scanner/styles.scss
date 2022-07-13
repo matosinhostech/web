@@ -12,12 +12,12 @@ body {
   border: 0;
 }
 
-.banner {
-  height: 15rem;
-  background-size: cover;
-  background-position: center;
-  margin: 0 -32px;
-}
+// .banner {
+//   height: 15rem;
+//   background-size: cover;
+//   background-position: center;
+//   margin: 0 -32px;
+// }
 
 .banner-top {
   margin-bottom: 4rem;
@@ -90,7 +90,7 @@ hr {
 }
 
 // Desktop
-@media (min-width: 1281px) {
+@media (min-width: 1025px) {
   .manifestoContainer {
     flex-direction: row;
   }
@@ -102,9 +102,9 @@ hr {
     padding: 0 2rem 0 0;
   }
 
-  .banner {
-    min-height: 30rem;
-  }
+  // .banner {
+  //   min-height: 30rem;
+  // }
 
   .manifesto-content {
     padding-top: 0;

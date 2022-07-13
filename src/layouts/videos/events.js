@@ -22,8 +22,42 @@ import openSourceSpeaker from 'assets/images/events/open-source-speaker-red.jpg'
 import architectureBanner from 'assets/images/events/placeholder.jpeg';
 import anaSpeaker from 'assets/images/events/ana-carvalho-speaker-red.jpeg';
 import marcSpeaker from 'assets/images/events/marc-speaker-red.jpeg';
+import tiagoSpeaker from 'assets/images/events/tiago-fernandes-speaker.jpg';
+import manelSpeaker from 'assets/images/events/manuel-parente-speaker.jpg';
 
 export default [
+    {
+        title: "Compensation as a Service",
+        authors: [{
+            name: "Tiago Fernandes",
+            url: "https://www.linkedin.com/in/tiago-m-fernandes/",
+            img: tiagoSpeaker,
+        }],
+        projectUrl: "",
+        description: "Building the Bank of the Employee with Elixir",
+        longDescription: "Tiago Fernandes, CTO of Coverflex, explains to us how Coverflex is building the future of compensation with Elixir and give us an insight into their mission of creating the Bank of the Employee.",
+        video: "https://vimeo.com/720187333",
+        bannerImg: mlBanner,
+        partnerSlug: 'tiagoFernandes',
+        date: '2022-06-01',
+        duration: '21:54',
+    },
+    {
+        title: "Maritime Robots",
+        authors: [{
+            name: "Manuel Parente",
+            url: "https://www.linkedin.com/in/mparente/",
+            img: manelSpeaker,
+        }],
+        projectUrl: "",
+        description: "Maritime Robots: Protecting our oceans with sustainable technology",
+        longDescription: "Manuel Parente, Director of Software Engineering at Ocean Infinity, will break down how building a fleet of robotic vessels at scale is a complex challenge – especially if done sustainably.",
+        video: "https://vimeo.com/722376503",
+        bannerImg: mlBanner,
+        partnerSlug: 'manelParente',
+        date: '2022-06-01',
+        duration: '32:08',
+    },
     {
         title: "Founding a tech startup",
         authors: [{

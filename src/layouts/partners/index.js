@@ -54,7 +54,7 @@ const PartnersListLayout = (props) => {
   );
 
   const logosByPartner = useGetImagesByPartner(partners, logos);
-  const isDesktop = useMediaQuery('(min-width: 1281px)');
+  const isDesktop = useMediaQuery('(min-width: 1025px)');
   const isMobile = useMediaQuery('(max-width: 768px)');
   const numberOfCarouselItems = isDesktop ? 8 : (isMobile ? 4 : 6);
 

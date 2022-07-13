@@ -1,5 +1,5 @@
 import React, { useEffect, useCallback, useState } from "react"
-import QrReader from 'modern-react-qr-reader'
+// import QrReader from 'modern-react-qr-reader'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheckCircle, faTimesCircle } from '@fortawesome/free-solid-svg-icons'
 
@@ -103,13 +103,13 @@ const Scan = () => {
   return (
     <>
       <div style={{ textAlign: 'center' }}>
-        <QrReader
+        {/* <QrReader
           delay={4000}
           style={previewStyle}
           facingMode={"environment"}
           onError={handleError}
           onScan={handleScan}
-        />
+        /> */}
         <div style={{ width: '100%', textAlign: 'center', paddingTop: '5rem' }}>
           {fetchOperationData.status === 'pristine' ? 'Ready to scan' : parseTicket(ticket)}
         </div>
