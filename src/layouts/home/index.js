@@ -39,15 +39,28 @@ const HomeLayout = ({ path }) => {
               </div>
             </div>
             <div className="hero">
-              {/* <div className="call-out-container">
-                <div className="highlight-gradient-text">CALL</div>
-                <div className="highlight-gradient-text">FOR</div>
-                <div className="highlight-gradient-text">SPEAKERS</div>
-                <div className="deadline">
-                  TALK SUBMISSION DEADLINE:{" "}
-                  <span className="highlight">JULY 31, 2020</span>
+              {/* <a href="mailto:hello@matosinhos.tech" className="mailto">
+                <div className="call-out-container">
+                  <div className="highlight-gradient-text">CALL</div>
+                  <div className="highlight-gradient-text">FOR</div>
+                  <div className="highlight-gradient-text">SPEAKERS</div>
+                  <div className="deadline">
+                    TALK SUBMISSION DEADLINE:{" "}
+                    <span className="highlight">JULY 31, 2020</span>
+                  </div>
                 </div>
-              </div> */}
+              </a> */}
+              <a href="mailto:hello@matosinhos.tech" className="mailto">
+                <div className="call-out-container">
+                  <div className="highlight-gradient-text">
+                    call for speakers
+                  </div>
+                  <div className="deadline">
+                    talk submission deadline:{" "}
+                    <span className="highlight">july 31, 2020</span>
+                  </div>
+                </div>
+              </a>
             </div>
           </div>
           <div className="upcomingEventFull">
@@ -88,15 +101,16 @@ const HomeLayout = ({ path }) => {
                 </Link>
               </div>
               <Subscribe />
-              <div className="bottomHomePlaceholder" />
             </div>
-          <div className="onlyDesktop">
-            <Waypoint
-              onEnter={() => setNavigationStyle("homePage")}
-              onLeave={() => setNavigationStyle("homePageAlt")}
-            />
+            <div className="filler" />
+            <div className="onlyDesktop">
+              <Waypoint
+                onEnter={() => setNavigationStyle("homePage")}
+                onLeave={() => setNavigationStyle("homePageAlt")}
+              />
+            </div>
           </div>
-          </div>
+          <div className="bottomHomePlaceholder" />
           <CookieBanner />
         </div>
       </div>

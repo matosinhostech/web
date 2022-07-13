@@ -1,45 +1,75 @@
 .subscribeFormWrapper {
-    margin-top: 2rem;
-    font-family: 'Manrope';
-    background: #141921;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    padding: 2rem;
+  margin-top: 2rem;
+  font-family: "Manrope";
+  background: #141921;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 1rem 2rem 2rem;
 }
 
 .notifyMeButton {
-    color: #141921;
-    border-style: none;
-    font-size: 16px;
-    background: #ffffff;
-    border-radius: 0;
-    padding: 12px 24px;
-    box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
-    transition: all 0.5s ease 0s;
-    cursor: pointer;
-    width: 170px;
+  color: #141921;
+  border-style: none;
+  font-size: 16px;
+  background: #ffffff;
+  border-radius: 0;
+  padding: 12px 24px;
+  box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%),
+    0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
+  transition: all 0.5s ease 0s;
+  cursor: pointer;
+  width: 100%;
+  text-transform: lowercase;
+  letter-spacing: 2px;
+  font-family: "Manrope";
+}
+
+.notifyMeButton:hover {
+  transform: scale(1.01);
 }
 
 .notifyMeInput {
-    height: 25px;
-    margin-bottom: 40px;
-    width: calc(100% - 10px);
-    font-size: 16px;
-    padding: 5px;
-    background: #141921;
-    border: 0;
-    border-bottom: 1px solid #efeeef;
-    color: white;
+  height: 35px;
+  font-family: "Manrope";
+  margin-bottom: 1rem;
+  width: 100%;
+  font-size: 16px;
+  padding: 0 0 5px;
+  width: 100%;
+  font-size: 16px;
+  background: #141921;
+  border: 0;
+  border-bottom: 1px solid #efeeef;
+  color: #fefefe;
+}
+
+.notifyMeInput::placeholder {
+  text-transform: lowercase;
+  letter-spacing: 2px;
 }
 
 .notifyMeInput:focus,
 .notifyMeInput:focus-visible {
-    outline: transparent auto 0;
+  outline: transparent auto 0;
 }
 
 @media (min-width: 1025px) {
-    .subscribeFormWrapper {
-        max-width: 43rem!important;
-    }
+  .subscribeFormWrapper {
+    max-width: 49rem !important;
+    flex-direction: row;
+    align-items: center;
+    padding: 2rem;
+  }
+
+  .notifyMeInput {
+    width: calc(100% - 350px);
+    margin-bottom: 0;
+    padding: 5px 0;
+  }
+
+  .notifyMeButton {
+    width: 300px;
+  }
 }

@@ -19,7 +19,7 @@ const CustomForm = ({ status, message, onValidated }) => {
         placeholder="Enter email address"
       />
       <button className="notifyMeButton" onClick={submit}>
-        {!status && 'Notify me'}
+        {!status && 'subscribe to newsletter'}
         {status === "sending" && 'Subscribing...'}
         {status === "error" && 'Error'}
         {status === "success" && 'Subscribed'}
