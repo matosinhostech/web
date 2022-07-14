@@ -12,14 +12,16 @@ const CustomForm = ({ status, message, onValidated }) => {
 
   return (
     <>
+    <label className="form-label">
+      keep in touch</label>
       <input
         ref={node => (email = node)}
         type="email"
         className="notifyMeInput"
-        placeholder="Enter email address"
+        placeholder="your email"
       />
       <button className="notifyMeButton" onClick={submit}>
-        {!status && 'subscribe to newsletter'}
+        {!status && 'subscribe'}
         {status === "sending" && 'Subscribing...'}
         {status === "error" && 'Error'}
         {status === "success" && 'Subscribed'}

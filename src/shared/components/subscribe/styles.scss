@@ -1,20 +1,22 @@
 .subscribeFormWrapper {
+  text-align: center;
+  bottom: 2rem;
+    width: calc(100% - 8rem);
+    padding: 1rem;
   align-items: flex-end;
   background: #141921;
-  bottom: -6rem;
   display: flex;
   flex-direction: column;
   font-family: Manrope;
   justify-content: space-between;
-  padding: 2rem 2rem 2rem;
+  padding: 1rem 2rem 2rem;
   position: absolute;
-  width: calc(100% - 8rem);
 }
 
 .notifyMeButton {
   color: #141921;
   border-style: none;
-  font-size: 16px;
+  font-size: 12px;
   background: #ffffff;
   border-radius: 0;
   padding: 12px 24px;
@@ -37,19 +39,20 @@
   font-family: "Manrope";
   margin-bottom: 1rem;
   width: 100%;
-  font-size: 16px;
   padding: 0 0 5px;
   width: 100%;
-  font-size: 16px;
-  background: #141921;
+  font-size: 12px;
+  background: transparent;
   border: 0;
   border-bottom: 1px solid #efeeef;
   color: #fefefe;
+  text-align: center;
 }
 
 .notifyMeInput::placeholder {
   text-transform: lowercase;
   letter-spacing: 2px;
+  text-align: center;
 }
 
 .notifyMeInput:focus,
@@ -57,24 +60,55 @@
   outline: transparent auto 0;
 }
 
+.form-label{
+    text-transform: uppercase;
+    width: 100%;
+    font-size: 0.6rem;
+    font-weight: 700;
+    padding-bottom: 1rem;
+}
+
 @media (min-width: 1025px) {
   .subscribeFormWrapper {
-    max-width: 49rem !important;
+    text-align: left;
+    border-right: 30px solid #efefef;
+    align-items: center;
     flex-direction: row;
     align-items: center;
-    padding: 2rem;
-    position: relative;
-    width: auto;
+    position: absolute;
     bottom: 0;
+    left: 0;
+    width: 49rem;
+    height: 5rem;
+    background: rgba(20, 25, 33, 0.9);
+    padding: 1.5rem 2rem;
+  }
+
+  .form-label {
+    position: absolute;
+    top: 1.5rem;
+    font-weight: 700;
+    left: 2.2rem;
+    text-transform: uppercase;
+    font-size: 0.8rem;
   }
 
   .notifyMeInput {
-    width: calc(100% - 350px);
+    width: 100%;
     margin-bottom: 0;
-    padding: 5px 0;
+    padding: 3px 5px;
+    margin-right: 2rem;
+    background: none;
+    font-size: 12px;
   }
 
   .notifyMeButton {
-    width: 300px;
+    width: 150px;
+    font-size: 12px;
+  }
+
+  .notifyMeInput,
+  .notifyMeInput::placeholder {
+    text-align: left;
   }
 }

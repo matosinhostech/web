@@ -100,7 +100,6 @@ const HomeLayout = ({ path }) => {
                   <img src={arrowRightBlack} className="claimArrowRight" />
                 </Link>
               </div>
-              <Subscribe />
             </div>
             <div className="filler" />
             <div className="onlyDesktop">
@@ -110,7 +109,10 @@ const HomeLayout = ({ path }) => {
               />
             </div>
           </div>
-          <div className="bottomHomePlaceholder" />
+
+          <div className="bottomHomePlaceholder">
+            <Subscribe />
+          </div>
           <CookieBanner />
         </div>
       </div>
