@@ -1,12 +1,14 @@
 .subscribeFormWrapper {
-  margin-top: 2rem;
-  font-family: "Manrope";
+  align-items: flex-end;
   background: #141921;
+  bottom: -6rem;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  font-family: Manrope;
   justify-content: space-between;
-  padding: 1rem 2rem 2rem;
+  padding: 2rem 2rem 2rem;
+  position: absolute;
+  width: calc(100% - 8rem);
 }
 
 .notifyMeButton {
@@ -27,7 +29,7 @@
 }
 
 .notifyMeButton:hover {
-  transform: scale(1.01);
+  transform: scale(1.05);
 }
 
 .notifyMeInput {
@@ -61,6 +63,9 @@
     flex-direction: row;
     align-items: center;
     padding: 2rem;
+    position: relative;
+    width: auto;
+    bottom: 0;
   }
 
   .notifyMeInput {

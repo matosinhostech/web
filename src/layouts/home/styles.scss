@@ -24,7 +24,11 @@ body {
   flex: 40%;
   background-image: url(assets/images/background/mercado-red.jpg);
   background-size: cover;
-  background-position: center;
+  background-position: top;
+}
+
+.hero:hover {
+  transform: scale(1.01);
 }
 
 .mailto {
@@ -40,6 +44,12 @@ body {
   justify-content: center;
 }
 
+.introFull {
+  min-height: calc(100vh - 8rem);
+  display: flex;
+  flex-direction: column;
+}
+
 .top {
   font-size: 2.5em;
   padding-bottom: 2rem;
@@ -47,7 +57,7 @@ body {
 }
 
 .bottom {
-  padding-bottom: 3rem;
+  padding-bottom: 2rem;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -70,6 +80,7 @@ body {
   margin: 0 -2rem;
   color: $edgy-black;
   padding: 2rem 2rem 2rem;
+  position: relative;
 }
 
 .upcomingEventTitle {
@@ -148,6 +159,7 @@ body {
   border-bottom: 2px solid black;
   position: relative;
   justify-content: space-between;
+  margin-bottom: 4rem;
 
   & > a {
     text-decoration: none;
@@ -171,6 +183,10 @@ body {
     position: absolute;
     bottom: 0;
   }
+}
+
+.upcomingEventClaim > a:hover {
+  transform: translate(5px, 0) scale(1.05);
 }
 
 .claimArrowRight {
@@ -273,13 +289,13 @@ body {
 }
 
 .call-out-container {
-  background: #131921;
-  border: 7px solid #efefef;
-  border-bottom: 0;
+  background: #efefef;
   display: flex;
-  padding: 1rem;
+  padding: 0.5rem 1rem 1rem;
   flex-wrap: wrap;
   justify-content: center;
+  margin-bottom: -1px;
+  box-shadow: 0px 5px 200px 0 #131921;
 }
 
 .highlight-gradient-text {
@@ -290,8 +306,8 @@ body {
   letter-spacing: 2px;
   background: -webkit-linear-gradient(
     180deg,
-    rgb(239, 239, 239) 20%,
-    rgb(239, 239, 239) 35%,
+    rgb(19 25 33) 20%,
+    rgb(19 25 33) 35%,
     rgb(225, 59, 58) 100%
   );
   -webkit-background-clip: text;
@@ -301,7 +317,8 @@ body {
 .deadline {
   width: 100%;
   text-align: center;
-  padding-right: 0.5rem;
+  color: #131921;
+  letter-spacing: 1px;
   font-size: 0.8rem;
 }
 
@@ -317,6 +334,10 @@ body {
     // border-left: 2rem solid white;
   }
 
+  .upcomingEventClaim {
+    margin-bottom: 2rem;
+  }
+
   .event > a {
     font-size: 3rem;
     text-decoration: none;
@@ -329,8 +350,9 @@ body {
     max-width: 20rem;
     padding-right: 6rem;
     padding-left: 2rem;
-    padding-top: 14rem;
     z-index: 2;
+    height: auto;
+    padding-top: 14rem;
   }
 
   .home-main {
@@ -343,42 +365,49 @@ body {
     flex: 30% 1;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: flex-end;
     align-items: flex-end;
+    background-position: center;
+  }
+
+  .hero:hover {
+    transform: none;
   }
 
   .call-out-container {
     display: block;
     border: 0;
-    background: rgb(19 25 33 / 90%);
-    margin-top: 1rem;
-    box-shadow: -10px 10px 0px 0px #ffabab;
+    background: #efefef;
+    margin: 2rem;
+    box-shadow: 10px 10px 0px 0px #ffabab;
+    padding: 0.5rem 3rem 1rem;
   }
 
   .call-out-container:hover {
-    box-shadow: -10px 10px 0px 0px #e13b3a;
-    transform: scale(1.01);
+    box-shadow: 10px 10px 0px 0px #e13b3a;
+    transform: translate(-5px, 0) scale(1.05);
     cursor: pointer;
   }
 
   .deadline {
     text-align: left;
-    font-size: 1rem;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
   }
 
   .highlight-gradient-text {
-    font-weight: 700;
-    font-size: 2.2rem;
-    line-height: 2.3rem;
-    letter-spacing: 0;
+    font-size: 1.7rem;
+    line-height: 2.5rem;
+    letter-spacing: 2px;
     background: -webkit-linear-gradient(
       180deg,
-      rgb(239, 239, 239) 20%,
-      rgb(239, 239, 239) 35%,
+      rgb(19, 25, 33) 20%,
+      rgb(19, 25, 33) 35%,
       rgb(225, 59, 58) 100%
     );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    text-align: center;
   }
 
   .menu {
@@ -387,11 +416,12 @@ body {
 
   .top {
     padding-bottom: 3rem;
-    font-size: 2.4em;
+    font-size: 3.4em;
+    line-height: 3.5rem;
   }
 
   .bottom {
-    font-size: 15px;
+    font-size: 18px;
     padding-bottom: 4rem;
     position: relative;
   }
@@ -409,6 +439,10 @@ body {
     display: flex;
     background: #131921;
     height: 100vh;
+  }
+
+  .introFull {
+    flex-direction: row;
   }
 
   .home-full > .upcomingEventFull {
@@ -441,6 +475,7 @@ body {
   .upcomingEventFull {
     width: 100%;
     background: $light-gray !important;
+    position: relative;
   }
 
   .filler {
@@ -500,6 +535,9 @@ body {
     align-items: end;
     display: flex;
     flex-direction: column;
+  }
+  .mailto {
+    transform: scale(1.05);
   }
 
   .ocean {

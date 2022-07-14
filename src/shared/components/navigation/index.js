@@ -61,7 +61,7 @@ const Navigation = ({ path, page = 'bluePage' }) => {
       whiteLogo;
 
   return (
-    <div className={`nav ${page}`}>
+    <div className={`nav ${page}`} onScroll={(...args) => console.log(args)}>
       <Link to="/">
         <img className="logo" src={logo} alt="logo" />
       </Link>
