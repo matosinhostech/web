@@ -1,8 +1,8 @@
 .subscribeFormWrapper {
   text-align: center;
-  bottom: 2rem;
-    width: calc(100% - 8rem);
-    padding: 1rem;
+  bottom: 4rem;
+  width: calc(100% - 8rem);
+  padding: 1rem;
   align-items: flex-end;
   background: #141921;
   display: flex;
@@ -60,12 +60,21 @@
   outline: transparent auto 0;
 }
 
-.form-label{
-    text-transform: uppercase;
-    width: 100%;
-    font-size: 0.6rem;
-    font-weight: 700;
-    padding-bottom: 1rem;
+.form-label {
+  text-transform: lowercase;
+  width: 100%;
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding-bottom: 0.5rem;
+  letter-spacing: 2px;
+  background: -webkit-linear-gradient(
+    180deg,
+    rgb(239 239 239) 20%,
+    rgb(239 239 239) 35%,
+    rgb(225, 59, 58) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 @media (min-width: 1025px) {
@@ -88,9 +97,17 @@
     position: absolute;
     top: 1.5rem;
     font-weight: 700;
-    left: 2.2rem;
-    text-transform: uppercase;
-    font-size: 0.8rem;
+    left: 2.3rem;
+    text-transform: lowercase;
+    font-size: 0.9rem;
+    background: -webkit-linear-gradient(
+      180deg,
+      rgb(239, 239, 239) 20%,
+      rgb(239, 239, 239) 35%,
+      rgb(225, 59, 58) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   .notifyMeInput {
@@ -100,6 +117,7 @@
     margin-right: 2rem;
     background: none;
     font-size: 12px;
+    color: #fefefe;
   }
 
   .notifyMeButton {

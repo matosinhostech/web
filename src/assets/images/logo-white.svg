@@ -6,7 +6,7 @@
         <g id="Layer_1-2" data-name="Layer 1">
             <polygon fill="#fefefe"  points="180 40 180 120 20 120 20 20 160 20 160 0 0 0 0 20.22 0 140 0.18 140 19.95 140 179.63 140 199 140 199 120.44 199 40 180 40" />
             <rect fill="#fefefe"  x="160" y="20" width="20" height="20" />
-            <rect fill="#fefefe"  class="cls-1" x="40.03" y="40.13" width="20.03" height="20.13"/>
+            <rect fill="#e13b3a" x="40.03" y="40.13" width="20.03" height="20.13"/>
             <polygon fill="#fefefe"  points="60 40 60 60 80 60 80 100 100 100 100 60 120 60 120 40 60 40" />
             <rect fill="#fefefe"  x="40" y="60" width="20" height="40" />
             <polygon fill="#fefefe"  points="140 80 140 60 120 60 120 100 140 100 140.06 100 160 100 160 80 140 80" />

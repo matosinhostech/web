@@ -57,7 +57,7 @@ const HomeLayout = ({ path }) => {
                   </div>
                   <div className="deadline">
                     talk submission deadline:{" "}
-                    <span className="highlight">july 31, 2020</span>
+                    <span className="highlight">august 31, 2022</span>
                   </div>
                 </div>
               </a>
