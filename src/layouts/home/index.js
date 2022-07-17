@@ -21,7 +21,7 @@ const HomeLayout = ({ path }) => {
     <main className="container">
       <div className="home-main">
         <Navigation path={path} page={navigationStyle} />
-        <div className="home-full">
+        <div className="home-full" id="scrollable">
           <div className="introFull">
             <div className="intro">
               <div className="top">

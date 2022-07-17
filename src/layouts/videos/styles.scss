@@ -23,7 +23,7 @@
 }
 
 .topSection {
-  height: 20rem;
+  height: 40vh;
   padding-bottom: 2rem;
   margin: 0 -2rem;
   background: $light-gray;
@@ -32,7 +32,7 @@
 .event {
   display: flex;
   position: relative;
-  height: 20rem;
+  height: 40vh;
 }
 
 .eventHero {
@@ -51,11 +51,15 @@
 
 .eventTitle {
   font-weight: 200;
-  font-size: 30px;
+  font-size: 1.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
 }
 
 .eventInfo {
-  width: 100%;
+  width: calc(100% - 4rem);
   padding: 2rem;
   color: $light-gray;
   background: $edgy-black;
@@ -97,7 +101,6 @@
   display: flex;
   flex-direction: column;
   text-align: left;
-  padding-top: 2rem;
 }
 
 .nowPlayingTitle {
@@ -258,11 +261,13 @@ div[data-swipeable] {
 
 .sliderPagination {
   position: absolute;
-  height: 3rem;
+  height: 5rem;
   bottom: 0;
-  right: 1rem;
+  right: 2rem;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
 }
 
 .sliderPaginationDot.active {
@@ -273,7 +278,7 @@ div[data-swipeable] {
   width: 0.5rem;
   background: #fefefe;
   height: 0.5rem;
-  margin: 0 0.5rem;
+  margin: 0 0.25rem;
   opacity: 0.5;
   cursor: pointer;
 }
@@ -297,19 +302,19 @@ div[data-swipeable] {
   color: $gray;
   position: relative;
   font-size: 0.8rem;
-  padding: 0 1rem;
+  padding: 0 0.5rem;
   display: inline;
 
   &:before {
     content: "";
-    width: 1rem;
+    width: 0.1rem;
     position: absolute;
     border: 1px solid $light-gray;
     top: 0.6rem;
   }
 
   & > span {
-    padding: 0 2rem;
+    padding: 0 0.7rem;
   }
 }
 
@@ -355,7 +360,7 @@ div[data-swipeable] {
 
   .videosMain {
     flex-direction: row;
-    padding: 0 2rem 0 0;
+    padding: 0;
   }
 
   .topSection {
@@ -409,6 +414,7 @@ div[data-swipeable] {
     font-weight: 600;
     color: $light-gray;
     font-size: 2rem;
+    width: auto;
   }
 
   .eventHero {
@@ -523,7 +529,17 @@ div[data-swipeable] {
 
   .sliderPagination {
     width: 100%;
-    right: 0;
+    justify-content: flex-end;
+    right: 2.75rem;
+  }
+
+  .sliderPaginationDot {
+    width: 0.75rem;
+    background: #fefefe;
+    height: 0.75rem;
+    margin: 0 0.5rem;
+    opacity: 0.5;
+    cursor: pointer;
   }
 
   .nowPlayingAuthor {

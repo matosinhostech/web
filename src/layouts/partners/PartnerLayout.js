@@ -35,7 +35,7 @@ const PartnerLayout = ({
     <main className="partnerContainer">
       <div className="partnerMain">
         <Navigation path={`/partners/${slug}`} page="partnerPage" />
-        <div className="partner-content">
+        <div className="partner-content" id="scrollable">
           <div className="header">
             <div className="header-top"></div>
           </div>

@@ -68,7 +68,7 @@ const PartnersListLayout = ({ path }) => {
     <div className="partnersContainer">
       <div className="partnersMain">
         <Navigation path={path} page="partnersPage" />
-        <div className="partners-content">
+        <div className="partners-content" id="scrollable">
           <div className="sponsors">
             <h2 className="sponsors-title">sponsors</h2>
             <div className="sponsorMatrix">

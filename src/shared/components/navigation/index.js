@@ -43,8 +43,17 @@ const Navigation = ({ path, page = "bluePage" }) => {
     }
   }
 
+  function handleScroll(e) {
+    if (windowGlobal) {
+      document.getElementById("scrollable").scrollTop += e.deltaY;
+    }
+  }
+
   useEffect(() => {
     if (windowGlobal) {
+      document
+        .getElementById("navbar")
+        .addEventListener("wheel", handleScroll, true);
       windowGlobal.addEventListener("resize", handleWindowSizeChange);
       return () => {
         windowGlobal.removeEventListener("resize", handleWindowSizeChange);
@@ -79,7 +88,9 @@ const Navigation = ({ path, page = "bluePage" }) => {
   }, [isDrawerOpen, setIsDrawerOpen]);
 
   const logo =
-    page === "videosPage" || page === "eventPage"
+    page === "videosPage"
+      ? darkRedLogo
+      : page === "eventPage"
       ? isDrawerOpen
         ? whiteLogo
         : darkRedLogo

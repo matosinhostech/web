@@ -29,7 +29,7 @@ const Event = () => {
 
   return (
     <div className="eventLayoutWrapper">
-      <div className="eventLayout">
+      <div className="eventLayout" id="scrollable">
         <div className="eventLayoutVenue">
           <img src={venue} alt="venue" />
         </div>

@@ -19,11 +19,15 @@
 }
 
 .wave.eventPage,
-.drawer.eventPage,
-.wave.videosPage,
-.drawer.videosPage {
+.drawer.eventPage {
   background: $edgy-red;
   fill: $edgy-red;
+}
+
+.wave.videosPage,
+.drawer.videosPage {
+  background: $light-gray;
+  fill: $light-gray;
 }
 
 .nav.bluePage {
@@ -120,7 +124,7 @@
   }
 
   &:first-child.videosPage.open {
-    color: $light-gray;
+    color: $edgy-black;
   }
 
   &:first-child.bluePage {
@@ -197,6 +201,10 @@
   font-weight: 400;
 }
 
+.drawer.videosPage > a {
+  color: $edgy-black;
+}
+
 a[aria-current="page"] {
   font-weight: 800;
 }
@@ -219,7 +227,7 @@ a[aria-current="page"] {
   }
 
   &.open.videosPage > div > a > svg {
-    color: $light-gray;
+    color: $edgy-black;
   }
 
   &.bluePage > div > a > svg {
