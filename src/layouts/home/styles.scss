@@ -181,7 +181,8 @@ body {
 }
 
 .upcomingEventClaim > a:hover {
-  transform: translate(5px, 0) scale(1.05);
+  transform: scale(1.02);
+  transform-origin: 0 0;
 }
 
 .claimArrowRight {
@@ -378,7 +379,7 @@ body {
 
   .call-out-container:hover {
     box-shadow: 10px 10px 0px 0px #131921;
-    // transform: translate(-5px, 0) scale(1.05);
+    transform: scale(1.02);
     cursor: pointer;
   }
 
@@ -530,7 +531,7 @@ body {
     flex-direction: column;
   }
   .mailto {
-    transform: scale(1.05);
+    transform: scale(1.02);
   }
 
   .ocean {

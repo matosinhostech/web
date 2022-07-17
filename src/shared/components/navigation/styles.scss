@@ -1,15 +1,10 @@
 @import "../../styles/variables.scss";
 
 .nav {
-  top: 0.1px;
+  top: 0;
   margin: 0 -4rem;
   display: flex;
   justify-content: space-between;
-  // background: linear-gradient(
-  //   0deg,
-  //   rgba(0, 183, 240, 0) 0%,
-  //   rgba(0, 183, 240, 1) 50%
-  // );
   background: #00b7f0;
   z-index: 5;
   padding: 1.5rem 4rem;
@@ -329,6 +324,11 @@ a[aria-current="page"] {
 
   .nav-socials.homePageAlt > div > a > svg {
     color: $edgy-black;
+  }
+
+  .nav-socials > div > a > svg:hover,
+  .nav-socials > div > a > svg:hover {
+    transform: scale(1.05);
   }
 
   .desktop > a {

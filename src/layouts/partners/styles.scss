@@ -8,8 +8,9 @@ body {
 .partnerContainer {
   display: flex;
   flex-direction: column;
+  background: $edgy-red;
   min-height: 100vh;
-  margin-top: 6rem;
+  padding-top: 6rem;
 }
 
 .partnersContainer {
@@ -263,7 +264,7 @@ body {
 // Desktop
 @media (min-width: 1025px) {
   .partnerContainer {
-    margin-top: 0;
+    padding-top: 0;
     flex-direction: row;
   }
 

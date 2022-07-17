@@ -37,6 +37,9 @@ const Navigation = ({ path, page = "bluePage" }) => {
   function handleWindowSizeChange() {
     if (windowGlobal) {
       setWidth(windowGlobal.innerWidth);
+      if (windowGlobal.innerWidth >= 1025) {
+        window.onscroll = () => undefined;
+      }
     }
   }
 
@@ -50,11 +53,11 @@ const Navigation = ({ path, page = "bluePage" }) => {
   }, []);
 
   useEffect(() => {
-    if (windowGlobal) {
+    if (windowGlobal && width <= 1025) {
       let prevScrollpos = window.pageYOffset;
       window.onscroll = function () {
         const currentScrollPos = window.pageYOffset;
-        if (prevScrollpos > currentScrollPos) {
+        if (prevScrollpos > currentScrollPos || currentScrollPos === 0) {
           document.getElementById("navbar").style.top = "0";
         } else {
           document.getElementById("navbar").style.top = "-100px";
@@ -62,7 +65,7 @@ const Navigation = ({ path, page = "bluePage" }) => {
         prevScrollpos = currentScrollPos;
       };
     }
-  });
+  }, [path, width]);
 
   const isMobile = width <= 1025;
 
@@ -87,11 +90,7 @@ const Navigation = ({ path, page = "bluePage" }) => {
       : whiteLogo;
 
   return (
-    <div
-      className={`nav ${page}`}
-      id="navbar"
-      onScroll={(...args) => console.log(args)}
-    >
+    <div className={`nav ${page}`} id="navbar">
       <Link to="/">
         <img className="logo" src={logo} alt="logo" />
       </Link>

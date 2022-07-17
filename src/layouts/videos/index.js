@@ -1,8 +1,8 @@
-import * as React from "react"
-import Navigation from "shared/components/navigation"
-import Videos from "./videos"
+import * as React from "react";
+import Navigation from "shared/components/navigation";
+import Videos from "./videos";
 
-import "./styles.scss"
+import "./styles.scss";
 
 const VideosLayout = ({ path }) => {
   return (
@@ -12,7 +12,7 @@ const VideosLayout = ({ path }) => {
         <Videos />
       </div>
     </main>
-  )
-}
+  );
+};
 
-export default VideosLayout
+export default VideosLayout;

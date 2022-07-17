@@ -3,8 +3,9 @@
 .eventContainer {
   display: flex;
   flex-direction: column;
+  background: $light-gray;
   min-height: 100vh;
-  margin-top: 6rem;
+  padding-top: 6rem;
 }
 
 .eventMain {
@@ -345,7 +346,7 @@
 
   .eventContainer {
     flex-direction: row;
-    margin-top: 0;
+    padding-top: 0;
   }
 
   .eventMain {
