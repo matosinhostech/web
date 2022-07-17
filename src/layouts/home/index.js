@@ -5,8 +5,8 @@ import Subscribe from "shared/components/subscribe";
 import { Waypoint } from "react-waypoint";
 import arrowRightBlack from "assets/images/arrow-right-black.svg";
 import arrowRightWhite from "assets/images/arrow-right-white.svg";
-import defaultBanner from "assets/images/events/event8.jpg";
 import Loadable from "react-loadable";
+import ReactPlayer from "react-player/vimeo";
 import "./styles.scss";
 
 const CookieBanner = Loadable({
@@ -66,7 +66,17 @@ const HomeLayout = ({ path }) => {
           <div className="upcomingEventFull">
             <div className="upcomingEvent">
               <div className="upcomingEventBanner">
-                <img src={defaultBanner} />
+                <ReactPlayer
+                  url="https://vimeo.com/720184787"
+                  controls={true}
+                  config={{
+                    vimeo: {
+                      playerOptions: {
+                        playsinline: "true",
+                      },
+                    },
+                  }}
+                />
                 <div className="upcomingEventDate">last event</div>
               </div>
               <div className="upcomingEventAuthorDate">

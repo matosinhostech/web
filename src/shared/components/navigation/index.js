@@ -37,7 +37,7 @@ const Navigation = ({ path, page = "bluePage" }) => {
   function handleWindowSizeChange() {
     if (windowGlobal) {
       setWidth(windowGlobal.innerWidth);
-      if (windowGlobal.innerWidth >= 1025) {
+      if (windowGlobal.innerWidth >= 1100) {
         window.onscroll = () => undefined;
       }
     }
@@ -53,7 +53,7 @@ const Navigation = ({ path, page = "bluePage" }) => {
   }, []);
 
   useEffect(() => {
-    if (windowGlobal && width <= 1025) {
+    if (windowGlobal && width <= 1100) {
       let prevScrollpos = window.pageYOffset;
       window.onscroll = function () {
         const currentScrollPos = window.pageYOffset;
@@ -67,7 +67,7 @@ const Navigation = ({ path, page = "bluePage" }) => {
     }
   }, [path, width]);
 
-  const isMobile = width <= 1025;
+  const isMobile = width <= 1100;
 
   const handleMenuClick = useCallback(() => {
     if (!isDrawerOpen) {

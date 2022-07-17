@@ -147,7 +147,7 @@
 
 .showMiniPlayer > div {
   width: 100% !important;
-  height: 5rem !important;
+  height: 30vh !important;
   left: 0 !important;
   background: black;
   z-index: 5;
@@ -252,7 +252,7 @@ div[data-swipeable] {
 .bottomPlaceholder {
   background-image: url("assets/images/background/anemona-red.jpg");
   background-size: cover;
-  height: 5rem;
+  height: 30vh;
   opacity: 1;
 }
 
@@ -335,7 +335,7 @@ div[data-swipeable] {
 }
 
 // Desktop
-@media (min-width: 1025px) {
+@media (min-width: 1100px) {
   .videos {
     width: calc(100vw - 11.8rem);
   }

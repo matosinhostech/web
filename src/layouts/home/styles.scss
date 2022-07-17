@@ -89,6 +89,13 @@ body {
 
   & > img {
     width: 100%;
+    opacity: 0.7;
+  }
+
+  & > div:first-child {
+    width: 100% !important;
+    height: 50vw !important;
+    background: #efefef;
   }
 }
 
@@ -102,6 +109,7 @@ body {
   padding: 0.5rem 1rem;
   border-radius: 0.1rem;
   font-weight: 200;
+  box-shadow: 5px 5px 20px 0px rgb(0 0 0 / 50%);
 }
 
 .upcomingEventAuthorDate {
@@ -110,6 +118,7 @@ body {
 
 .upcomingEventAuthor {
   color: $edgy-red;
+  font-weight: bold;
   padding: 1rem 0;
   font-size: 1rem;
   display: inline;
@@ -142,7 +151,7 @@ body {
 }
 
 .upcomingEventName {
-  font-size: 2rem;
+  font-size: 1.6rem;
 }
 
 .upcomingEventClaim {
@@ -154,7 +163,7 @@ body {
   border-bottom: 2px solid black;
   position: relative;
   justify-content: space-between;
-  margin-bottom: 8rem;
+  margin-bottom: 5rem;
 
   & > a {
     text-decoration: none;
@@ -322,7 +331,7 @@ body {
 }
 
 // Desktop
-@media (min-width: 1025px) {
+@media (min-width: 1100px) {
   .onlyDesktop {
     display: inline;
   }
@@ -460,8 +469,23 @@ body {
     padding: 2rem 0 0 2rem;
   }
 
+  .upcomingEventBanner {
+    & > div:first-child {
+      width: 53rem !important;
+      height: 30rem !important;
+    }
+  }
+
   .upcomingEvent > div:not(:last-child) {
     width: 53rem;
+  }
+
+  .upcomingEventAuthorDate {
+    text-align: left;
+  }
+
+  .upcomingEventName {
+    text-align: left;
   }
 
   .upcomingEventFull {
