@@ -122,7 +122,7 @@ body {
   & > div:first-child {
     width: 100% !important;
     height: 50vw !important;
-    background: #efefef;
+    background: $light-gray;
   }
 }
 
@@ -130,7 +130,7 @@ body {
   position: absolute;
   left: 0;
   top: 1rem;
-  color: #efefef;
+  color: $light-gray;
   margin: 0 0px 0 -5px;
   background: $edgy-red;
   padding: 0.5rem 1rem;
@@ -249,7 +249,7 @@ body {
 .getTicketFormWrapper {
   margin-top: 2rem;
   font-family: "Manrope";
-  background: #141921;
+  background: $edgy-black;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -276,8 +276,8 @@ body {
     font-size: 1rem;
     margin-top: 1rem;
     cursor: pointer;
-    color: #efefef;
-    background: #131921;
+    color: $light-gray;
+    background: $edgy-black;
 
     &:disabled {
       background: #c3c4c6;
@@ -298,10 +298,10 @@ body {
   margin-bottom: 1rem;
   font-size: 16px;
   padding: 1rem;
-  background: #efefef;
+  background: $light-gray;
   border: 0;
-  border-left: 0.2rem solid #131921;
-  color: #131921;
+  border-left: 0.2rem solid $edgy-black;
+  color: $edgy-black;
 }
 
 .getTicketInput:focus,
@@ -311,7 +311,7 @@ body {
 
 .getTicketError {
   font-size: 13px;
-  color: #e13b3a;
+  color: $edgy-red;
 }
 
 .getTicketSuccess {
@@ -338,7 +338,7 @@ body {
 }
 
 .save-the-date-container:hover {
-  box-shadow: inset 0px -5px 0 0 #e13b3a;
+  box-shadow: inset 0px -5px 0 0 $edgy-red;
   transform: scale(1.02);
   transform-origin: bottom;
 }
@@ -346,7 +346,7 @@ body {
 .save-the-date-container > .day {
   font-size: 1.5rem;
   font-weight: 200;
-  color: #efefef;
+  color: $light-gray;
   line-height: 2rem;
 }
 
@@ -354,13 +354,13 @@ body {
   font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: 5px;
-  color: #efefef;
+  color: $light-gray;
   padding-left: 5px;
 }
 
 .save-the-date-container > .year {
   font-size: 1.5rem;
-  color: #efefef;
+  color: $light-gray;
   font-weight: 200;
 }
 
@@ -393,7 +393,7 @@ body {
 }
 
 .call-out-container {
-  background: #efefef;
+  background: $light-gray;
   display: flex;
   padding: 0.5rem 1rem 1rem;
   flex-wrap: wrap;
@@ -401,7 +401,7 @@ body {
 }
 
 .call-out-container:hover {
-  box-shadow: inset 0px 5px 0 0 #e13b3a;
+  box-shadow: inset 0px 5px 0 0 $edgy-red;
   transform: scale(1.02);
   transform-origin: top;
 }
@@ -412,7 +412,7 @@ body {
   padding-right: 0.5rem;
   line-height: 2.5rem;
   letter-spacing: 2px;
-  color: #e13b3a;
+  color: $edgy-red;
 }
 
 .highlight-gradient-text-dark {
@@ -421,13 +421,13 @@ body {
   padding-right: 0.5rem;
   line-height: 2.5rem;
   letter-spacing: 1px;
-  color: #e13b3a;
+  color: $edgy-red;
 }
 
 .deadline {
   width: 100%;
   text-align: center;
-  color: #131921;
+  color: $edgy-black;
   letter-spacing: 1px;
   font-size: 0.8rem;
   flex-wrap: wrap;
@@ -495,10 +495,10 @@ body {
 
   .save-the-date-container {
     align-items: flex-end;
-    background: linear-gradient(111deg, transparent 50%, #efefef 0);
+    background: linear-gradient(111deg, transparent 50%, $light-gray 0);
     border: 0;
     border-radius: 0;
-    box-shadow: 10px -10px 0 0 #131921;
+    box-shadow: 10px -10px 0 0 $edgy-black;
     color: #ffabab;
     display: flex;
     flex-direction: column;
@@ -513,27 +513,27 @@ body {
   }
 
   .save-the-date-container > .day {
-    color: #e13b3a;
+    color: $edgy-red;
     font-size: 3.5rem;
     line-height: 3.2rem;
     letter-spacing: 15px;
   }
 
   .save-the-date-container > .month {
-    color: #e13b3a;
+    color: $edgy-red;
     font-size: 1.3rem;
     letter-spacing: 7px;
     line-height: 20px;
   }
 
   .save-the-date-container > .year {
-    color: #e13b3a;
+    color: $edgy-red;
     font-size: 1.2rem;
     letter-spacing: 4px;
   }
 
   .save-the-date-container > .venue {
-    color: #131921;
+    color: $edgy-black;
     flex-direction: column;
     line-height: 1.25rem;
     padding-top: 0.5rem;
@@ -558,20 +558,21 @@ body {
     box-shadow: 10px -10px 0px 0px $edgy-red;
     transform: scale(1.02);
     transform-origin: top;
+    animation: none;
     cursor: pointer;
   }
 
   .call-out-container {
     display: block;
     border: 0;
-    background: #efefef;
-    margin: 2rem 2rem 1.5rem;
-    box-shadow: 10px 10px 0px 0px $edgy-black;
+    background: $light-gray;
+    box-shadow: -10px 10px 0px 0px $edgy-black;
     padding: 0.5rem 2rem 1rem;
+    margin: 0;
   }
 
   .call-out-container:hover {
-    box-shadow: 10px 10px 0px 0px $edgy-red;
+    box-shadow: -10px 10px 0px 0px $edgy-red;
     transform: scale(1.02);
     transform-origin: bottom;
     cursor: pointer;
@@ -593,7 +594,7 @@ body {
     font-size: 1.7rem;
     line-height: 2.5rem;
     letter-spacing: 2px;
-    color: #e13b3a;
+    color: $edgy-red;
     text-align: center;
   }
 
@@ -601,7 +602,7 @@ body {
     font-size: 1.7rem;
     line-height: 2.5rem;
     letter-spacing: 2px;
-    color: #e13b3a;
+    color: $edgy-red;
     text-align: center;
   }
 
@@ -631,7 +632,7 @@ body {
 
   .home-full > .introFull {
     display: flex;
-    background: #131921;
+    background: $edgy-black;
   }
 
   .introFull {
@@ -640,7 +641,7 @@ body {
 
   .home-full > .upcomingEventFull {
     display: flex;
-    background: #131921;
+    background: $edgy-black;
     height: auto;
   }
 
@@ -735,10 +736,10 @@ body {
     margin-bottom: 1rem;
     font-size: 16px;
     padding: 1rem;
-    background: #efefef;
+    background: $light-gray;
     border: 0;
-    border-left: 0.2rem solid #131921;
-    color: #131921;
+    border-left: 0.2rem solid $edgy-black;
+    color: $edgy-black;
   }
 
   .mailto {

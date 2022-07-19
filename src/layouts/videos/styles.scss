@@ -263,11 +263,11 @@ div[data-swipeable] {
   position: absolute;
   height: 5rem;
   bottom: 0;
-  right: 2rem;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   width: 100%;
+  pointer-events: none;
 }
 
 .sliderPaginationDot.active {
@@ -276,7 +276,7 @@ div[data-swipeable] {
 
 .sliderPaginationDot {
   width: 0.5rem;
-  background: #fefefe;
+  background: $light-gray;
   height: 0.5rem;
   margin: 0 0.25rem;
   opacity: 0.5;
@@ -295,7 +295,7 @@ div[data-swipeable] {
 }
 
 .eventAuthor > a {
-  font-weight: 400;
+  font-weight: 600;
 }
 
 .eventDate {
@@ -517,7 +517,7 @@ div[data-swipeable] {
       border: 0;
       width: 4.5rem;
       top: 0.9rem;
-      border-top: 2px solid #efefef;
+      border-top: 2px solid $light-gray;
     }
 
     & > span {
@@ -532,12 +532,13 @@ div[data-swipeable] {
   .sliderPagination {
     width: 100%;
     justify-content: flex-end;
-    right: 2.75rem;
+    right: 2.5rem;
+    pointer-events: all;
   }
 
   .sliderPaginationDot {
     width: 0.75rem;
-    background: #fefefe;
+    background: $light-gray;
     height: 0.75rem;
     margin: 0 0.5rem;
     opacity: 0.5;

@@ -66,7 +66,7 @@
   
         > hr {
           margin: 3rem 0 !important;
-          border-top: 2px solid #131921 !important;
+          border-top: 2px solid $edgy-black !important;
           display: block !important;
         }
   
@@ -141,7 +141,7 @@
         > .ticket {
           position: relative;
           margin-right: 0;
-          background: #131921;
+          background: $edgy-black;
           border-radius: 1rem;
           padding: 2rem;
           top: 2rem;
@@ -197,7 +197,7 @@
               left: -2.5rem;
               bottom: -1.5rem;
               border-radius: 2rem;
-              background: #efefef;
+              background: $light-gray;
               position: absolute;
             }
   
@@ -208,7 +208,7 @@
               right: -2.5rem;
               bottom: -1.5rem;
               border-radius: 2rem;
-              background: #efefef;
+              background: $light-gray;
               position: absolute;
             }
   
@@ -287,7 +287,7 @@
         bottom: 0px;
         justify-content: center;
         width: calc(100% - 2rem);
-        background: #131921;
+        background: $edgy-black;
         align-items: center;
         display: flex;
         margin-right: 11rem;
@@ -375,7 +375,7 @@
 
       > hr {
         margin: 3rem 0 !important;
-        border-top: 2px solid #131921 !important;
+        border-top: 2px solid $edgy-black !important;
         display: block !important;
       }
 
@@ -452,7 +452,7 @@
       > .ticket {
         position: sticky!important;
         margin-right: 2rem!important;
-        background: #131921!important;
+        background: $edgy-black!important;
         border-radius: 1rem!important;
         padding: 2rem!important;
         top: 2rem!important;
@@ -511,7 +511,7 @@
             left: -2.5rem;
             bottom: -1.5rem;
             border-radius: 2rem;
-            background: #efefef;
+            background: $light-gray;
             position: absolute;
           }
 
@@ -522,7 +522,7 @@
             right: -2.5rem;
             bottom: -1.5rem;
             border-radius: 2rem;
-            background: #efefef;
+            background: $light-gray;
             position: absolute;
           }
 
@@ -601,7 +601,7 @@
       bottom: 0px;
       justify-content: center;
       width: calc(100% - 2rem);
-      background: #131921;
+      background: $edgy-black;
       align-items: center;
       display: flex;
       margin-right: 11rem;
