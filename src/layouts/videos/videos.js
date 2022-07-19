@@ -33,6 +33,7 @@ const Videos = () => {
 
   useEffect(() => {
     if (!isPlayingVideo) {
+      setShowMiniPlayer(false);
       setEvent();
     }
   }, [isPlayingVideo]);
