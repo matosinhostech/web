@@ -1,6 +1,7 @@
 import * as React from "react";
 import Navigation from "shared/components/navigation";
 import Socials from "shared/components/socials";
+import Copyright from "shared/components/copyright";
 
 import arrowDownWhite from "assets/images/arrow-down-white.svg";
 
@@ -69,6 +70,7 @@ const PartnerLayout = ({
           </div>
         </div>
       </div>
+      <Copyright />
     </main>
   );
 };

@@ -1,47 +1,5 @@
 @import "shared/styles/variables.scss";
 
-body {
-  margin: 0;
-  font-family: "Manrope";
-}
-
-.manifestoContainer {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  border: 0;
-}
-
-// .banner {
-//   height: 15rem;
-//   background-size: cover;
-//   background-position: center;
-//   margin: 0 -32px;
-// }
-
-.banner-top {
-  margin-bottom: 4rem;
-  background-image: url(assets/images/manifesto/hero-top.jpg);
-}
-
-.banner-bottom {
-  margin-top: 4rem;
-  background-image: url(assets/images/manifesto/hero-bottom.jpg);
-}
-
-.manifestoMain {
-  flex: 1;
-  background: $edgy-red;
-  color: $light-gray;
-  display: flex;
-  flex-direction: column;
-  padding: 0 2rem;
-}
-
-.manifesto-content {
-  padding-top: 6.3rem;
-}
-
 .scanMain {
   flex: 1;
   background: $edgy-red;
@@ -52,7 +10,7 @@ body {
 }
 
 .scanContainer {
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .content {
@@ -91,26 +49,6 @@ hr {
 
 // Desktop
 @media (min-width: 1100px) {
-  .manifestoContainer {
-    flex-direction: row;
-  }
-
-  .manifestoMain {
-    flex: 70%;
-    flex-direction: row;
-    overflow: auto;
-    padding: 0 2rem 0 0;
-  }
-
-  // .banner {
-  //   min-height: 30rem;
-  // }
-
-  .manifesto-content {
-    padding-top: 0;
-    text-align: left;
-    width: 100%;
-  }
 
   .accordion {
     display: flex;
@@ -134,15 +72,5 @@ hr {
   hr,
   .accordion-button {
     display: none;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .banner-top {
-    background-image: url(assets/images/manifesto/mobile-hero-top.png);
-  }
-
-  .banner-bottom {
-    background-image: url(assets/images/manifesto/mobile-hero-bottom.png);
   }
 }

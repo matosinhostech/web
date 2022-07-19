@@ -8,12 +8,11 @@ body {
 .manifestoContainer {
   display: flex;
   flex-direction: column;
-  height: 100vh;
   border: 0;
 }
 
 .banner {
-  height: 9rem;
+  height: 5rem;
   background-size: cover;
   background-position: center;
   margin: 0 -32px;
@@ -21,12 +20,12 @@ body {
 
 .banner-top {
   margin-bottom: 4rem;
-  background-image: url(assets/images/manifesto/hero-top.jpg);
+  background-image: url(assets/images/manifesto/hero-bottom.jpg);
 }
 
 .banner-bottom {
   margin-top: 4rem;
-  background-image: url(assets/images/manifesto/hero-bottom.jpg);
+  background-image: url(assets/images/manifesto/hero-top.jpg);
 }
 
 .manifestoMain {
@@ -80,6 +79,7 @@ hr {
 @media (min-width: 1100px) {
   .manifestoContainer {
     flex-direction: row;
+    height: 100vh;
   }
 
   .manifestoMain {
@@ -124,12 +124,12 @@ hr {
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media (min-width: 1100px) {
   .banner-top {
-    background-image: url(assets/images/manifesto/mobile-hero-top.png);
+    background-image: url(assets/images/manifesto/hero-top.jpg);
   }
 
   .banner-bottom {
-    background-image: url(assets/images/manifesto/mobile-hero-bottom.png);
+    background-image: url(assets/images/manifesto/hero-bottom.jpg);
   }
 }
