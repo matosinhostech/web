@@ -236,7 +236,7 @@ body {
   justify-content: center;
   background-image: url("assets/images/background/anemona-red.jpg");
   background-size: cover;
-  height: 10rem;
+  height: 14rem;
   opacity: 1;
   margin: 0rem -2rem;
   position: relative;
@@ -412,14 +412,7 @@ body {
   padding-right: 0.5rem;
   line-height: 2.5rem;
   letter-spacing: 2px;
-  background: -webkit-linear-gradient(
-    180deg,
-    rgb(19 25 33) 20%,
-    rgb(19 25 33) 35%,
-    rgb(225, 59, 58) 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #e13b3a;
 }
 
 .highlight-gradient-text-dark {
@@ -428,14 +421,7 @@ body {
   padding-right: 0.5rem;
   line-height: 2.5rem;
   letter-spacing: 1px;
-  background: -webkit-linear-gradient(
-    180deg,
-    rgb(19 25 33) 20%,
-    rgb(19 25 33) 35%,
-    rgb(225, 59, 58) 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #e13b3a;
 }
 
 .deadline {
@@ -508,74 +494,46 @@ body {
   }
 
   .save-the-date-container {
-    border-radius: 15rem 16rem 7.5rem 29rem;
+    align-items: flex-end;
+    background: linear-gradient(111deg, transparent 50%, #efefef 0);
+    border: 0;
+    border-radius: 0;
+    box-shadow: 10px -10px 0 0 #131921;
+    color: #ffabab;
     display: flex;
     flex-direction: column;
-    text-transform: lowercase;
-    color: #ffabab;
-    border: 0;
-    background: linear-gradient(111deg, rgba(0, 0, 0, 0) 50%, #efefef 50%);
-    margin: 0rem 2rem -2rem;
     height: 10.5rem;
-    width: 11rem;
-    text-align: right;
-    align-items: flex-end;
-    opacity: 1;
     justify-content: flex-end;
-    padding: 1.5rem 1.5rem 1.5rem 2rem;
-    box-shadow: 10px 10px 0px 0px $edgy-black;
+    margin: 0 3rem -2rem;
+    opacity: 1;
+    padding: 1.5rem 1rem 1rem 1rem;
+    text-align: right;
+    text-transform: lowercase;
+    width: 11rem;
   }
 
   .save-the-date-container > .day {
-    background: -webkit-linear-gradient(
-      180deg,
-      rgb(19, 25, 33) 20%,
-      rgb(19, 25, 33) 35%,
-      rgb(225, 59, 58) 100%
-    );
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #e13b3a;
     font-size: 3.5rem;
     line-height: 3.2rem;
     letter-spacing: 15px;
   }
 
   .save-the-date-container > .month {
-    background: -webkit-linear-gradient(
-      180deg,
-      rgb(19, 25, 33) 20%,
-      rgb(19, 25, 33) 35%,
-      rgb(225, 59, 58) 100%
-    );
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #e13b3a;
     font-size: 1.3rem;
     letter-spacing: 7px;
     line-height: 20px;
   }
 
   .save-the-date-container > .year {
-    background: -webkit-linear-gradient(
-      180deg,
-      rgb(19, 25, 33) 20%,
-      rgb(19, 25, 33) 35%,
-      rgb(225, 59, 58) 100%
-    );
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #e13b3a;
     font-size: 1.2rem;
     letter-spacing: 4px;
   }
 
   .save-the-date-container > .venue {
-    background: -webkit-linear-gradient(
-      180deg,
-      rgb(19, 25, 33) 20%,
-      rgb(19, 25, 33) 35%,
-      rgb(225, 59, 58) 100%
-    );
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #131921;
     flex-direction: column;
     line-height: 1.25rem;
     padding-top: 0.5rem;
@@ -597,7 +555,7 @@ body {
   }
 
   .save-the-date-container:hover {
-    box-shadow: 10px 10px 0px 0px $edgy-red;
+    box-shadow: 10px -10px 0px 0px $edgy-red;
     transform: scale(1.02);
     transform-origin: top;
     cursor: pointer;
@@ -635,14 +593,7 @@ body {
     font-size: 1.7rem;
     line-height: 2.5rem;
     letter-spacing: 2px;
-    background: -webkit-linear-gradient(
-      180deg,
-      rgb(19, 25, 33) 20%,
-      rgb(19, 25, 33) 35%,
-      rgb(225, 59, 58) 100%
-    );
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #e13b3a;
     text-align: center;
   }
 
@@ -650,14 +601,7 @@ body {
     font-size: 1.7rem;
     line-height: 2.5rem;
     letter-spacing: 2px;
-    background: -webkit-linear-gradient(
-      180deg,
-      rgb(19, 25, 33) 20%,
-      rgb(19, 25, 33) 35%,
-      rgb(225, 59, 58) 100%
-    );
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #e13b3a;
     text-align: center;
   }
 
@@ -666,7 +610,7 @@ body {
   }
 
   .top {
-    padding-bottom: 3rem;
+    padding: 2rem 0;
     font-size: 3.4em;
     line-height: 3.5rem;
   }

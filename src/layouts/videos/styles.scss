@@ -353,7 +353,7 @@ div[data-swipeable] {
   .bottomPlaceholder {
     background-image: url("assets/images/background/anemona-red.jpg");
     background-size: cover;
-    height: 5rem;
+    height: 30vh;
     opacity: 1;
     margin-top: 0;
   }
@@ -432,7 +432,7 @@ div[data-swipeable] {
   }
 
   .eventInfo {
-    width: 75%;
+    width: calc(100% - 14rem);
     padding: 0 4rem 0 2rem;
     margin-top: 0;
   }
@@ -514,8 +514,10 @@ div[data-swipeable] {
     font-size: 1.2rem;
 
     &:before {
-      width: 4rem;
-      top: 0.8rem;
+      border: 0;
+      width: 4.5rem;
+      top: 0.9rem;
+      border-top: 2px solid #efefef;
     }
 
     & > span {

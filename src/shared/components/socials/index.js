@@ -13,7 +13,7 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import "./styles.scss"
 
 const Socials = ({ facebook, linkedin, twitter, instagram, slack, reddit, email }) => (
-  <div>
+  <>
     {facebook && (
       <a href={facebook}>
         <FontAwesomeIcon icon={faFacebook} className="icon" />
@@ -49,6 +49,6 @@ const Socials = ({ facebook, linkedin, twitter, instagram, slack, reddit, email 
         <FontAwesomeIcon icon={faEnvelope} className="icon" />
       </a>
     )}
-  </div>
+  </>
 )
 export default Socials

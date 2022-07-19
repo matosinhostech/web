@@ -214,61 +214,61 @@ a[aria-current="page"] {
   bottom: 6rem;
   left: 4rem;
 
-  &.eventPage > div > a > svg {
+  &.eventPage > a > svg {
     color: $edgy-black;
   }
 
-  &.open.eventPage > div > a > svg {
+  &.open.eventPage > a > svg {
     color: $light-gray;
   }
 
-  &.videosPage > div > a > svg {
+  &.videosPage > a > svg {
     color: $edgy-black;
   }
 
-  &.open.videosPage > div > a > svg {
+  &.open.videosPage > a > svg {
     color: $edgy-black;
   }
 
-  &.bluePage > div > a > svg {
+  &.bluePage > a > svg {
     color: $light-gray;
   }
 
-  &.open.bluePage > div > a > svg {
+  &.open.bluePage > a > svg {
     color: $light-gray;
   }
 
-  &.manifestoPage > div > a > svg {
+  &.manifestoPage > a > svg {
     color: $light-gray;
   }
 
-  &.open.manifestoPage > div > a > svg {
+  &.open.manifestoPage > a > svg {
     color: $light-gray;
   }
 
-  &.partnerPage > div > a > svg {
+  &.partnerPage > a > svg {
     color: $light-gray;
   }
 
-  &.open.partnerPage > div > a > svg {
+  &.open.partnerPage > a > svg {
     color: $light-gray;
   }
 
-  &.partnersPage > div > a > svg {
+  &.partnersPage > a > svg {
     color: $light-gray;
   }
 
-  &.open.partnersPage > div > a > svg {
+  &.open.partnersPage > a > svg {
     color: $light-gray;
   }
 
-  &.homePage > div > a > svg,
-  &.homePageAlt > div > a > svg {
+  &.homePage > a > svg,
+  &.homePageAlt > a > svg {
     color: $light-gray;
   }
 
-  &.open.homePage > div > a > svg,
-  &.open.homePageAlt > div > a > svg {
+  &.open.homePage > a > svg,
+  &.open.homePageAlt > a > svg {
     color: $light-gray;
   }
 }
@@ -330,12 +330,12 @@ a[aria-current="page"] {
     background: $light-gray;
   }
 
-  .nav-socials.homePageAlt > div > a > svg {
+  .nav-socials.homePageAlt > a > svg {
     color: $edgy-black;
   }
 
-  .nav-socials > div > a > svg:hover,
-  .nav-socials > div > a > svg:hover {
+  .nav-socials > a > svg:hover,
+  .nav-socials > a > svg:hover {
     transform: scale(1.05);
   }
 

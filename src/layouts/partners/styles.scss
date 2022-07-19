@@ -65,8 +65,11 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-end;
-  padding-bottom: 3rem;
+  align-items: center;
+  padding-bottom: 0;
+  background-image: url("assets/images/background/anemona-red.jpg");
+  background-size: cover;
+  margin: 0 -2rem;
 }
 
 .partner-footer > div {
@@ -74,17 +77,16 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #e13b3a;
-  margin: -10rem -1.1rem 2rem;
+  background: $edgy-black;
+  margin: -10rem 0.9rem 2rem;
   padding: 1rem;
   box-shadow: 0px 0px 0px 15px rgb(239 239 239);
   max-width: 40%;
 }
 
 .partner-logo {
-  padding: 0;
-  height: 6rem;
-  max-width: 80%;
+  padding: 1rem;
+  height: 8rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -96,17 +98,17 @@ body {
 }
 
 .partner-logo a img {
-  width: 100%;
-  height: 100%;
+  width: 9rem;
 }
 
 .partner-socials {
   display: flex;
-  flex-direction: column;
+  width: 100%;
+  justify-content: space-around;
+  flex-direction: row;
   align-self: center;
   height: 2rem;
-  padding: 2rem 0 0;
-  justify-content: center;
+  padding: 0;
 }
 
 .partner-socials ul {
@@ -118,14 +120,14 @@ body {
   justify-content: center;
 }
 
-.partner-socials > div > a > svg {
+.partner-socials > a > svg {
   color: $light-gray;
-  padding: 0 1rem;
-  font-size: 2.5rem;
+  padding: 0;
+  font-size: 2rem;
   display: inline;
 }
 
-.partner-socials > div > a > svg:hover {
+.partner-socials > a > svg:hover {
   cursor: pointer;
   transform: scale(1.05);
 }
@@ -150,11 +152,11 @@ body {
 }
 
 .partner-description {
-  padding: 4rem 4rem 14rem;
+  padding: 2rem 2rem 12rem;
   background: $light-gray;
   color: $edgy-black;
   margin: 0 -2rem;
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 .partnerArrowDown {
@@ -331,7 +333,7 @@ body {
   }
 
   .secondImage {
-    margin: -8rem 0rem 0 -2rem;
+    margin: -8rem -2rem 0 -2rem;
   }
 
   .sponsorMatrix {
@@ -342,6 +344,11 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(20%, 0.3fr));
   }
 
+  .partner-footer {
+    align-items: flex-end;
+    padding-bottom: 3rem;
+  }
+
   .partner-description {
     padding: 4rem 4rem 14rem;
     font-size: 1.2rem;
@@ -350,14 +357,13 @@ body {
   .partner-logo > a {
     text-align: right;
     width: 100%;
-    height: 100%;
   }
 
   .partner-socials {
     align-self: center;
   }
 
-  .partner-socials > div > a > svg {
+  .partner-socials > a > svg {
     font-size: 2rem;
   }
 
