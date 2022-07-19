@@ -1,17 +1,16 @@
-import * as React from "react";
-import { EventLayout } from "layouts";
-import Header from "shared/components/header";
-import Seo from "shared/components/seo";
-import Copyright from "shared/components/copyright";
+import * as React from "react"
+import { EventLayout } from "layouts"
+import Header from "shared/components/header"
+import Seo from "shared/components/seo"
+
 const EventPage = (props) => {
   return (
     <>
       <Seo />
       <Header />
       <EventLayout {...props} />
-      <Copyright />
     </>
-  );
-};
+  )
+}
 
-export default EventPage;
+export default EventPage

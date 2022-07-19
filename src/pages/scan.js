@@ -1,8 +1,7 @@
-import * as React from "react";
-import { ScannerLayout } from "layouts";
-import Header from "shared/components/header";
-import Seo from "shared/components/seo";
-import Copyright from "shared/components/copyright";
+import * as React from "react"
+import { ScannerLayout } from "layouts"
+import Header from "shared/components/header"
+import Seo from "shared/components/seo"
 
 const ScanPage = (props) => {
   return (
@@ -10,9 +9,8 @@ const ScanPage = (props) => {
       <Seo />
       <Header />
       <ScannerLayout {...props} />
-      <Copyright />
     </>
-  );
-};
+  )
+}
 
-export default ScanPage;
+export default ScanPage

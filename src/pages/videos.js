@@ -1,8 +1,7 @@
-import * as React from "react";
-import { VideosLayout } from "layouts";
-import Header from "shared/components/header";
-import Seo from "shared/components/seo";
-import Copyright from "shared/components/copyright";
+import * as React from "react"
+import { VideosLayout } from "layouts"
+import Header from "shared/components/header"
+import Seo from "shared/components/seo"
 
 const VideosPage = (props) => {
   return (
@@ -10,9 +9,8 @@ const VideosPage = (props) => {
       <Seo />
       <Header />
       <VideosLayout {...props} />
-      <Copyright />
     </>
-  );
-};
+  )
+}
 
-export default VideosPage;
+export default VideosPage

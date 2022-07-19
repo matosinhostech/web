@@ -1,8 +1,7 @@
-import * as React from "react";
-import { PartnersLayout } from "layouts";
-import Header from "shared/components/header";
-import Seo from "shared/components/seo";
-import Copyright from "shared/components/copyright";
+import * as React from "react"
+import { PartnersLayout } from "layouts"
+import Header from "shared/components/header"
+import Seo from "shared/components/seo"
 
 const PartnersPage = (props) => {
   return (
@@ -10,9 +9,8 @@ const PartnersPage = (props) => {
       <Seo />
       <Header />
       <PartnersLayout {...props} />
-      <Copyright />
     </>
-  );
-};
+  )
+}
 
-export default PartnersPage;
+export default PartnersPage

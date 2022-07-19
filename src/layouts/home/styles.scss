@@ -18,6 +18,7 @@ body {
 .container {
   display: flex;
   flex-direction: column;
+  height: 100vh;
 }
 
 .home-main {
@@ -235,7 +236,7 @@ body {
   justify-content: center;
   background-image: url("assets/images/background/anemona-red.jpg");
   background-size: cover;
-  height: 11rem;
+  height: 14rem;
   opacity: 1;
   margin: 0rem -2rem;
   position: relative;
@@ -443,7 +444,6 @@ body {
   .container {
     flex-direction: row;
     overflow-x: hidden;
-    height: 100vh;
     // border-left: 2rem solid white;
   }
 
