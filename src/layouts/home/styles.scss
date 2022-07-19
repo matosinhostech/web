@@ -31,16 +31,26 @@ body {
 }
 
 .hero {
-  flex: 40%;
+  flex: 40% 0;
   background-image: url(assets/images/background/mercado-red.jpg);
   background-size: cover;
-  background-position: top;
+  background-position: center;
+  position: relative;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  min-height: auto;
+  padding: 2rem;
 }
 
+.google-calendar {
+  position: inherit;
+}
+
+.google-calendar,
 .mailto {
   text-decoration: none;
   color: inherit;
-  min-width: 50%;
 }
 
 .intro {
@@ -53,6 +63,7 @@ body {
   min-height: calc(100vh - 8rem);
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
 }
 
 .top {
@@ -78,6 +89,12 @@ body {
 
 .highlight {
   color: $edgy-red;
+}
+
+.deadline-date {
+  color: $edgy-black;
+  font-weight: 600;
+  padding-left: 1px;
 }
 
 .upcomingEvent {
@@ -306,22 +323,111 @@ body {
   padding-bottom: 50px;
 }
 
+.save-the-date-container {
+  background: rgb(19 25 33 / 100%);
+  padding: 1rem;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  opacity: 1;
+
+  display: flex;
+    flex-direction: row;
+    align-items: end;
+    flex-wrap: wrap;
+}
+
+.save-the-date-container:hover {
+  box-shadow: inset 0px -5px 0 0 #e13b3a;
+  transform: scale(1.02);
+  transform-origin: bottom;
+}
+
+.save-the-date-container > .day {
+  font-size: 1.5rem;
+  font-weight: 200;
+  color: #efefef;
+  line-height: 2rem;
+}
+
+.save-the-date-container > .month {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 5px;
+  color: #efefef;
+  padding-left: 5px;
+}
+
+.save-the-date-container > .year {
+  font-size: 1.5rem;
+  color: #efefef;
+  font-weight: 200;
+}
+
+.save-the-date-container > .venue {
+  display: flex;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  letter-spacing: 15x;
+  text-transform: lowercase;
+}
+
+.save-the-date-container > .venue > div:nth-of-type(1) {
+  font-size: 0.8rem;
+  padding-left: 5px;
+}
+
+.save-the-date-container > .venue > div:nth-of-type(2) {
+  font-weight: 900;
+  font-size: 0.8rem;
+  padding-left: 5px;
+}
+
+.save-the-date-container > .venue > div:nth-of-type(3) {
+  font-size: 0.8rem;
+  padding-left: 5px;
+}
+
 .call-out-container {
   background: #efefef;
   display: flex;
   padding: 0.5rem 1rem 1rem;
   flex-wrap: wrap;
   justify-content: center;
-  margin-bottom: -1px;
-  box-shadow: 0px 5px 200px 0 #131921;
 }
 
-.highlight-gradient-text {
+.call-out-container:hover {
+  box-shadow: inset 0px 5px 0 0 #e13b3a;
+  transform: scale(1.02);
+  transform-origin: top;
+}
+
+.highlight-gradient-text-light {
   font-weight: 700;
   font-size: 1.5rem;
   padding-right: 0.5rem;
   line-height: 2.5rem;
   letter-spacing: 2px;
+  background: -webkit-linear-gradient(
+    180deg,
+    rgb(19 25 33) 20%,
+    rgb(19 25 33) 35%,
+    rgb(225, 59, 58) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.highlight-gradient-text-dark {
+  font-weight: 700;
+  font-size: 1.5rem;
+  padding-right: 0.5rem;
+  line-height: 2.5rem;
+  letter-spacing: 1px;
   background: -webkit-linear-gradient(
     180deg,
     rgb(19 25 33) 20%,
@@ -338,6 +444,9 @@ body {
   color: #131921;
   letter-spacing: 1px;
   font-size: 0.8rem;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
 }
 
 // Desktop
@@ -385,6 +494,113 @@ body {
     justify-content: flex-end;
     align-items: flex-end;
     background-position: center;
+    position: relative;
+    height: auto;
+    border-radius: 0;
+    padding: 0;
+  }
+
+  .google-calendar {
+    z-index: 5;
+    position: absolute;
+    top: -1rem;
+    left: -12rem;
+  }
+
+  .save-the-date-container {
+    border-radius: 15rem 16rem 7.5rem 29rem;
+    display: flex;
+    flex-direction: column;
+    text-transform: lowercase;
+    color: #ffabab;
+    border: 0;
+    background: linear-gradient(111deg, rgba(0, 0, 0, 0) 50%, #efefef 50%);
+    margin: 0rem 2rem -2rem;
+    height: 10.5rem;
+    width: 11rem;
+    text-align: right;
+    align-items: flex-end;
+    opacity: 1;
+    justify-content: flex-end;
+    padding: 1.5rem 1.5rem 1.5rem 2rem;
+    box-shadow: 10px 10px 0px 0px $edgy-black;
+  }
+
+  .save-the-date-container > .day {
+    background: -webkit-linear-gradient(
+      180deg,
+      rgb(19, 25, 33) 20%,
+      rgb(19, 25, 33) 35%,
+      rgb(225, 59, 58) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 3.5rem;
+    line-height: 3.2rem;
+    letter-spacing: 15px;
+  }
+
+  .save-the-date-container > .month {
+    background: -webkit-linear-gradient(
+      180deg,
+      rgb(19, 25, 33) 20%,
+      rgb(19, 25, 33) 35%,
+      rgb(225, 59, 58) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.3rem;
+    letter-spacing: 7px;
+    line-height: 20px;
+  }
+
+  .save-the-date-container > .year {
+    background: -webkit-linear-gradient(
+      180deg,
+      rgb(19, 25, 33) 20%,
+      rgb(19, 25, 33) 35%,
+      rgb(225, 59, 58) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.2rem;
+    letter-spacing: 4px;
+  }
+
+  .save-the-date-container > .venue {
+    background: -webkit-linear-gradient(
+      180deg,
+      rgb(19, 25, 33) 20%,
+      rgb(19, 25, 33) 35%,
+      rgb(225, 59, 58) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    flex-direction: column;
+    line-height: 1.25rem;
+    padding-top: 0.5rem;
+  }
+
+  .save-the-date-container > .venue > div:nth-of-type(1) {
+    letter-spacing: 2px;
+    font-weight: 400;
+  }
+
+  .save-the-date-container > .venue > div:nth-of-type(2) {
+    letter-spacing: 2px;
+    font-weight: 900;
+  }
+
+  .save-the-date-container > .venue > div:nth-of-type(3) {
+    font-weight: 400;
+    letter-spacing: 2.4px;
+  }
+
+  .save-the-date-container:hover {
+    box-shadow: 10px 10px 0px 0px $edgy-red;
+    transform: scale(1.02);
+    transform-origin: top;
+    cursor: pointer;
   }
 
   .call-out-container {
@@ -392,15 +608,21 @@ body {
     border: 0;
     background: #efefef;
     margin: 2rem 2rem 1.5rem;
-    box-shadow: 10px 10px 0px 0px #ffabab;
+    box-shadow: 10px 10px 0px 0px $edgy-black;
     padding: 0.5rem 2rem 1rem;
   }
 
   .call-out-container:hover {
-    box-shadow: 10px 10px 0px 0px #131921;
+    box-shadow: 10px 10px 0px 0px $edgy-red;
     transform: scale(1.02);
-    transform-origin: top right;
+    transform-origin: bottom;
     cursor: pointer;
+  }
+
+  .venue {
+    text-align: right;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
   }
 
   .deadline {
@@ -409,7 +631,22 @@ body {
     letter-spacing: 1px;
   }
 
-  .highlight-gradient-text {
+  .highlight-gradient-text-light {
+    font-size: 1.7rem;
+    line-height: 2.5rem;
+    letter-spacing: 2px;
+    background: -webkit-linear-gradient(
+      180deg,
+      rgb(19, 25, 33) 20%,
+      rgb(19, 25, 33) 35%,
+      rgb(225, 59, 58) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+  }
+
+  .highlight-gradient-text-dark {
     font-size: 1.7rem;
     line-height: 2.5rem;
     letter-spacing: 2px;
@@ -565,6 +802,8 @@ body {
     display: flex;
     flex-direction: column;
   }
+
+  .google-calendar,
   .mailto {
     transform: scale(1.02);
   }

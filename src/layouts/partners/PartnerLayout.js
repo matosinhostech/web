@@ -50,18 +50,22 @@ const PartnerLayout = ({
           <div className="outcomes">{outcomes.map(renderOutcome)}</div>
           <img className="image secondImage" src={images[1]} alt="" />
           <div className="partner-description">{description}</div>
-          <div className="partner-logo">
-            <a href={site}>
-              <img src={logo} alt="logo" />
-            </a>
-          </div>
-          <div className="partner-socials">
-            <Socials
-              facebook={social_facebook}
-              twitter={social_twitter}
-              linkedin={social_linkedin}
-              instagram={social_instagram}
-            />
+          <div className="partner-footer">
+            <div>
+              <div className="partner-logo">
+                <a href={site}>
+                  <img src={logo} alt="logo" />
+                </a>
+              </div>
+              <div className="partner-socials">
+                <Socials
+                  facebook={social_facebook}
+                  twitter={social_twitter}
+                  linkedin={social_linkedin}
+                  instagram={social_instagram}
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>

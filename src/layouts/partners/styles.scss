@@ -61,29 +61,52 @@ body {
   text-align: center;
 }
 
+.partner-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 3rem;
+}
+
+.partner-footer > div {
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #e13b3a;
+  margin: -10rem -1.1rem 2rem;
+  padding: 1rem;
+  box-shadow: 0px 0px 0px 15px rgb(239 239 239);
+  max-width: 40%;
+}
+
 .partner-logo {
   padding: 0;
-  min-height: 15rem;
+  height: 6rem;
+  max-width: 80%;
   display: flex;
   justify-content: center;
   align-items: center;
+}
 
-  & > a {
-    width: 100%;
-  }
+.partner-logo:hover {
+  cursor: pointer;
+  transform: scale(1.05);
 }
 
 .partner-logo a img {
-  max-height: 8rem;
-  max-width: 75%;
+  width: 100%;
+  height: 100%;
 }
 
 .partner-socials {
   display: flex;
   flex-direction: column;
-  align-self: flex-start;
-  flex-grow: 1;
-  padding-bottom: 6rem;
+  align-self: center;
+  height: 2rem;
+  padding: 2rem 0 0;
+  justify-content: center;
 }
 
 .partner-socials ul {
@@ -97,9 +120,14 @@ body {
 
 .partner-socials > div > a > svg {
   color: $light-gray;
-  padding-right: 2rem;
-  font-size: 3.5rem;
+  padding: 0 1rem;
+  font-size: 2.5rem;
   display: inline;
+}
+
+.partner-socials > div > a > svg:hover {
+  cursor: pointer;
+  transform: scale(1.05);
 }
 
 .partner-name h1 {
@@ -122,11 +150,11 @@ body {
 }
 
 .partner-description {
-  padding: 5rem 2rem;
+  padding: 4rem 4rem 14rem;
   background: $light-gray;
   color: $edgy-black;
   margin: 0 -2rem;
-  font-size: 6vw;
+  font-size: 1.5rem;
 }
 
 .partnerArrowDown {
@@ -315,22 +343,22 @@ body {
   }
 
   .partner-description {
-    padding: 12rem;
-    font-size: 2rem;
+    padding: 4rem 4rem 14rem;
+    font-size: 1.2rem;
   }
 
   .partner-logo > a {
     text-align: right;
-    padding-right: 2rem;
+    width: 100%;
+    height: 100%;
   }
 
   .partner-socials {
-    align-self: flex-end;
-    padding-bottom: 1rem;
+    align-self: center;
   }
 
   .partner-socials > div > a > svg {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 
   .partnerArrowDown {
@@ -356,7 +384,7 @@ body {
   .partner-content {
     height: calc(100vh - 12rem);
     overflow: scroll;
-    padding: 12rem 0rem 0 2rem;
+    padding: 12rem 2rem 0;
   }
 
   .outcomes {

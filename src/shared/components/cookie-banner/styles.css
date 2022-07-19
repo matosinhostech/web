@@ -8,7 +8,7 @@
   align-items: center;
   opacity: 1;
   box-shadow: rgb(0 0 0 / 10%) 0px 24px 32px, rgb(0 0 0 / 10%) 0px 8px 32px;
-  border: 1px solid #ffabab;
+  border: 1px solid #e13b3a;
   margin: 0 auto 30px;
   background: rgb(19 25 33 / 90%);
   font-size: 13px;
@@ -157,6 +157,8 @@
   ._1udoG {
     left: calc(50% - 285px);
     width: 570px;
+    border: 1px solid #e13b3a;
+    bottom: -4px;
   }
 }
 
