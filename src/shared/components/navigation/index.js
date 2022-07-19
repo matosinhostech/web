@@ -85,7 +85,7 @@ const Navigation = ({ path, page = "bluePage" }) => {
       document.body.style.overflow = "";
     }
     setIsDrawerOpen(!isDrawerOpen);
-  }, [isDrawerOpen, setIsDrawerOpen]);
+  }, [isDrawerOpen, setIsDrawerOpen, path]);
 
   const logo =
     page === "videosPage"
