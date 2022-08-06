@@ -40,7 +40,7 @@ const HomeLayout = ({ path }) => {
             </div>
             <div className="hero">
               <a
-                href="https://docs.google.com/forms/d/e/1FAIpQLSf6P7L-tSUtgXsEpWzGiF_QIcCvxtnPfRtHl2i64JqAhVudhQ/viewform"
+                href="https://forms.gle/PidZu3xHKJRxtyxA7"
                 target="_blank"
                 className="mailto"
               >
