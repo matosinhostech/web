@@ -60,7 +60,6 @@ body {
 }
 
 .introFull {
-  min-height: calc(100vh - 8rem);
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -278,6 +277,9 @@ body {
     cursor: pointer;
     color: $light-gray;
     background: $edgy-black;
+    text-transform: lowercase;
+    letter-spacing: 2px;
+    transition: all 0.2s ease 0s;
 
     &:disabled {
       background: #c3c4c6;
@@ -288,6 +290,7 @@ body {
     &:hover {
       background: $edgy-red;
       color: #e8e8e8;
+      transform: scale(1.02);
     }
   }
 }
@@ -302,6 +305,11 @@ body {
   border: 0;
   border-left: 0.2rem solid $edgy-black;
   color: $edgy-black;
+
+  &::placeholder {
+    text-transform: lowercase;
+    letter-spacing: 2px;
+  }
 }
 
 .getTicketInput:focus,
@@ -332,9 +340,9 @@ body {
   opacity: 1;
 
   display: flex;
-    flex-direction: row;
-    align-items: end;
-    flex-wrap: wrap;
+  flex-direction: row;
+  align-items: end;
+  flex-wrap: wrap;
 }
 
 .save-the-date-container:hover {
@@ -460,9 +468,9 @@ body {
 
   .intro {
     justify-content: center;
-    max-width: 20rem;
-    padding-right: 6rem;
+    max-width: 28.5rem;
     padding-left: 2rem;
+    padding-right: 8rem;
     z-index: 2;
     height: auto;
   }
@@ -497,7 +505,7 @@ body {
     align-items: flex-end;
     background: linear-gradient(111deg, transparent 50%, $light-gray 0);
     border: 0;
-    border-radius: 0;
+    border-radius: 1rem;
     box-shadow: 10px -10px 0 0 $edgy-black;
     color: #ffabab;
     display: flex;
@@ -566,13 +574,14 @@ body {
     display: block;
     border: 0;
     background: $light-gray;
-    box-shadow: -10px 10px 0px 0px $edgy-black;
-    padding: 0.5rem 2rem 1rem;
-    margin: 0;
+    box-shadow: 10px 10px 0px 0px $edgy-black;
+    margin: 0 -1rem 4rem;
+    padding: 0.5rem 3rem 1rem 2rem;
+    border-radius: 0 1rem;
   }
 
   .call-out-container:hover {
-    box-shadow: -10px 10px 0px 0px $edgy-red;
+    box-shadow: 10px 10px 0px 0px $edgy-red;
     transform: scale(1.02);
     transform-origin: bottom;
     cursor: pointer;
@@ -586,12 +595,12 @@ body {
 
   .deadline {
     text-align: left;
-    font-size: 0.8rem;
+    font-size: 0.6rem;
     letter-spacing: 1px;
   }
 
   .highlight-gradient-text-light {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     line-height: 2.5rem;
     letter-spacing: 2px;
     color: $edgy-red;
@@ -611,7 +620,7 @@ body {
   }
 
   .top {
-    padding: 2rem 0;
+    padding: 0 0 2rem 0;
     font-size: 3.4em;
     line-height: 3.5rem;
   }
@@ -637,6 +646,8 @@ body {
 
   .introFull {
     flex-direction: row;
+    height: 100vh;
+    min-height: auto;
   }
 
   .home-full > .upcomingEventFull {
@@ -647,10 +658,23 @@ body {
 
   .homeArrowRight {
     width: 20%;
+    transform: rotate(90deg);
+    position: absolute;
+    animation: up-and-down 1.5s linear infinite;
+  }
+
+  @keyframes up-and-down {
+    0%,
+    100% {
+      margin-top: 0;
+    }
+    50% {
+      margin-top: 20px;
+    }
   }
 
   .serving {
-    margin-left: 10px;
+    margin-left: 6rem;
     max-width: 25rem;
   }
 
@@ -740,6 +764,11 @@ body {
     border: 0;
     border-left: 0.2rem solid $edgy-black;
     color: $edgy-black;
+
+    &::placeholder {
+      text-transform: lowercase;
+      letter-spacing: 2px;
+    }
   }
 
   .mailto {

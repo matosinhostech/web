@@ -64,7 +64,7 @@ const TicketForm = ({ id, operationCallback }) => {
                 display: 'flex',
                 flexDirection: 'column',
                 width: '100%',
-                padding: '0 0 4rem 1px',
+                padding: '0 0 0 1px',
             }}>
             <input
                 name="first_name"

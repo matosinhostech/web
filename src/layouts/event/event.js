@@ -37,7 +37,7 @@ const Event = () => {
           <div className="left">
             <div className="title">Compensation as a Service & Maritime Robots</div>
             <div className="speakers"><span>speakers: </span><a className="hyperlink" href="https://www.linkedin.com/in/tiago-m-fernandes/" target="_blank">Tiago Fernandes</a>,&nbsp;&nbsp;<a className="hyperlink" href="https://www.linkedin.com/in/mparente/" target="_blank">Manuel Parente</a></div>
-            <div className="venue"><span>venue: </span><a className="hyperlink" href="https://goo.gl/maps/N47fGgKkY1TpiLDp6" target="_blank">Auditório da Biblioteca Municipal Florbela Espanca</a></div>
+            <div className="location"><span>venue: </span><a className="hyperlink" href="https://goo.gl/maps/N47fGgKkY1TpiLDp6" target="_blank">Auditório da Biblioteca Municipal Florbela Espanca</a></div>
             <div className="description">
               <p>At our eighth event, we will bring to our stage Tiago Fernandes, CTO of Coverflex, to explain to us how Coverflex is building the future of compensation with Elixir and give us an insight into their mission of creating the Bank of the Employee.</p>
               <p>Afterwards, Manuel Parente, Director of Software Engineering at Ocean Infinity, will break down how building a fleet of robotic vessels at scale is a complex challenge – especially if done sustainably. In this talk, he’ll talk about how groundbreaking technology is transforming the sea and improving the planet and our lives.</p>

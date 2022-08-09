@@ -7,6 +7,7 @@ import arrowRightBlack from "assets/images/arrow-right-black.svg";
 import arrowRightWhite from "assets/images/arrow-right-white.svg";
 import Loadable from "react-loadable";
 import ReactPlayer from "react-player/vimeo";
+import Event from "./event";
 import "./styles.scss";
 
 const CookieBanner = Loadable({
@@ -72,7 +73,14 @@ const HomeLayout = ({ path }) => {
               </a>
             </div>
           </div>
-          <div className="upcomingEventFull">
+          <div className="onlyDesktop">
+            <Waypoint
+              onEnter={() => setNavigationStyle("homePage")}
+              onLeave={() => setNavigationStyle("homePageAlt")}
+            />
+          </div>
+          <Event />
+          {/* <div className="upcomingEventFull">
             <div className="upcomingEvent">
               <div className="upcomingEventBanner">
                 <ReactPlayer
@@ -104,9 +112,9 @@ const HomeLayout = ({ path }) => {
                     Manuel Parente
                   </a>
                 </div>
-                {/* <div className="upcomingEventHour">
+                <div className="upcomingEventHour">
                   <span>7:00 pm GMT</span>
-                </div> */}
+                </div> 
               </div>
               <div className="upcomingEventName">
                 Compensation as a Service & Maritime Robots
@@ -127,11 +135,11 @@ const HomeLayout = ({ path }) => {
                 onLeave={() => setNavigationStyle("homePageAlt")}
               />
             </div>
-          </div>
+          </div> */}
 
-          <div className="bottomHomePlaceholder">
+          {/* <div className="bottomHomePlaceholder">
             <Subscribe />
-          </div>
+          </div> */}
           <CookieBanner />
         </div>
       </div>
