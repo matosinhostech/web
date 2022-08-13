@@ -153,6 +153,7 @@ module.exports = {
         trackingId: "G-RBCCS5WMQW",
       },
     },
+    `gatsby-plugin-smoothscroll`,
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {

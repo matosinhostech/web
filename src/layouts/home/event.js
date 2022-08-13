@@ -11,15 +11,12 @@ import "./styles.scss";
 // Assets
 import venue from "assets/images/events/07/venue.jpg";
 import whiteLogo from "assets/images/logo-white.png";
-import firstSpeaker from 'assets/images/events/cyber-speaker-red.jpeg';
-import secondSpeaker from 'assets/images/events/cyber-speaker-red.jpeg';
+import firstSpeaker from "assets/images/events/cyber-speaker-red.jpeg";
+import secondSpeaker from "assets/images/events/cyber-speaker-red.jpeg";
 import nelsonSpeaker from "assets/images/events/nelson-speaker-red.jpeg";
 import mercado from "assets/images/mercado.png";
-
-if (typeof window !== "undefined") {
-  // eslint-disable-next-line global-require
-  require("smooth-scroll")('a[href*="#"]');
-}
+import mercado2 from "assets/images/background/mercado-2.png";
+import mercado3 from "assets/images/background/mercado-3.png";
 
 const Event = () => {
   const [operation, setOperation] = useState(DEFAULT_OPERATION_DATA);
@@ -32,10 +29,22 @@ const Event = () => {
   );
 
   return (
-    <div className="eventLayoutWrapper">
-      <div className="eventLayout" id="scrollable">
-        <div className="eventContent">
+    <div className="event-layout-wrapper">
+      <div className="event-layout" id="scrollable">
+        <div className="event-content">
           <div className="left">
+            <div className="event-name"  id="event">
+              Welcome to the{" "}
+              <span className="highlight-water">Fish Market</span>
+            </div>
+            <div className="place-and-date">
+              <div className="place">
+                place: <b>Mercado Municipal de Matosinhos</b>
+              </div>
+              <div className="date">
+                <span>09/10/2022</span>
+              </div>
+            </div>
             <div className="description">
               <p>
                 At our eighth event, we will bring to our stage Tiago Fernandes,
@@ -55,6 +64,25 @@ const Event = () => {
                 Claim your ticket and enjoy the show on the 1st of June at 7:00
                 PM.
               </p>
+            </div>
+            <img className="event-outcomes-image" src={mercado2} alt="" />
+            <div className="event-outcomes">
+              <div className="event-outcomes-row">
+                <div className="event-outcomes-number">1</div>
+                <div className="event-outcomes-text">day</div>
+              </div>
+              <div className="event-outcomes-row">
+                <div className="event-outcomes-number">4</div>
+                <div className="event-outcomes-text">speakers</div>
+              </div>
+              <div className="event-outcomes-row">
+                <div className="event-outcomes-number">+10</div>
+                <div className="event-outcomes-text">companies</div>
+              </div>
+              <div className="event-outcomes-row">
+                <div className="event-outcomes-number">80</div>
+                <div className="event-outcomes-text">seats</div>
+              </div>
             </div>
             <hr />
             <div className="title">Where to find us</div>
@@ -137,7 +165,7 @@ const Event = () => {
                   </a>
                 </div>
                 <div className="speaker-bio">
-                <p>
+                  <p>
                     With more than two decades of experience building software,
                     Tiago is currently on a mission to change the way companies
                     reward employees. He leads a team of superstars, helping
@@ -167,11 +195,10 @@ const Event = () => {
               </div>
             </div>
             <hr />
-            <div className="title">Attend the event</div>
-            <TicketForm
-              id="claim-ticket-form"
-              operationCallback={handleClaimTicket}
-            />
+            <div className="title" id="claim-ticket-anchor">
+              Attend the event
+            </div>
+            <TicketForm operationCallback={handleClaimTicket} />
             <hr />
             <div className="brand-details">
               <div className="brand">
@@ -206,7 +233,7 @@ const Event = () => {
                   </div>
                   <div className="date">
                     <div className="month">OUT</div>
-                    <div className="day">9</div>
+                    <div className="day">09</div>
                     <div className="year">2022</div>
                   </div>
                 </div>

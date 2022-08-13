@@ -4,6 +4,7 @@ import Socials from "shared/components/socials";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import useInterval from "shared/hooks/useInterval";
+import scrollTo from "gatsby-plugin-smoothscroll";
 
 import whiteLogo from "assets/images/logo-white.svg";
 import darkRedLogo from "assets/images/logo-dark-red.svg";
@@ -160,7 +161,9 @@ const Navigation = ({ path, page = "bluePage" }) => {
               </div>
             </div>
             <div className="counter-cta">
-              <button>Claim your ticket</button>
+              <button onClick={() => scrollTo("#claim-ticket-anchor")}>
+                Claim your ticket
+              </button>
             </div>
           </div>
         </div>

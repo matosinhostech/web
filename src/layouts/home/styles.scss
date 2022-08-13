@@ -27,7 +27,7 @@ body {
   color: $light-gray;
   display: flex;
   flex-direction: column;
-  width: calc(100vw - 2rem);
+  width: calc(100vw - 4rem);
   padding: 8rem 2rem 0;
 }
 
@@ -60,7 +60,7 @@ body {
   justify-content: center;
 }
 
-.introFull {
+.intro-full {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -79,8 +79,10 @@ body {
   justify-content: flex-start;
 }
 
-.homeArrowRight {
-  max-height: 7rem;
+.homeArrowDown {
+  max-height: 3rem;
+  cursor: pointer;
+  padding: 0 1rem;
 }
 
 .serving {
@@ -307,7 +309,6 @@ body {
   color: $edgy-black;
 
   &::placeholder {
-    
     letter-spacing: 2px;
   }
 }
@@ -381,7 +382,6 @@ body {
   align-items: flex-end;
   width: 100%;
   letter-spacing: 15x;
-  
 }
 
 .save-the-date-container > .venue > div:nth-of-type(1) {
@@ -443,6 +443,11 @@ body {
   justify-content: center;
 }
 
+.intro-full,
+.home-full {
+  height: 100%;
+}
+
 // Desktop
 @media (min-width: 1100px) {
   .onlyDesktop {
@@ -453,6 +458,88 @@ body {
     flex-direction: row;
     overflow-x: hidden;
     // border-left: 2rem solid white;
+  }
+
+  .event-name {
+    font-size: 2rem;
+    padding-top: 2rem;
+  }
+
+  .highlight-water {
+    font-family: "Water Brush", cursive;
+    color: $cadet-blue;
+    font-size: 3.2rem;
+  }
+
+  .place-and-date {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    > .place {
+      color: $edgy-black;
+      padding: 1rem 1rem 1rem 0;
+      font-size: 0.8rem;
+      display: inline;
+      z-index: 1;
+      background: $light-gray;
+    }
+
+    > .place > a {
+      font-weight: 600;
+    }
+
+    > .date {
+      color: $quick-silver;
+      position: relative;
+      font-size: 0.8rem;
+      padding: 1rem 0 1rem 1rem;
+      display: inline;
+      z-index: 1;
+      background: $light-gray;
+    }
+
+    &:after {
+      content: "";
+      width: 100%;
+      position: absolute;
+      border: 1px solid #a5a5a5;
+      top: 1.5rem;
+    }
+  }
+
+  .event-outcomes-image {
+    width: 100%;
+  }
+
+  .event-outcomes {
+    display: flex;
+    justify-content: space-around;
+    z-index: 1;
+  }
+  
+  .event-outcomes-row {
+    width: 5rem;
+    padding: 2rem;
+    height: 5rem;
+    background: $light-gray;
+    color: $edgy-black;
+    margin-top: -3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    margin-bottom: 5rem;
+  }
+  
+  .event-outcomes-number {
+    font-size: 3rem;
+    font-weight: 600;
+  }
+  
+  .event-outcomes-text {
+    font-size: 1.1rem;
   }
 
   .upcomingEventClaim {
@@ -517,7 +604,7 @@ body {
     opacity: 1;
     padding: 1.5rem 1rem 1rem 1rem;
     text-align: right;
-    
+
     width: 11rem;
   }
 
@@ -632,7 +719,6 @@ body {
     font-size: 18px;
     position: relative;
     width: 29rem;
-    margin-left: -1.5rem;
   }
 
   .home-full {
@@ -644,12 +730,12 @@ body {
     background: $light-gray;
   }
 
-  .home-full > .introFull {
+  .home-full > .intro-full {
     display: flex;
     background: $edgy-black;
   }
 
-  .introFull {
+  .intro-full {
     flex-direction: row;
     height: 100vh;
     min-height: auto;
@@ -661,28 +747,28 @@ body {
     height: auto;
   }
 
-  .homeArrowRight {
-    width: 6rem;
-    transform: rotate(90deg);
+  .homeArrowDown {
+    width: 4rem;
     position: absolute;
-    animation: up-and-down 3s ease-in-out infinite;
+    animation: up-and-down 2.66s ease-in-out infinite;
   }
 
   @keyframes up-and-down {
     0%,
     100% {
-      margin-top: -5px;
+      transform: translateY(0px);
     }
     50% {
-      margin-top: 30px;
+      transform: translateY(24px);
     }
   }
 
   .serving {
-    margin-left: 6rem;
+    margin-left: 7rem;
     max-width: 18rem;
     font-weight: 500;
     line-height: 2rem;
+    font-size: 1.2rem;
   }
 
   .upcomingEvent {
@@ -773,7 +859,6 @@ body {
     color: $edgy-black;
 
     &::placeholder {
-      
       letter-spacing: 2px;
     }
   }

@@ -291,7 +291,7 @@ a[aria-current="page"] {
   .desktop {
     display: flex;
     flex-direction: column;
-    padding-top: 3rem;
+    padding-top: 4.25rem;
   }
 
   .desktop.eventPage > a,
@@ -343,7 +343,7 @@ a[aria-current="page"] {
     transition: all 0.1s ease-in;
     position: relative;
     cursor: pointer;
-    font-weight: 400;
+    font-weight: 500;
     width: fit-content;
   }
 
@@ -353,7 +353,7 @@ a[aria-current="page"] {
   }
 
   .logo {
-    width: 6rem;
+    width: 4rem;
   }
 
   .countdown {
@@ -370,7 +370,7 @@ a[aria-current="page"] {
     & > .date-container {
       display: flex;
       flex-direction: column;
-      padding-left: 18.5rem;
+      padding-left: 12rem;
       justify-content: center;
       text-align: center;
       line-height: 1.8rem;
@@ -394,23 +394,23 @@ a[aria-current="page"] {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding-left: 1.7rem;
+      padding-left: 10.75rem;
       width: 100%;
 
       & > .counter-date {
         display: flex;
 
         & > .counter-message {
-          padding-right: 3rem;
+          padding-right: 1rem;
           display: flex;
           align-items: center;
           height: 5.5rem;
-          font-size: 1rem;
-          font-weight: 500;
+          font-size: 0.9rem;
+          font-weight: 700;
           color: var(--light-gray);
 
           & > .highlight {
-            padding-left: 0.3rem;
+            padding-left: 0.2rem;
             color: var(--eerie-black);
           }
         }
@@ -420,7 +420,7 @@ a[aria-current="page"] {
           align-items: center;
 
           & > .counter-box {
-            padding-right: 0.5rem;
+            padding-right: 1rem;
             padding-top: 1rem;
 
             & > .counter-value {
