@@ -138,11 +138,11 @@ body {
 }
 
 .partner-mission {
-  font-size: 5vw;
-  padding: 2rem 0rem 2rem 2rem;
+  font-size: 1.5rem;
+  padding: 0;
   display: flex;
-  justify-content: center;
-  align-items: flex-end;
+  justify-content: flex-start;
+  align-items: center;
   position: relative;
   margin-bottom: 2rem;
 
@@ -160,12 +160,10 @@ body {
 }
 
 .partnerArrowDown {
-  position: absolute;
-  width: 20vw;
+  width: 4rem;
   left: 0;
   bottom: 0;
-  max-height: 7rem;
-  margin: 1rem -1rem;
+  margin: 0rem 2rem 0 0;
 }
 
 .image {
@@ -379,15 +377,14 @@ body {
   }
 
   .partnerArrowDown {
-    position: absolute;
     left: 0rem;
     bottom: 0;
-    max-height: 6rem;
-    width: 6rem;
-    margin: 1rem -1rem;
+    width: 4rem;
+    margin: 0rem 2rem 0rem 0rem;
   }
 
   .partner-mission {
+    padding: 0rem 0rem 2rem 0;
     justify-content: flex-start;
     font-size: 2rem;
 
