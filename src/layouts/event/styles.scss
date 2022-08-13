@@ -92,7 +92,7 @@
                 height: 0.7rem;
                 top: 0.2rem;
                 left: 0;
-                background: black;
+                background: $edgy-black;
                 border-radius: 2rem;
               }
             }
@@ -103,7 +103,7 @@
               padding-left: 1rem;
               font-size: 1.1rem;
               height: 5rem;
-              border-left: 3px solid black;
+              border-left: 3px solid $edgy-black;
             }
 
             > .dashed {
@@ -114,6 +114,7 @@
 
         > .map {
           display: flex;
+          flex-direction: column;
 
           > .map-details {
             display: flex;
@@ -122,14 +123,18 @@
             width: 30rem;
 
             & > .map-address {
+              font-size: 0.8rem;
+              padding-bottom: 1rem;
+
               > div:last-child {
-                font-size: 1.3rem;
-                font-weight: 500;
+                font-size: 1rem;
+                font-weight: 600;
               }
             }
 
-            & > .map-directions  {
+            & > .map-direction  {
               font-size: 0.7rem;
+              padding-bottom: 2rem;
             }
           }
         }
@@ -160,6 +165,69 @@
             > .speaker-image {
               > img {
                 width: 100%;
+              }
+            }
+          }
+        }
+
+        > .host-details {
+          display: flex;
+  
+          > .host {
+            width: 50% !important;
+            max-width: 17rem;
+  
+            &:first-child {
+              margin: 0 4rem 0 0 !important;
+            }
+  
+            // &:last-child {
+            //   margin-left: 0 !important;
+            // }
+  
+            > .host-name {
+              margin: 0.5rem 0 1rem;
+            }
+  
+            > .host-bio {
+              font-size: 0.8rem;
+            }
+  
+            > .host-image {
+              > img {
+                width: 100%;
+              }
+            }
+          }
+        }
+  
+        > .brand-details {
+          display: flex;
+  
+          > .brand {
+            width: 50% !important;
+            max-width: 17rem;
+  
+            &:first-child {
+              margin: 0 4rem 0 0 !important;
+            }
+  
+            &:last-child {
+              margin-left: 0 !important;
+            }
+  
+            > .brand-name {
+              margin: 0.5rem 0 1rem;
+            }
+  
+            > .brand-bio {
+              font-size: 0.8rem;
+            }
+  
+            > .brand-image {
+              > img {
+                width: 100%;
+                border: 1px solid $edgy-black;
               }
             }
           }
@@ -294,7 +362,6 @@
                 font-size: 1rem;
                 cursor: pointer;
                 background: #e8e8e8;
-                text-transform: lowercase;
                 letter-spacing: 2px;
                 transition: all 0.2s ease 0s;
 
@@ -355,7 +422,9 @@
 // Desktop
 @media (min-width: 1100px) {
   .eventLayoutWrapper {
-    width: calc(100vw - 13.8rem);
+    padding: 0;
+    width: calc(100vw - 16rem);
+    margin: 0;
   }
 
   .eventMain {
@@ -364,8 +433,8 @@
 
   .eventLayout {
     margin-right: 0rem;
-    margin-left: 2rem;
-    margin-top: 2rem;
+    margin-left: 5rem;
+    margin-top: 6rem;
   }
 
   .eventLayoutVenue {
@@ -391,12 +460,15 @@
   .eventContent {
     display: flex;
     flex-direction: row !important;
+    justify-content: space-between;
     margin-top: 3rem;
     position: relative;
+    padding-bottom: 7rem;
 
     > .left {
       width: 60% !important;
-      padding-right: 4rem !important;
+      max-width: 36.5rem;
+      padding-right: 8rem !important;
       padding-bottom: 2rem;
 
       > .title {
@@ -409,6 +481,7 @@
 
         > p {
           margin-top: 0;
+          text-align: justify;
         }
       }
 
@@ -433,7 +506,7 @@
               height: 0.7rem;
               top: 0.2rem;
               left: 0;
-              background: black;
+              background: $edgy-black;
               border-radius: 2rem;
             }
           }
@@ -444,7 +517,7 @@
             padding-left: 1rem;
             font-size: 1.1rem;
             height: 5rem;
-            border-left: 3px solid black;
+            border-left: 3px solid $edgy-black;
           }
 
           > .dashed {
@@ -455,6 +528,7 @@
 
       > .map {
         display: flex;
+        flex-direction: row;
 
         > .map-details {
           display: flex;
@@ -462,14 +536,21 @@
           justify-content: space-evenly;
 
           & > .map-address {
+            font-size: 0.8rem;
+
             > div:last-child {
-              font-size: 1.3rem;
+              font-size: 1rem;
               font-weight: 500;
             }
           }
 
-          & > .map-directions  {
-            font-size: 0.7rem;
+          & > .map-direction {
+            font-size: 0.6rem;
+
+            > div:last-child {
+              font-size: 0.9rem;
+              font-weight: 600;
+            }
           }
         }
       }
@@ -516,9 +597,9 @@
             margin: 0 4rem 0 0 !important;
           }
 
-          &:last-child {
-            margin-left: 0 !important;
-          }
+          // &:last-child {
+          //   margin-left: 0 !important;
+          // }
 
           > .host-name {
             margin: 0.5rem 0 1rem;

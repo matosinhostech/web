@@ -3,6 +3,7 @@ import { Link } from "gatsby";
 import Socials from "shared/components/socials";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+import useInterval from "shared/hooks/useInterval";
 
 import whiteLogo from "assets/images/logo-white.svg";
 import darkRedLogo from "assets/images/logo-dark-red.svg";
@@ -30,7 +31,24 @@ const Links = (path) => {
   );
 };
 
+const getCountdownValues = (date) => {
+  const now = new Date().getTime();
+  const timeleft = date - now;
+
+  const days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
+  const hours = Math.floor(
+    (timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+  );
+  const minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
+
+  return { days, hours, minutes, seconds };
+};
+
 const Navigation = ({ path, page = "bluePage" }) => {
+  const [countdownValues, setCountdownValues] = useState({});
+  const countDownDate = new Date("Oct 09, 2022 12:00:00").getTime();
+
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [width, setWidth] = useState(windowGlobal && windowGlobal.innerWidth);
 
@@ -76,6 +94,10 @@ const Navigation = ({ path, page = "bluePage" }) => {
     }
   }, [path, width]);
 
+  useInterval(() => {
+    setCountdownValues(getCountdownValues(countDownDate));
+  }, 1000);
+
   const isMobile = width <= 1100;
 
   const handleMenuClick = useCallback(() => {
@@ -107,6 +129,41 @@ const Navigation = ({ path, page = "bluePage" }) => {
       </Link>
       <div className={`desktop ${page}`}>
         <Links />
+        <div className="countdown">
+          <div className="date-container">
+            <div className="date-month">OUT</div>
+            <div className="date-day">09</div>
+            <div className="date-year">2022</div>
+          </div>
+          <div className="counter-container">
+            <div className="counter-date">
+              <div className="counter-message">
+                We're getting <span className="highlight"> ready.</span>
+              </div>
+              <div className="counter-boxes">
+                <div className="counter-box">
+                  <div className="counter-value">{countdownValues.days}</div>
+                  <div className="counter-label">DAYS</div>
+                </div>
+                <div className="counter-box">
+                  <div className="counter-value">{countdownValues.hours}</div>
+                  <div className="counter-label">HOURS</div>
+                </div>
+                <div className="counter-box">
+                  <div className="counter-value">{countdownValues.minutes}</div>
+                  <div className="counter-label">MINUTES</div>
+                </div>
+                <div className="counter-box">
+                  <div className="counter-value">{countdownValues.seconds}</div>
+                  <div className="counter-label">SECONDS</div>
+                </div>
+              </div>
+            </div>
+            <div className="counter-cta">
+              <button>Claim your ticket</button>
+            </div>
+          </div>
+        </div>
         <div className={`nav-socials ${page}`}>
           <Socials
             slack="https://join.slack.com/t/matosinhostech/shared_invite/zt-mo49t1jm-QJE6skfu7Td~0yEO868HOg"

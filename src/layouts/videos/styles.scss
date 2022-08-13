@@ -170,7 +170,7 @@ div[data-swipeable] {
   flex-direction: column;
   justify-content: space-between;
   margin: 0;
-  border-top: 2px solid black;
+  border-top: 2px solid $edgy-black;
   padding-top: 2rem;
 }
 
@@ -326,7 +326,6 @@ div[data-swipeable] {
   cursor: pointer;
   padding: 12px 24px;
   font-size: 12px;
-  text-transform: lowercase;
   letter-spacing: 2px;
   font-family: "Manrope";
 }
@@ -342,7 +341,8 @@ div[data-swipeable] {
 // Desktop
 @media (min-width: 1100px) {
   .videos {
-    width: calc(100vw - 11.8rem);
+    width: calc(100vw - 12rem);
+    padding-left: 1rem;
   }
 
   .videosContainer {
@@ -353,7 +353,7 @@ div[data-swipeable] {
   .bottomPlaceholder {
     background-image: url("assets/images/background/anemona-red.jpg");
     background-size: cover;
-    height: 30vh;
+    height: calc(30vh + 7rem);
     opacity: 1;
     margin-top: 0;
   }
@@ -479,7 +479,7 @@ div[data-swipeable] {
     right: 0 !important;
     z-index: 5;
     left: 0rem !important;
-    bottom: 0 !important;
+    bottom: 7rem !important;
     position: fixed;
   }
 

@@ -39,39 +39,7 @@ const HomeLayout = ({ path }) => {
                 </div>
               </div>
             </div>
-            <div className="hero">
-              <a
-                href="https://docs.google.com/forms/d/e/1FAIpQLSf6P7L-tSUtgXsEpWzGiF_QIcCvxtnPfRtHl2i64JqAhVudhQ/viewform"
-                target="_blank"
-                className="mailto"
-              >
-                <div className="call-out-container">
-                  <div className="highlight-gradient-text-dark">
-                    call for papers
-                  </div>
-                  <div className="deadline">
-                    talk submission deadline:{" "}
-                    <span className="deadline-date">august 31, 2022</span>
-                  </div>
-                </div>
-              </a>
-              <a
-                href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=matosinhos.tech%20🏖%20event%209.0&dates=20221009/20221009&details=On%20the%209th%20of%20October,%20in%20the%20Matosinhos%20fish%20market,%20we'll%20have%20a%20full%20day%20event%20of%20talks,%20network%20with%20our%20community%20and%20showcasing%20the%20companies%20around%20us%20that%20are%20growing%20our%20digital%20landscape.%20%20<br/><br/>%20Come%20join%20our%20party%20and%20share%20your%20knowledge.&location=Event%20Lochttps://goo.gl/maps/u3PTW5Vkz3h6T3uj9ation&trp=true"
-                target="_blank"
-                className="google-calendar"
-              >
-                <div className="save-the-date-container">
-                  <div className="highlight-gradient-text day">9</div>
-                  <div className="highlight-gradient-text month">OCT</div>
-                  <div className="highlight-gradient-text year">2022</div>
-                  <div className="venue">
-                    <div className="">MERCADO</div>
-                    <div className="">MUNICIPAL</div>
-                    <div className="">MATOSINHOS</div>
-                  </div>
-                </div>
-              </a>
-            </div>
+            <div className="hero" />
           </div>
           <div className="onlyDesktop">
             <Waypoint

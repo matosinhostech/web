@@ -27,7 +27,6 @@
   transition: all 0.5s ease 0s;
   cursor: pointer;
   width: 100%;
-  text-transform: lowercase;
   letter-spacing: 2px;
   font-family: "Manrope";
 }
@@ -52,7 +51,6 @@
 }
 
 .notifyMeInput::placeholder {
-  text-transform: lowercase;
   letter-spacing: 2px;
   text-align: center;
 }
@@ -63,7 +61,6 @@
 }
 
 .form-label {
-  text-transform: lowercase;
   width: 100%;
   font-size: 1.2rem;
   font-weight: 700;
@@ -100,7 +97,6 @@
     top: 1.5rem;
     font-weight: 700;
     left: 2.3rem;
-    text-transform: lowercase;
     font-size: 0.9rem;
     background: -webkit-linear-gradient(
       180deg,

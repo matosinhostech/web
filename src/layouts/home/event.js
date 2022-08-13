@@ -11,8 +11,8 @@ import "./styles.scss";
 // Assets
 import venue from "assets/images/events/07/venue.jpg";
 import whiteLogo from "assets/images/logo-white.png";
-import firstSpeaker from "assets/images/events/tiago-fernandes-speaker.jpg";
-import secondSpeaker from "assets/images/events/manuel-parente-speaker.jpg";
+import firstSpeaker from 'assets/images/events/cyber-speaker-red.jpeg';
+import secondSpeaker from 'assets/images/events/cyber-speaker-red.jpeg';
 import nelsonSpeaker from "assets/images/events/nelson-speaker-red.jpeg";
 import mercado from "assets/images/mercado.png";
 
@@ -64,23 +64,13 @@ const Event = () => {
                   <div>R. França Júnior, 4450-135 Matosinhos</div>
                   <div>Mercado Municipal de Matosinhos</div>
                 </div>
-                <div className="map-directions">
+                <div className="map-direction">
                   <div>41.187431, -8.693362</div>
                   <div>
-                    Estação de metro <b>Mercado</b> - Linha A (Senhor de
-                    Matosinhos)
+                    Estação de metro <b>Mercado</b> - Linha A
                   </div>
                 </div>
               </div>
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3002.581437868457!2d-8.695529284655393!3d41.187295679283025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd246f2e1d005c71%3A0x9486cd6a40a80636!2sMercado%20Municipal%20de%20Matosinhos!5e0!3m2!1sen!2spt!4v1660299310389!5m2!1sen!2spt"
-                width="500"
-                height="300"
-                style={{ border: "0" }}
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-              ></iframe>
             </div>
             <hr />
             <div className="title">Schedule</div>
@@ -125,10 +115,6 @@ const Event = () => {
                 </div>
                 <div className="speaker-bio">
                   <p>
-                    Former Co-Founder & CTO of Bitmaker, currently Co-Founder &
-                    CTO of Coverflex.
-                  </p>
-                  <p>
                     With more than two decades of experience building software,
                     Tiago is currently on a mission to change the way companies
                     reward employees. He leads a team of superstars, helping
@@ -151,32 +137,24 @@ const Event = () => {
                   </a>
                 </div>
                 <div className="speaker-bio">
-                  <p>
-                    Manuel oversees the long-term technological activities and
-                    software development of Ocean Infinity, ensuring it is ahead
-                    of market needs in a sustainable way.
-                  </p>
-                  <p>
-                    Before joining Ocean Infinity as Director of Software
-                    Engineering, he founded and took up the position of CTO at
-                    Abyssal, where he planned and developed advanced software
-                    solutions for several key companies in the Maritime
-                    Industry. A software engineer from the University of Porto
-                    and an avid musician, Manuel holds several patents and
-                    awards pertaining to augmented reality and artificial
-                    intelligence in maritime operations.
+                <p>
+                    With more than two decades of experience building software,
+                    Tiago is currently on a mission to change the way companies
+                    reward employees. He leads a team of superstars, helping
+                    them to embrace the role of product engineers and to deliver
+                    amazing products.
                   </p>
                 </div>
               </div>
             </div>
             <hr />
             <div className="title">Hosts</div>
-            <div className="speaker-details">
-              <div className="speaker">
-                <div className="speaker-image">
+            <div className="host-details">
+              <div className="host">
+                <div className="host-image">
                   <img src={nelsonSpeaker} />
                 </div>
-                <div className="speaker-name">
+                <div className="host-name">
                   <a
                     className="hyperlink"
                     href="https://www.linkedin.com/in/nelsonsachse/"
@@ -185,7 +163,7 @@ const Event = () => {
                     Nelson Sachse
                   </a>
                 </div>
-                <div className="speaker-bio">Founder, matosinhos.tech</div>
+                <div className="host-bio">Founder, matosinhos.tech</div>
               </div>
             </div>
             <hr />
@@ -227,7 +205,7 @@ const Event = () => {
                     <img src={whiteLogo} alt="logo" />
                   </div>
                   <div className="date">
-                    <div className="month">Out</div>
+                    <div className="month">OUT</div>
                     <div className="day">9</div>
                     <div className="year">2022</div>
                   </div>

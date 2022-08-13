@@ -89,13 +89,13 @@ const Event = () => {
             </div>
             <hr />
             <div className="title">Hosts</div>
-            <div className="speaker-details">
-              <div className="speaker">
-                <div className="speaker-image">
+            <div className="host-details">
+              <div className="host">
+                <div className="host-image">
                   <img src={nelsonSpeaker} />
                 </div>
-                <div className="speaker-name"><a className="hyperlink" href="https://www.linkedin.com/in/nelsonsachse/" target="_blank">Nelson Sachse</a></div>
-                <div className="speaker-bio">
+                <div className="host-name"><a className="hyperlink" href="https://www.linkedin.com/in/nelsonsachse/" target="_blank">Nelson Sachse</a></div>
+                <div className="host-bio">
                   Founder, matosinhos.tech
                 </div>
               </div>
