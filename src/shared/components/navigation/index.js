@@ -161,9 +161,9 @@ const Navigation = ({ path, page = "bluePage" }) => {
               </div>
             </div>
             <div className="counter-cta">
-              <a href="https://docs.google.com/forms/d/e/1FAIpQLSf6P7L-tSUtgXsEpWzGiF_QIcCvxtnPfRtHl2i64JqAhVudhQ/viewform" target="_blank">
-                <button>Call for papers</button>
-              </a>
+              <button onClick={() => scrollTo("#claim-ticket-anchor")}>
+                Claim your ticket
+              </button>
             </div>
           </div>
         </div>
