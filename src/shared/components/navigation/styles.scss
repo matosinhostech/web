@@ -370,7 +370,7 @@ a[aria-current="page"] {
     & > .date-container {
       display: flex;
       flex-direction: column;
-      padding-left: 12rem;
+      padding-left: 20rem;
       justify-content: center;
       text-align: center;
       line-height: 1.8rem;
@@ -394,7 +394,7 @@ a[aria-current="page"] {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding-left: 10.75rem;
+      padding-left: 2.75rem;
       width: 100%;
 
       & > .counter-date {
@@ -449,7 +449,7 @@ a[aria-current="page"] {
         align-items: center;
         margin-top: 5px;
 
-        > button {
+        > a > button {
           width: 15rem;
           border: 0;
           height: 3rem;
