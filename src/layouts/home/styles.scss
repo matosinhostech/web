@@ -32,12 +32,12 @@ body {
 }
 
 .hero {
+  display: flex;
   flex: 40% 0;
   background-image: url(assets/images/background/mercado-red.jpg);
   background-size: cover;
   background-position: center;
   position: relative;
-  display: flex;
   flex-direction: column-reverse;
   justify-content: space-between;
   min-height: auto;
@@ -83,6 +83,7 @@ body {
   max-height: 3rem;
   cursor: pointer;
   padding: 0 1rem;
+  animation: up-and-down 2.66s ease-in-out infinite;
 }
 
 .serving {
@@ -518,7 +519,7 @@ body {
     justify-content: space-around;
     z-index: 1;
   }
-  
+
   .event-outcomes-row {
     width: 5rem;
     padding: 2rem;
@@ -532,12 +533,12 @@ body {
     align-items: start;
     margin-bottom: 5rem;
   }
-  
+
   .event-outcomes-number {
     font-size: 3rem;
     font-weight: 600;
   }
-  
+
   .event-outcomes-text {
     font-size: 1.1rem;
   }
@@ -556,7 +557,7 @@ body {
   .intro {
     justify-content: space-between;
     padding: 8.5rem 0 7rem 7.2rem;
-    width: 22.75rem;
+    width: 23rem;
     z-index: 2;
     height: auto;
     position: relative;
@@ -570,6 +571,7 @@ body {
   }
 
   .hero {
+    visibility: visible;
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -709,7 +711,7 @@ body {
 
   .top {
     padding: 0 0 2rem 0;
-    font-size: 3.6em;
+    font-size: 3.65em;
     line-height: 4.5rem;
     font-weight: 600;
     width: 35rem;
@@ -753,22 +755,12 @@ body {
     animation: up-and-down 2.66s ease-in-out infinite;
   }
 
-  @keyframes up-and-down {
-    0%,
-    100% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(24px);
-    }
-  }
-
   .serving {
-    margin-left: 7rem;
-    max-width: 18rem;
+    font-size: 1.22rem;
     font-weight: 500;
     line-height: 2rem;
-    font-size: 1.2rem;
+    margin-left: 7rem;
+    max-width: 19rem;
   }
 
   .upcomingEvent {
@@ -928,5 +920,15 @@ body {
     50% {
       transform: translate3d(0, 5px, 0);
     }
+  }
+}
+
+@keyframes up-and-down {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(24px);
   }
 }

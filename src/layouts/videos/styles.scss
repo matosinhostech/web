@@ -15,6 +15,7 @@
   display: flex;
   flex-direction: column;
   padding: 0 2rem;
+  position: relative;
 }
 
 .videos {
@@ -264,10 +265,11 @@ div[data-swipeable] {
   height: 5rem;
   bottom: 0;
   display: flex;
-  justify-content: center;
   align-items: center;
   width: 100%;
   pointer-events: none;
+  justify-content: flex-end;
+  right: 1.75rem;
 }
 
 .sliderPaginationDot.active {
@@ -353,7 +355,7 @@ div[data-swipeable] {
   .bottomPlaceholder {
     background-image: url("assets/images/background/anemona-red.jpg");
     background-size: cover;
-    height: calc(30vh + 7rem);
+    height: calc(30vh);
     opacity: 1;
     margin-top: 0;
   }
@@ -477,9 +479,9 @@ div[data-swipeable] {
     width: 35% !important;
     height: 30% !important;
     right: 0 !important;
-    z-index: 5;
+    z-index: 6;
     left: 0rem !important;
-    bottom: 7rem !important;
+    bottom: 0 !important;
     position: fixed;
   }
 
@@ -534,10 +536,8 @@ div[data-swipeable] {
   }
 
   .sliderPagination {
-    width: 100%;
-    justify-content: flex-end;
-    right: 2.5rem;
     pointer-events: all;
+    right: 2.5rem;
   }
 
   .sliderPaginationDot {

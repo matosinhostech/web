@@ -44,7 +44,7 @@ const PartnerLayout = ({
           </div>
           <div className="partner-mission">
             <img src={arrowDownWhite} className="partnerArrowDown" />
-            <span> {mission}</span>
+            <div> {mission}</div>
           </div>
           <img className="image" src={images[0]} alt="" />
           <div className="outcomes">{outcomes.map(renderOutcome)}</div>

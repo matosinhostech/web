@@ -1,9 +1,9 @@
-import React from "react"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
-import { Link } from 'gatsby'
+import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "gatsby";
 
-import "./styles.scss"
+import "./styles.scss";
 
 const Card = ({ slug, image }) => (
   <div className="card">
@@ -12,9 +12,7 @@ const Card = ({ slug, image }) => (
       <div className="center">
         <img src={image} />
       </div>
-      <div className="card-title">
-        {slug}
-      </div>
+      <div className="card-title">{slug}</div>
       <div className="card-link">
         <Link className="card-link" to={`/partners/${slug}`}>
           About {slug}
@@ -22,6 +20,6 @@ const Card = ({ slug, image }) => (
       </div>
     </div>
   </div>
-)
+);
 
-export default Card
+export default Card;

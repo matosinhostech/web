@@ -73,18 +73,18 @@ const PartnersListLayout = ({ path }) => {
             <h2 className="sponsors-title">sponsors</h2>
             <div className="sponsorMatrix">
               {partners.map(({ slug, name }) => (
-                <Link className="clickable" to={`/partners/${slug}`}>
+                <Link className="clickable" key={slug} to={`/partners/${slug}`}>
                   <Card slug={slug} name={name} image={logosByPartner[slug]} />
                 </Link>
               ))}
               <div className="card">
                 <div className="content">
                   <div className="center card-invite">
-                    <span className="invite-message">
-                      <span>this</span>
-                      <span> could be</span>
-                      <span> your company</span>
-                    </span>
+                    <div className="invite-message">
+                      <div>this</div>
+                      <div>could be</div>
+                      <div>your company</div>
+                    </div>
                   </div>
                   <div className="card-title">Your company's name</div>
                   <div className="card-link mail">

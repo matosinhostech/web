@@ -100,6 +100,7 @@ const Navigation = ({ path, page = "bluePage" }) => {
   }, 1000);
 
   const isMobile = width <= 1100;
+  const isHomePage = page === "homePage" || page === "homePageAlt";
 
   const handleMenuClick = useCallback(() => {
     if (!isDrawerOpen) {
@@ -124,13 +125,9 @@ const Navigation = ({ path, page = "bluePage" }) => {
       : whiteLogo;
 
   return (
-    <div className={`nav ${page}`} id="navbar">
-      <Link to="/">
-        <img className="logo" src={logo} alt="logo" />
-      </Link>
-      <div className={`desktop ${page}`}>
-        <Links />
-        <div className="countdown">
+    <>
+      {isHomePage ? (
+        <div className="countdown" id="countdown">
           <div className="date-container">
             <div className="date-month">OUT</div>
             <div className="date-day">09</div>
@@ -161,12 +158,64 @@ const Navigation = ({ path, page = "bluePage" }) => {
               </div>
             </div>
             <div className="counter-cta">
-              <a href="https://docs.google.com/forms/d/e/1FAIpQLSf6P7L-tSUtgXsEpWzGiF_QIcCvxtnPfRtHl2i64JqAhVudhQ/viewform" target="_blank">
-                <button>Call for papers</button>
+              <a href="https://forms.gle/PidZu3xHKJRxtyxA7" target="_blank">
+                <button id="call-for-papers">Call for papers</button>
               </a>
             </div>
           </div>
         </div>
+      ) : null}
+      <div className={`nav ${page}`} id="navbar">
+        <Link to="/">
+          <img className="logo" src={logo} alt="logo" />
+        </Link>
+        <div className={`desktop ${page}`}>
+          <Links />
+        </div>
+        <div className="mobile">
+          <div
+            className={`menu ${isDrawerOpen && "open"} ${page}`}
+            onClick={handleMenuClick}
+            onKeyDown={handleMenuClick}
+            role="button"
+            tabIndex="-1"
+          >
+            {isDrawerOpen ? "✕" : <FontAwesomeIcon icon={faBars} />}
+          </div>
+          <div
+            className={isDrawerOpen ? `drawer open ${page}` : `drawer ${page}`}
+          >
+            <svg
+              viewBox="0 0 500 150"
+              preserveAspectRatio="none"
+              style={{
+                height: "100%",
+                width: "50%",
+                left: "100vw",
+                position: "absolute",
+                top: "0",
+                zIndex: "-1",
+                pointerEvents: "none",
+              }}
+            >
+              <path
+                d="M251.41,-48.84 C88.31,109.03 349.60,41.94 202.88,201.80 L0.00,150.00 L0.00,0.00 Z"
+                style={{ stroke: "none" }}
+                className={`wave ${page}`}
+              ></path>
+            </svg>
+            <Links path={path} />
+            <div className={`nav-socials ${isDrawerOpen && "open"} ${page}`}>
+              <Socials
+                slack="https://join.slack.com/t/matosinhostech/shared_invite/zt-mo49t1jm-QJE6skfu7Td~0yEO868HOg"
+                reddit="https://www.reddit.com/r/matosinhos"
+                email="mailto:hello@matosinhos.tech"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="desktop">
         <div className={`nav-socials ${page}`}>
           <Socials
             slack="https://join.slack.com/t/matosinhostech/shared_invite/zt-mo49t1jm-QJE6skfu7Td~0yEO868HOg"
@@ -175,49 +224,7 @@ const Navigation = ({ path, page = "bluePage" }) => {
           />
         </div>
       </div>
-      <div className="mobile">
-        <div
-          className={`menu ${isDrawerOpen && "open"} ${page}`}
-          onClick={handleMenuClick}
-          onKeyDown={handleMenuClick}
-          role="button"
-          tabIndex="-1"
-        >
-          {isDrawerOpen ? "✕" : <FontAwesomeIcon icon={faBars} />}
-        </div>
-        <div
-          className={isDrawerOpen ? `drawer open ${page}` : `drawer ${page}`}
-        >
-          <svg
-            viewBox="0 0 500 150"
-            preserveAspectRatio="none"
-            style={{
-              height: "100%",
-              width: "50%",
-              left: "100vw",
-              position: "absolute",
-              top: "0",
-              zIndex: "-1",
-              pointerEvents: "none",
-            }}
-          >
-            <path
-              d="M251.41,-48.84 C88.31,109.03 349.60,41.94 202.88,201.80 L0.00,150.00 L0.00,0.00 Z"
-              style={{ stroke: "none" }}
-              className={`wave ${page}`}
-            ></path>
-          </svg>
-          <Links path={path} />
-          <div className={`nav-socials ${isDrawerOpen && "open"} ${page}`}>
-            <Socials
-              slack="https://join.slack.com/t/matosinhostech/shared_invite/zt-mo49t1jm-QJE6skfu7Td~0yEO868HOg"
-              reddit="https://www.reddit.com/r/matosinhos"
-              email="mailto:hello@matosinhos.tech"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
+    </>
   );
 };
 
