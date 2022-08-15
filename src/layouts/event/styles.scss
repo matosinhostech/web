@@ -3,15 +3,12 @@
 .eventContainer {
   display: flex;
   flex-direction: column;
-  background: $light-gray;
   min-height: 100vh;
   padding-top: 6rem;
 }
 
 .eventMain {
   flex: 60%;
-  background: $light-gray;
-  color: $edgy-black;
   display: flex;
   flex-direction: column;
   padding: 0 2rem;
@@ -19,10 +16,9 @@
 
 .event-layout-wrapper {
   display: none;
-  color: $edgy-black;
+  visibility: hidden;
   margin: -2rem;
   padding: 0 2rem;
-  background: $light-gray;
 
   > .event-layout {
     > .eventLayoutVenue {
@@ -42,7 +38,6 @@
         padding-bottom: 2rem;
 
         > .title {
-          margin-bottom: 2rem;
           font-size: 2rem;
         }
 
@@ -71,18 +66,25 @@
           margin-top: 0rem;
         }
 
-        > hr {
-          margin: 3rem 0 !important;
-          border-top: 2px solid $edgy-black !important;
-          display: block !important;
-        }
-
         > .schedule {
+          position: relative;
+
+          > .fish {
+            position: absolute;
+            left: calc(50% + 5vw);
+            top: calc(50% - 7.5vw);
+
+            > img {
+              height: 10vw;
+            }
+          }
+
           > .schedule-slot {
+            width: 50%;
+
             > .schedule-time {
               font-size: 0.9rem;
               position: relative;
-              color: gray;
               padding-left: 1.5rem;
 
               &:before {
@@ -92,8 +94,15 @@
                 height: 0.7rem;
                 top: 0.2rem;
                 left: 0;
-                background: $edgy-black;
                 border-radius: 2rem;
+              }
+
+              &.red:before {
+                background: $light-gray;
+              }
+
+              &.light:before {
+                background: $edgy-black;
               }
             }
 
@@ -102,12 +111,19 @@
               margin-left: 0.25rem;
               padding-left: 1rem;
               font-size: 1.1rem;
-              height: 5rem;
-              border-left: 3px solid $edgy-black;
+              height: 8rem;
+
+              &.red {
+                border-left: 3px solid $light-gray;
+              }
+
+              &.light {
+                border-left: 3px solid $edgy-black;
+              }
             }
 
             > .dashed {
-              border-left: 3px dashed gray;
+              border-left-style: dashed !important;
             }
           }
         }
@@ -172,27 +188,27 @@
 
         > .host-details {
           display: flex;
-  
+
           > .host {
             width: 50% !important;
             max-width: 17rem;
-  
+
             &:first-child {
               margin: 0 4rem 0 0 !important;
             }
-  
+
             // &:last-child {
             //   margin-left: 0 !important;
             // }
-  
+
             > .host-name {
               margin: 0.5rem 0 1rem;
             }
-  
+
             > .host-bio {
               font-size: 0.8rem;
             }
-  
+
             > .host-image {
               > img {
                 width: 100%;
@@ -200,34 +216,35 @@
             }
           }
         }
-  
+
         > .brand-details {
           display: flex;
-  
+
           > .brand {
             width: 50% !important;
             max-width: 17rem;
-  
+
             &:first-child {
               margin: 0 4rem 0 0 !important;
             }
-  
+
             &:last-child {
               margin-left: 0 !important;
             }
-  
+
             > .brand-name {
-              margin: 0.5rem 0 1rem;
+              margin: 1rem 0;
             }
-  
+
             > .brand-bio {
               font-size: 0.8rem;
             }
-  
+
             > .brand-image {
+              background-color: $light-gray;
+
               > img {
                 width: 100%;
-                border: 1px solid $edgy-black;
               }
             }
           }
@@ -267,7 +284,7 @@
 
                 > .day {
                   color: #e8e8e8;
-                  font-size: 36px;
+                  font-size: 2rem;
                   font-weight: bold;
                 }
 
@@ -296,6 +313,10 @@
               border-radius: 2rem;
               background: $light-gray;
               position: absolute;
+
+              .red & {
+                background: $edgy-red;
+              }
             }
 
             &:after {
@@ -307,6 +328,10 @@
               border-radius: 2rem;
               background: $light-gray;
               position: absolute;
+
+              .red & {
+                background: $edgy-red;
+              }
             }
 
             > .ticket-name {
@@ -337,7 +362,8 @@
             > .ticket-time {
               display: flex;
               justify-content: space-between;
-              margin: 2rem 0;
+              // margin: 2rem 0;
+              margin: 2rem 0 0;
 
               > .left,
               > .right {
@@ -355,14 +381,18 @@
             }
 
             > .ticket-claim {
+              display: none;
+
               > button {
                 width: 100%;
                 border: 0;
                 height: 3rem;
                 font-size: 1rem;
                 cursor: pointer;
-                background: #e8e8e8;
-                letter-spacing: 2px;
+                font-family: "Manrope";
+                font-weight: 600;
+                color: $edgy-black;
+                background: $light-gray;
                 transition: all 0.2s ease 0s;
 
                 &:disabled {
@@ -372,9 +402,10 @@
                 }
 
                 &:hover {
-                  background: $edgy-red;
-                  color: #e8e8e8;
-                  transform: scale(1.01);
+                  background: $eerie-black;
+                  color: $light-gray;
+                  box-shadow: 5px 5px 5px -5px $edgy-black;
+                  transform: scale(1.02);
                 }
               }
             }
@@ -403,6 +434,40 @@
   cursor: pointer;
   color: $edgy-red;
   text-decoration: none;
+
+  .red & {
+    color: $light-gray;
+  }
+}
+
+.arrow-button {
+  height: 3rem;
+  margin: 6rem 0 0;
+  display: flex;
+  align-items: center;
+  border-top: 2px solid $light-gray;
+  border-bottom: 2px solid $light-gray;
+  position: relative;
+  justify-content: space-between;
+  cursor: pointer;
+
+  .light & {
+    border-color: $edgy-black;
+  }
+
+  &:hover {
+    font-weight: 600;
+  }
+
+  & > .text {
+    font-size: 3rem;
+    position: relative;
+  }
+
+  & > img {
+    width: 3rem;
+    margin: 5px -5px 5px;
+  }
 }
 
 .spinner {
@@ -422,19 +487,358 @@
 // Desktop
 @media (min-width: 1100px) {
   .event-layout-wrapper {
+    display: flex;
+    visibility: visible;
     padding: 0;
-    width: calc(100vw - 16rem);
+    width: calc(100vw - 14rem);
     margin: 0;
+
+    .event-layout {
+      margin-left: 2rem;
+      margin-top: 4rem;
+
+      .event-content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        position: relative;
+        padding-bottom: 7rem;
+
+        > .left {
+          position: relative;
+          width: 60%;
+          padding-right: 4rem;
+          padding-bottom: 2rem;
+
+          > .title {
+            margin: 4rem 0 2rem;
+            font-size: 2rem;
+            padding-top: 2.5rem;
+          }
+
+          > .description {
+            margin-top: 2rem;
+
+            > p {
+              margin-top: 0;
+              text-align: justify;
+            }
+          }
+
+          > hr {
+            margin: 6rem 0 4rem;
+            border-top: 1px solid $edgy-black;
+            display: block;
+
+            .red & {
+              border-color: $light-gray;
+            }
+          }
+
+          > .map {
+            display: flex;
+            flex-direction: row;
+
+            > .map-details {
+              display: flex;
+              flex-direction: column;
+              justify-content: space-evenly;
+
+              & > .map-address {
+                font-size: 0.8rem;
+
+                > div:last-child {
+                  font-size: 1rem;
+                  font-weight: 500;
+                }
+              }
+
+              & > .map-direction {
+                font-size: 0.6rem;
+
+                > div:last-child {
+                  font-size: 0.9rem;
+                  font-weight: 600;
+                }
+              }
+            }
+          }
+
+          > .speaker-details {
+            display: flex;
+
+            > .speaker {
+              width: 50%;
+              max-width: 17rem;
+
+              &:first-child {
+                margin: 0 4rem 0 0;
+              }
+
+              &:last-child {
+                margin-left: 0;
+              }
+
+              > .speaker-name {
+                margin: 0.5rem 0 1rem;
+              }
+
+              > .speaker-bio {
+                font-size: 0.8rem;
+              }
+
+              > .speaker-image {
+                > img {
+                  width: 100%;
+                }
+              }
+            }
+          }
+
+          > .host-details {
+            display: flex;
+
+            > .host {
+              width: 50%;
+              max-width: 17rem;
+
+              &:first-child {
+                margin: 0 4rem 0 0;
+              }
+
+              // &:last-child {
+              //   margin-left: 0 ;
+              // }
+
+              > .host-name {
+                margin: 0.5rem 0 1rem;
+              }
+
+              > .host-bio {
+                font-size: 0.8rem;
+              }
+
+              > .host-image {
+                > img {
+                  width: 100%;
+                }
+              }
+            }
+          }
+
+          > .brand-details {
+            display: flex;
+
+            > .brand {
+              width: 50%;
+              max-width: 17rem;
+
+              &:first-child {
+                margin: 0 4rem 0 0;
+              }
+
+              &:last-child {
+                margin-left: 0;
+              }
+
+              > .brand-name {
+                margin: 1rem 0;
+              }
+
+              > .brand-bio {
+                font-size: 0.8rem;
+              }
+
+              > .brand-image {
+                > img {
+                  width: 100%;
+                }
+              }
+            }
+          }
+        }
+
+        > .right {
+          width: 40%;
+          position: relative;
+
+          > .ticket {
+            position: sticky;
+            margin-right: 0rem;
+            background: $edgy-black;
+            border-radius: 1rem;
+            padding: 2rem;
+            top: 2rem;
+            margin-bottom: 4rem;
+
+            > .ticket-top {
+              display: flex;
+
+              > .ticket-header {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+
+                > .ticket-logo {
+                  width: 5rem;
+
+                  > img {
+                    width: 100%;
+                  }
+                }
+
+                > .date {
+                  text-align: center;
+
+                  > .month {
+                    color: #9a9da0;
+                    margin-bottom: -7px;
+                  }
+
+                  > .day {
+                    color: #e8e8e8;
+                    font-size: 2rem;
+                    font-weight: bold;
+                  }
+
+                  > .year {
+                    color: #9a9da0;
+                    line-height: 1;
+                    margin-top: -3px;
+                  }
+                }
+              }
+            }
+
+            > .ticket-center {
+              width: 100%;
+              padding: 3rem 1rem 2rem;
+              margin: 0 -1rem;
+              border-bottom: 1px #e8e8e8 dashed;
+              position: relative;
+
+              &:before {
+                content: "";
+                width: 3rem;
+                height: 3rem;
+                left: -2.5rem;
+                bottom: -1.5rem;
+                border-radius: 2rem;
+                background: $light-gray;
+                position: absolute;
+
+                .red & {
+                  background: $edgy-red;
+                }
+              }
+
+              &:after {
+                content: "";
+                width: 3rem;
+                height: 3rem;
+                right: -2.5rem;
+                bottom: -1.5rem;
+                border-radius: 2rem;
+                background: $light-gray;
+                position: absolute;
+
+                .red & {
+                  background: $edgy-red;
+                }
+              }
+
+              > .ticket-name {
+                width: 75%;
+                font-size: 28px;
+                color: #e8e8e8;
+              }
+            }
+
+            > .ticket-bottom {
+              margin-top: 1rem;
+
+              > .ticket-location {
+                margin: 1rem 0;
+
+                > .label {
+                  font-size: 0.8rem;
+                  color: #9a9da0;
+                }
+
+                > .value {
+                  color: #e8e8e8;
+                  margin-top: 0.2rem;
+                  font-size: 1.2rem;
+                }
+              }
+
+              > .ticket-time {
+                display: flex;
+                justify-content: space-between;
+                margin: 2rem 0;
+
+                > .left,
+                > .right {
+                  > .label {
+                    font-size: 0.8rem;
+                    color: #9a9da0;
+                  }
+
+                  > .value {
+                    color: #e8e8e8;
+                    margin-top: 0.2rem;
+                    font-size: 1.2rem;
+                  }
+                }
+              }
+
+              > .ticket-claim {
+                > button {
+                  width: 100%;
+                  border: 0;
+                  height: 3rem;
+                  font-size: 1rem;
+                  cursor: pointer;
+                  font-family: "Manrope";
+                  background: $light-gray;
+                  color: $light-gray;
+                  background: $edgy-black;
+                  transition: all 0.2s ease 0s;
+
+                  &:disabled {
+                    background: #c3c4c6;
+                    color: #3d4248;
+                    pointer-events: none;
+                  }
+
+                  &:hover {
+                    background: $edgy-red;
+                    box-shadow: 5px 5px 5px -5px $light-gray;
+                    transform: scale(1.02);
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        > .status-message {
+          position: absolute;
+          bottom: 0px;
+          justify-content: center;
+          width: calc(100% - 2rem);
+          background: $edgy-black;
+          align-items: center;
+          display: flex;
+          margin-right: 11rem;
+          padding: 1rem;
+        }
+      }
+    }
   }
 
   .eventMain {
     padding: 0;
-  }
-
-  .event-layout {
-    margin-right: 0rem;
-    margin-left: 5rem;
-    margin-top: 6rem;
   }
 
   .eventLayoutVenue {
@@ -455,361 +859,5 @@
   .eventMain {
     flex-direction: row;
     padding: 0 0 0 0;
-  }
-
-  .event-content {
-    display: flex;
-    flex-direction: row !important;
-    justify-content: space-between;
-    margin-top: 3rem;
-    position: relative;
-    padding-bottom: 7rem;
-
-    > .left {
-      width: 60% !important;
-      padding-right: 8rem !important;
-      padding-bottom: 2rem;
-
-      > .title {
-        margin-bottom: 2rem;
-        font-size: 2rem;
-      }
-
-      > .description {
-        margin-top: 2rem;
-
-        > p {
-          margin-top: 0;
-          text-align: justify;
-        }
-      }
-
-      > hr {
-        margin: 3rem 0 !important;
-        border-top: 2px solid $edgy-black !important;
-        display: block !important;
-      }
-
-      > .schedule {
-        > .schedule-slot {
-          > .schedule-time {
-            font-size: 0.9rem;
-            position: relative;
-            color: gray;
-            padding-left: 1.5rem;
-
-            &:before {
-              content: "";
-              position: absolute;
-              width: 0.7rem;
-              height: 0.7rem;
-              top: 0.2rem;
-              left: 0;
-              background: $edgy-black;
-              border-radius: 2rem;
-            }
-          }
-
-          > .schedule-title {
-            font-weight: 600;
-            margin-left: 0.25rem;
-            padding-left: 1rem;
-            font-size: 1.1rem;
-            height: 5rem;
-            border-left: 3px solid $edgy-black;
-          }
-
-          > .dashed {
-            border-left: 3px dashed gray;
-          }
-        }
-      }
-
-      > .map {
-        display: flex;
-        flex-direction: row;
-
-        > .map-details {
-          display: flex;
-          flex-direction: column;
-          justify-content: space-evenly;
-
-          & > .map-address {
-            font-size: 0.8rem;
-
-            > div:last-child {
-              font-size: 1rem;
-              font-weight: 500;
-            }
-          }
-
-          & > .map-direction {
-            font-size: 0.6rem;
-
-            > div:last-child {
-              font-size: 0.9rem;
-              font-weight: 600;
-            }
-          }
-        }
-      }
-
-      > .speaker-details {
-        display: flex;
-
-        > .speaker {
-          width: 50% !important;
-          max-width: 17rem;
-
-          &:first-child {
-            margin: 0 4rem 0 0 !important;
-          }
-
-          &:last-child {
-            margin-left: 0 !important;
-          }
-
-          > .speaker-name {
-            margin: 0.5rem 0 1rem;
-          }
-
-          > .speaker-bio {
-            font-size: 0.8rem;
-          }
-
-          > .speaker-image {
-            > img {
-              width: 100%;
-            }
-          }
-        }
-      }
-
-      > .host-details {
-        display: flex;
-
-        > .host {
-          width: 50% !important;
-          max-width: 17rem;
-
-          &:first-child {
-            margin: 0 4rem 0 0 !important;
-          }
-
-          // &:last-child {
-          //   margin-left: 0 !important;
-          // }
-
-          > .host-name {
-            margin: 0.5rem 0 1rem;
-          }
-
-          > .host-bio {
-            font-size: 0.8rem;
-          }
-
-          > .host-image {
-            > img {
-              width: 100%;
-            }
-          }
-        }
-      }
-
-      > .brand-details {
-        display: flex;
-
-        > .brand {
-          width: 50% !important;
-          max-width: 17rem;
-
-          &:first-child {
-            margin: 0 4rem 0 0 !important;
-          }
-
-          &:last-child {
-            margin-left: 0 !important;
-          }
-
-          > .brand-name {
-            margin: 0.5rem 0 1rem;
-          }
-
-          > .brand-bio {
-            font-size: 0.8rem;
-          }
-
-          > .brand-image {
-            > img {
-              width: 100%;
-              border: 1px solid $edgy-black;
-            }
-          }
-        }
-      }
-    }
-
-    > .right {
-      width: 40%;
-      position: relative;
-
-      > .ticket {
-        position: sticky !important;
-        margin-right: 0rem !important;
-        background: $edgy-black !important;
-        border-radius: 1rem !important;
-        padding: 2rem !important;
-        top: 2rem !important;
-        margin-bottom: 4rem !important;
-
-        > .ticket-top {
-          display: flex;
-
-          > .ticket-header {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-
-            > .ticket-logo {
-              width: 5rem;
-
-              > img {
-                width: 100%;
-              }
-            }
-
-            > .date {
-              text-align: center;
-
-              > .month {
-                color: #9a9da0;
-                margin-bottom: -7px;
-              }
-
-              > .day {
-                color: #e8e8e8;
-                font-size: 36px;
-                font-weight: bold;
-              }
-
-              > .year {
-                color: #9a9da0;
-                line-height: 1;
-                margin-top: -3px;
-              }
-            }
-          }
-        }
-
-        > .ticket-center {
-          width: 100%;
-          padding: 3rem 1rem 2rem;
-          margin: 0 -1rem;
-          border-bottom: 1px #e8e8e8 dashed;
-          position: relative;
-
-          &:before {
-            content: "";
-            width: 3rem;
-            height: 3rem;
-            left: -2.5rem;
-            bottom: -1.5rem;
-            border-radius: 2rem;
-            background: $light-gray;
-            position: absolute;
-          }
-
-          &:after {
-            content: "";
-            width: 3rem;
-            height: 3rem;
-            right: -2.5rem;
-            bottom: -1.5rem;
-            border-radius: 2rem;
-            background: $light-gray;
-            position: absolute;
-          }
-
-          > .ticket-name {
-            width: 75%;
-            font-size: 28px;
-            color: #e8e8e8;
-          }
-        }
-
-        > .ticket-bottom {
-          margin-top: 1rem;
-
-          > .ticket-location {
-            margin: 1rem 0;
-
-            > .label {
-              font-size: 0.8rem;
-              color: #9a9da0;
-            }
-
-            > .value {
-              color: #e8e8e8;
-              margin-top: 0.2rem;
-              font-size: 1.2rem;
-            }
-          }
-
-          > .ticket-time {
-            display: flex;
-            justify-content: space-between;
-            margin: 2rem 0;
-
-            > .left,
-            > .right {
-              > .label {
-                font-size: 0.8rem;
-                color: #9a9da0;
-              }
-
-              > .value {
-                color: #e8e8e8;
-                margin-top: 0.2rem;
-                font-size: 1.2rem;
-              }
-            }
-          }
-
-          > .ticket-claim {
-            > button {
-              width: 100%;
-              border: 0;
-              height: 3rem;
-              font-size: 1rem;
-              cursor: pointer;
-              background: #e8e8e8;
-
-              &:disabled {
-                background: #c3c4c6;
-                color: #3d4248;
-                pointer-events: none;
-              }
-
-              &:hover {
-                background: $edgy-red;
-                color: #e8e8e8;
-              }
-            }
-          }
-        }
-      }
-    }
-
-    > .status-message {
-      position: absolute;
-      bottom: 0px;
-      justify-content: center;
-      width: calc(100% - 2rem);
-      background: $edgy-black;
-      align-items: center;
-      display: flex;
-      margin-right: 11rem;
-      padding: 1rem;
-    }
   }
 }

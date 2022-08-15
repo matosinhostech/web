@@ -2,7 +2,7 @@ import * as React from "react";
 import Navigation from "shared/components/navigation";
 import Socials from "shared/components/socials";
 
-import arrowDownWhite from "assets/images/arrow-down-white-slim.svg";
+import arrowDownWhite from "assets/images/arrow-down-light-slim.svg";
 
 import "./styles.scss";
 

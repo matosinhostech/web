@@ -4,21 +4,29 @@ import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import TicketForm, {
   DEFAULT_OPERATION_DATA,
 } from "shared/components/ticket-form";
+import { Waypoint } from "react-waypoint";
+import scrollTo from "gatsby-plugin-smoothscroll";
+import arrowLight from "assets/images/arrow-link-light-slim.svg";
+import arrowDark from "assets/images/arrow-link-dark-slim.svg";
+import fish from "assets/images/fish.png";
 
 // Styles
 import "./styles.scss";
 
 // Assets
-import venue from "assets/images/events/07/venue.jpg";
 import whiteLogo from "assets/images/logo-white.png";
 import firstSpeaker from "assets/images/events/cyber-speaker-red.jpeg";
 import secondSpeaker from "assets/images/events/cyber-speaker-red.jpeg";
-import nelsonSpeaker from "assets/images/events/nelson-speaker-red.jpeg";
 import mercado from "assets/images/mercado.png";
-import mercado2 from "assets/images/background/mercado-2.png";
-import mercado3 from "assets/images/background/mercado-3.png";
+import matosinhostech from "assets/images/matosinhostech.png";
 
-const Event = () => {
+const THEMES = {
+  DARK: "dark",
+  LIGHT: "light",
+  RED: "red",
+};
+
+const Event = ({ setTheme, theme }) => {
   const [operation, setOperation] = useState(DEFAULT_OPERATION_DATA);
 
   const handleClaimTicket = useCallback(
@@ -33,7 +41,7 @@ const Event = () => {
       <div className="event-layout" id="scrollable">
         <div className="event-content">
           <div className="left">
-            <div className="event-name"  id="event">
+            <div className="event-name" id="event">
               Welcome to the{" "}
               <span className="highlight-water">Fish Market</span>
             </div>
@@ -65,67 +73,34 @@ const Event = () => {
                 PM.
               </p>
             </div>
-            <img className="event-outcomes-image" src={mercado2} alt="" />
-            <div className="event-outcomes">
-              <div className="event-outcomes-row">
-                <div className="event-outcomes-number">1</div>
-                <div className="event-outcomes-text">day</div>
-              </div>
-              <div className="event-outcomes-row">
-                <div className="event-outcomes-number">4</div>
-                <div className="event-outcomes-text">speakers</div>
-              </div>
-              <div className="event-outcomes-row">
-                <div className="event-outcomes-number">+10</div>
-                <div className="event-outcomes-text">companies</div>
-              </div>
-              <div className="event-outcomes-row">
-                <div className="event-outcomes-number">80</div>
-                <div className="event-outcomes-text">seats</div>
-              </div>
-            </div>
-            <hr />
-            <div className="title">Where to find us</div>
-            <div className="map">
-              <div className="map-details">
-                <div className="map-address">
-                  <div>R. França Júnior, 4450-135 Matosinhos</div>
-                  <div>Mercado Municipal de Matosinhos</div>
+            <Waypoint onEnter={() => setTheme(THEMES.LIGHT)} />
+            <div className="event-outcomes-wrapper">
+              <div className="event-outcomes">
+                <div className="event-outcomes-row">
+                  <div className="event-outcomes-number">1</div>
+                  <div className="event-outcomes-text">day</div>
                 </div>
-                <div className="map-direction">
-                  <div>41.187431, -8.693362</div>
-                  <div>
-                    Estação de metro <b>Mercado</b> - Linha A
-                  </div>
+                <div className="event-outcomes-row">
+                  <div className="event-outcomes-number">4</div>
+                  <div className="event-outcomes-text">speakers</div>
+                </div>
+                <div className="event-outcomes-row">
+                  <div className="event-outcomes-number">+10</div>
+                  <div className="event-outcomes-text">companies</div>
+                </div>
+                <div className="event-outcomes-row">
+                  <div className="event-outcomes-number">80</div>
+                  <div className="event-outcomes-text">seats</div>
                 </div>
               </div>
             </div>
-            <hr />
-            <div className="title">Schedule</div>
-            <div className="schedule">
-              <div className="schedule-slot">
-                <div className="schedule-time">7:00 PM</div>
-                <div className="schedule-title">Hello</div>
-              </div>
-              <div className="schedule-slot">
-                <div className="schedule-time">7:15 PM</div>
-                <div className="schedule-title">
-                  Building the Bank of the Employee with Elixir
-                </div>
-              </div>
-              <div className="schedule-slot">
-                <div className="schedule-time">7:45 PM</div>
-                <div className="schedule-title">
-                  Maritime Robots: Protecting our oceans with sustainable
-                  technology
-                </div>
-              </div>
-              <div className="schedule-slot">
-                <div className="schedule-time">8:15 PM</div>
-                <div className="schedule-title dashed">Bye</div>
-              </div>
+            <div className="event-description">
+              On October 9th don't miss out on the opportunity to{" "}
+              <span className="highlight">get involved in the community</span>{" "}
+              and network with other talented devs! Also, if you have a company,
+              take the chance to <span className="highlight">show it</span>!
             </div>
-            <hr />
+            <div className="event-image-banner" />
             <div className="title">Speakers</div>
             <div className="speaker-details">
               <div className="speaker">
@@ -175,31 +150,39 @@ const Event = () => {
                 </div>
               </div>
             </div>
-            <hr />
-            <div className="title">Hosts</div>
-            <div className="host-details">
-              <div className="host">
-                <div className="host-image">
-                  <img src={nelsonSpeaker} />
+            <div className="title">Schedule</div>
+            <div className="schedule">
+              <div className="schedule-slot">
+                <div className={`schedule-time ${theme}`}>7:00 PM</div>
+                <div className={`schedule-title ${theme}`}>Hello</div>
+              </div>
+              <div className="schedule-slot">
+                <div className={`schedule-time ${theme}`}>7:15 PM</div>
+                <div className={`schedule-title ${theme}`}>
+                  Building the Bank of the Employee with Elixir
                 </div>
-                <div className="host-name">
-                  <a
-                    className="hyperlink"
-                    href="https://www.linkedin.com/in/nelsonsachse/"
-                    target="_blank"
-                  >
-                    Nelson Sachse
-                  </a>
+              </div>
+              <div className="schedule-slot">
+                <div className={`schedule-time ${theme}`}>7:45 PM</div>
+                <div className={`schedule-title ${theme}`}>
+                  Maritime Robots: Protecting our oceans with sustainable
+                  technology
                 </div>
-                <div className="host-bio">Founder, matosinhos.tech</div>
+              </div>
+              <div className="schedule-slot">
+                <div className={`schedule-time ${theme}`}>8:15 PM</div>
+                <div className={`schedule-title dashed ${theme}`}>Bye</div>
+              </div>
+              <div className="fish">
+                <img src={fish} />
               </div>
             </div>
-            <hr />
+            <Waypoint onEnter={() => setTheme(THEMES.RED)} />
             <div className="title" id="claim-ticket-anchor">
               Attend the event
             </div>
             <TicketForm operationCallback={handleClaimTicket} />
-            <hr />
+            <div className="title">About us</div>
             <div className="brand-details">
               <div className="brand">
                 <div className="brand-image">
@@ -211,7 +194,7 @@ const Event = () => {
                     href="https://goo.gl/maps/QQTSkA2RVjrERZ2H7"
                     target="_blank"
                   >
-                    Mercado Municipal de Matosinhos
+                    Mercado M. de Matosinhos
                   </a>
                 </div>
                 <div className="brand-bio">
@@ -222,6 +205,27 @@ const Event = () => {
                   (1909-1991).
                 </div>
               </div>
+              <div className="brand">
+                <div className="brand-image">
+                  <img src={matosinhostech} />
+                </div>
+                <div className="brand-name">
+                  <div className="hyperlink">Matosinhos.tech</div>
+                </div>
+                <div className="brand-bio">
+                  In the vicinity of Porto, located in the north of Portugal,
+                  Matosinhos is a booming hub for successful technology
+                  businesses, and it has attracted investment by some of the
+                  most innovative companies. National and international
+                  organisations are setting the foundation to attract and retain
+                  new talent by providing an excellent work-life balance in a
+                  vibrant city by the sea.
+                </div>
+              </div>
+            </div>
+            <div className="arrow-button" onClick={() => scrollTo("#event")}>
+              <span className="text">take me back</span>
+              <img src={theme === THEMES.LIGHT ? arrowDark : arrowLight} />
             </div>
           </div>
           <div className="right">
@@ -239,7 +243,7 @@ const Event = () => {
                 </div>
               </div>
               <div className="ticket-center">
-                <div className="ticket-name">event.market</div>
+                <div className="ticket-name">event.fish.market</div>
               </div>
               <div className="ticket-bottom">
                 <div className="ticket-location">
@@ -249,7 +253,7 @@ const Event = () => {
                 <div className="ticket-time">
                   <div className="left">
                     <div className="label">Start time</div>
-                    <div className="value">7:00 PM</div>
+                    <div className="value">1:00 PM</div>
                   </div>
                   <div className="right">
                     <div className="label">End time</div>
@@ -258,9 +262,8 @@ const Event = () => {
                 </div>
                 <div className="ticket-claim">
                   <button
-                    type="submit"
+                    onClick={() => scrollTo("#claim-ticket-anchor")}
                     disabled={operation.status !== "pristine"}
-                    form="claim-ticket-form"
                   >
                     {operation.status === "pending" ? (
                       <FontAwesomeIcon icon={faSpinner} className="spinner" />
@@ -289,6 +292,7 @@ const Event = () => {
             ))}
         </div>
       </div>
+      <Waypoint onEnter={() => setTheme(THEMES.DARK)} />
     </div>
   );
 };

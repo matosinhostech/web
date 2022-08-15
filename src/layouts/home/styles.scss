@@ -31,6 +31,29 @@ body {
   padding: 8rem 2rem 0;
 }
 
+.dark,
+.light,
+.red {
+  transition: background-color 266ms ease-in-out;
+  transition: color 266ms ease-in-out;
+  transition: background 266ms ease-in-out;
+}
+
+.dark {
+  background: $edgy-black;
+  color: $light-gray;
+}
+
+.light {
+  background: $light-gray;
+  color: $edgy-black;
+}
+
+.red {
+  background: $edgy-red;
+  color: $light-gray;
+}
+
 .hero {
   display: flex;
   flex: 40% 0;
@@ -91,7 +114,15 @@ body {
 }
 
 .highlight {
-  // color: $edgy-red;
+  color: $edgy-red;
+
+  .red & {
+    color: $edgy-black;
+  }
+
+  .light & {
+    color: $edgy-red;
+  }
 }
 
 .deadline-date {
@@ -229,9 +260,16 @@ body {
   margin-top: 5px;
 }
 
-.justBorder {
+.outline.dark {
   -webkit-text-stroke: 1px $light-gray; /* width and color */
   color: transparent;
+  background: transparent;
+}
+
+.outline.light {
+  -webkit-text-stroke: 1px $edgy-black; /* width and color */
+  color: transparent;
+  background: transparent;
 }
 
 .bottomHomePlaceholder {
@@ -273,16 +311,28 @@ body {
   margin-bottom: 3rem;
 
   > button {
-    width: 50%;
     border: 0;
     height: 3rem;
     font-size: 1rem;
+    font-weight: 600;
+    width: 60%;
     margin-top: 1rem;
+    font-family: "Manrope";
     cursor: pointer;
-    color: $light-gray;
-    background: $edgy-black;
-    letter-spacing: 2px;
+    color: $edgy-red;
+    background: $light-gray;
     transition: all 0.2s ease 0s;
+
+    .dark &,
+    .red & {
+      color: $edgy-red;
+      background: $light-gray;
+    }
+
+    .light & {
+      color: $light-gray;
+      background: $edgy-black;
+    }
 
     &:disabled {
       background: #c3c4c6;
@@ -291,9 +341,21 @@ body {
     }
 
     &:hover {
-      background: $edgy-red;
-      color: #e8e8e8;
+      background: $eerie-black;
+      box-shadow: 5px 5px 5px -5px $edgy-black;
       transform: scale(1.02);
+      transform-origin: left;
+
+      .dark &,
+      .red & {
+        color: $light-gray;
+        background: $eerie-black;
+      }
+
+      .light & {
+        color: $light-gray;
+        background: $eerie-black;
+      }
     }
   }
 }
@@ -304,13 +366,32 @@ body {
   margin-bottom: 1rem;
   font-size: 16px;
   padding: 1rem;
-  background: $light-gray;
+  background: transparent;
   border: 0;
-  border-left: 0.2rem solid $edgy-black;
-  color: $edgy-black;
+  border: 0.1rem solid;
+  border-left: 0.5rem solid;
+  font-family: "Manrope";
+
+  .dark &,
+  .red & {
+    border-color: $light-gray;
+    color: $light-gray;
+  }
+
+  .light & {
+    border-color: $edgy-black;
+    color: $edgy-black;
+  }
 
   &::placeholder {
-    letter-spacing: 2px;
+    .dark &,
+    .red & {
+      color: $light-gray;
+    }
+
+    .light & {
+      color: $edgy-black;
+    }
   }
 }
 
@@ -463,7 +544,7 @@ body {
 
   .event-name {
     font-size: 2rem;
-    padding-top: 2rem;
+    padding-top: 1.5rem;
   }
 
   .highlight-water {
@@ -484,7 +565,20 @@ body {
       font-size: 0.8rem;
       display: inline;
       z-index: 1;
-      background: $light-gray;
+      transition: background 266ms ease-in-out;
+
+      .red & {
+        background: $edgy-red;
+      }
+
+      .light & {
+        background: $light-gray;
+      }
+
+      .dark & {
+        color: $light-gray;
+        background: $edgy-black;
+      }
     }
 
     > .place > a {
@@ -499,14 +593,47 @@ body {
       display: inline;
       z-index: 1;
       background: $light-gray;
+
+      .red & {
+        background: $edgy-red;
+      }
+
+      .light & {
+        background: $light-gray;
+      }
+
+      .dark & {
+        background: $edgy-black;
+      }
     }
 
     &:after {
       content: "";
       width: 100%;
       position: absolute;
-      border: 1px solid #a5a5a5;
-      top: 1.5rem;
+      border-top: 2px solid #a5a5a5;
+      top: 1.6rem;
+    }
+  }
+
+  .event-description {
+    font-size: 1.8vw;
+    margin-left: 2vw;
+  }
+
+  .event-image-banner {
+    position: relative;
+    margin: 5rem 0;
+    height: 30rem;
+
+    &::after {
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: calc(100vw - 13rem);
+      background-position: bottom !important;
+      background-size: cover !important;
+      background: url(assets/images/background/mercado-3.png);
     }
   }
 
@@ -514,33 +641,53 @@ body {
     width: 100%;
   }
 
+  .event-outcomes-wrapper {
+    height: 30rem;
+    margin: 7rem 0 10rem;
+    position: relative;
+  }
+
   .event-outcomes {
+    position: absolute;
+    width: calc(100vw - 13rem);
+    background-image: url("assets/images/background/mercado-2.png");
     display: flex;
-    justify-content: space-around;
-    z-index: 1;
+    justify-content: flex-start;
+    align-items: flex-end;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
   }
 
   .event-outcomes-row {
-    width: 5rem;
-    padding: 2rem;
-    height: 5rem;
+    width: 6vw;
+    padding: 2vw;
+    height: 6vw;
     background: $light-gray;
-    color: $edgy-black;
-    margin-top: -3rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: start;
-    margin-bottom: 5rem;
+    margin: 0 1vw -5.5rem;
+    line-height: 1;
+    text-align: left;
+
+    .red & {
+      background: $edgy-red;
+    }
+
+    .dark & {
+      background: $edgy-black;
+    }
   }
 
   .event-outcomes-number {
-    font-size: 3rem;
+    font-size: 4vw;
     font-weight: 600;
   }
 
   .event-outcomes-text {
-    font-size: 1.1rem;
+    font-size: 1.3vw;
   }
 
   .upcomingEventClaim {
@@ -729,12 +876,18 @@ body {
     width: calc(100vw - 14rem);
     overflow: scroll;
     overflow-x: hidden;
-    background: $light-gray;
   }
 
-  .home-full > .intro-full {
+  .home-full > .intro-full.dark {
     display: flex;
-    background: $edgy-black;
+  }
+
+  .home-full > .intro-full.light {
+    display: flex;
+  }
+
+  .home-full > .intro-full.red {
+    display: flex;
   }
 
   .intro-full {
@@ -837,22 +990,12 @@ body {
 
   .getTicketButton {
     margin-bottom: 0;
+    width: 50%;
   }
 
   .getTicketInput {
     height: 25px;
     width: 50%;
-    margin-bottom: 1rem;
-    font-size: 16px;
-    padding: 1rem;
-    background: $light-gray;
-    border: 0;
-    border-left: 0.2rem solid $edgy-black;
-    color: $edgy-black;
-
-    &::placeholder {
-      letter-spacing: 2px;
-    }
   }
 
   .mailto {

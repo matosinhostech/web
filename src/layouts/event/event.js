@@ -88,7 +88,7 @@ const Event = () => {
             <div className="title">Schedule</div>
             <div className="schedule">
               <div className="schedule-slot">
-                <div className="schedule-time">7:00 PM</div>
+                <div className="schedule-time">1:00 PM</div>
                 <div className="schedule-title">Hello</div>
               </div>
               <div className="schedule-slot">

@@ -15,6 +15,7 @@
   display: flex;
   flex-direction: column;
   padding: 0 2rem;
+  position: relative;
 }
 
 .videos {
@@ -148,12 +149,16 @@
   color: $gray;
 }
 
+.showMiniPlayer {
+  z-index: 6;
+}
+
 .showMiniPlayer > div {
   width: 100% !important;
   height: 30vh !important;
   left: 0 !important;
   background: $edgy-black;
-  z-index: 5;
+  z-index: 6;
   bottom: 0 !important;
   position: fixed;
 }
@@ -264,10 +269,11 @@ div[data-swipeable] {
   height: 5rem;
   bottom: 0;
   display: flex;
-  justify-content: center;
   align-items: center;
   width: 100%;
   pointer-events: none;
+  justify-content: flex-end;
+  right: 1.75rem;
 }
 
 .sliderPaginationDot.active {
@@ -534,10 +540,8 @@ div[data-swipeable] {
   }
 
   .sliderPagination {
-    width: 100%;
-    justify-content: flex-end;
-    right: 2.5rem;
     pointer-events: all;
+    right: 2.5rem;
   }
 
   .sliderPaginationDot {

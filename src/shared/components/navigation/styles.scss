@@ -5,12 +5,15 @@
   margin: 0 -4rem;
   display: flex;
   justify-content: space-between;
-  background: var(--cyan);
   z-index: 6;
   padding: 1.5rem 4rem;
   position: fixed;
   transition: top 0.3s;
   width: calc(100% - 4rem);
+  transition: background-color 266ms ease-in-out;
+  transition: color 266ms ease-in-out;
+  transition: background 266ms ease-in-out;
+  transition: fill 266ms ease-in-out;
 }
 
 .nav.eventPage,
@@ -70,11 +73,35 @@
   fill: var(--edgy-black);
 }
 
-.nav.homePageAlt,
 .nav.homePage {
-  background: var(--edgy-black);
-  // transition: background-color 150ms ease-in-out;
+  // animation: mymove2 266ms linear;
 }
+
+.nav.homePageAlt {
+  // animation: mymove 266ms linear;
+}
+
+// @keyframes mymove {
+//   0% {
+//     background-color: var(--edgy-black);
+//     fill: var(--edgy-black);
+//   }
+//   100% {
+//     background-color: var(--light-gray);
+//     fill: var(--light-gray);
+//   }
+// }
+
+// @keyframes mymove2 {
+//   0% {
+//     background-color: var(--light-gray);
+//     fill: var(--light-gray);
+//   }
+//   100% {
+//     background-color: var(--edgy-black);
+//     fill: var(--edgy-black);
+//   }
+// }
 
 .wave.homePage,
 .drawer.homePage,
@@ -184,9 +211,11 @@
   z-index: -1;
   padding: 12rem 0 0 4rem;
   margin-left: 0;
+  visibility: hidden;
 }
 
 .open {
+  visibility: visible;
   transform: translateX(0);
 }
 
@@ -211,7 +240,7 @@ a[aria-current="page"] {
 .nav-socials {
   position: absolute;
   bottom: 6rem;
-  left: 4rem;;
+  left: 4rem;
 
   &.eventPage > a > svg {
     color: var(--edgy-black);
@@ -291,11 +320,11 @@ a[aria-current="page"] {
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    line-height: 1.8rem;
+    line-height: 1.5rem;
     padding-left: 0;
     margin-top: 0.4rem;
     position: absolute;
-    left: 2rem;
+    left: 3.2rem;
     top: 0;
 
     & > .date-day {
@@ -381,9 +410,8 @@ a[aria-current="page"] {
       display: flex;
       align-items: center;
       margin-top: 1rem;
-      
 
-      > a > button {
+      > button {
         width: calc(100vw - 4rem);
         border: 0;
         height: 3rem;
@@ -465,10 +493,6 @@ a[aria-current="page"] {
     color: var(--edgy-black);
   }
 
-  .nav.homePageAlt {
-    background: var(--light-gray);
-  }
-
   .nav-socials.homePageAlt > a > svg {
     color: var(--edgy-black);
   }
@@ -504,7 +528,7 @@ a[aria-current="page"] {
     left: 0;
     z-index: 6;
     background: var(--cadet-blue);
-    padding: 2.4rem 2rem 2rem;
+    padding: 2.39rem 2rem 2rem;
   }
 
   .countdown {
@@ -558,15 +582,14 @@ a[aria-current="page"] {
               font-size: 0.6rem;
               width: 3.5rem;
             }
-            
           }
         }
       }
 
       & > .counter-cta {
         margin-top: 0;
-        
-        > a > button {
+
+        > button {
           width: 12.5rem;
           margin-right: 3rem;
           margin-top: 0;

@@ -102,7 +102,7 @@ const TicketForm = ({ id, operationCallback }) => {
                             'Check your email' :
                             fetchOperationData.status === 'error' ?
                                 'Error' :
-                                'Claim your ticket'}
+                                'Submit'}
                 </button>
             </div>
             <div>

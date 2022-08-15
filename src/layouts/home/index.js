@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import Navigation from "shared/components/navigation";
 import { Waypoint } from "react-waypoint";
-import arrowDownWhiteSlim from "assets/images/arrow-down-white-slim.svg";
+import arrowDownLightSlim from "assets/images/arrow-down-light-slim.svg";
+import arrowDownDarkSlim from "assets/images/arrow-down-dark-slim.svg";
 import Loadable from "react-loadable";
 import Event from "./event";
 import scrollTo from "gatsby-plugin-smoothscroll";
@@ -14,8 +15,16 @@ const CookieBanner = Loadable({
 
 const windowGlobal = typeof window !== "undefined" && window;
 
+const THEMES = {
+  DARK: "dark",
+  LIGHT: "light",
+  RED: "red",
+};
+
 const HomeLayout = ({ path }) => {
-  const [navigationStyle, setNavigationStyle] = useState("homePage");
+  //TODO: change theme by context...
+  const [theme, setTheme] = useState(THEMES.DARK);
+  const changeTheme = useCallback((t) => setTheme(t), [theme]);
 
   // TODO: remove this when event page is ready
   const [width, setWidth] = useState(windowGlobal && windowGlobal.innerWidth);
@@ -24,7 +33,10 @@ const HomeLayout = ({ path }) => {
     if (windowGlobal) {
       setWidth(windowGlobal.innerWidth);
       if (windowGlobal.innerWidth >= 1100) {
+        setTheme(THEMES.LIGHT);
         window.onscroll = () => undefined;
+      } else {
+        setTheme(THEMES.DARK);
       }
     }
   }
@@ -42,41 +54,53 @@ const HomeLayout = ({ path }) => {
 
   return (
     <main className="container">
-      <div className="home-main">
-        <Navigation path={path} page={navigationStyle} />
+      <div className={`home-main ${theme}`}>
+        <Navigation
+          path={path}
+          // TODO: Make themes standard in nav component
+          page={theme === THEMES.LIGHT ? "homePageAlt" : "homePage"}
+        />
         <div className="home-full" id="scrollable">
-          <div className="intro-full">
+          <div className={`intro-full ${theme}`}>
             <div className="intro">
               <div className="top">
-                a tech <span className="justBorder">community</span> for people,
-                projects and companies
+                a tech <span className={`outline ${theme}`}>community</span> for
+                people, projects and companies
               </div>
               <div className="bottom">
                 <img
-                  src={arrowDownWhiteSlim}
+                  src={
+                    theme === THEMES.DARK
+                      ? arrowDownLightSlim
+                      : theme === THEMES.RED
+                      ? arrowDownLightSlim
+                      : arrowDownDarkSlim
+                  }
                   className="homeArrowDown"
-                  onClick={() => scrollTo(isMobile ? "#call-for-papers" : "#event")}
+                  onClick={() =>
+                    scrollTo(isMobile ? "#call-for-papers" : "#event")
+                  }
                 />
                 <div className="serving">
-                  Serving a <span className="highlight">community</span> of
-                  engineers, students and{" "}
-                  <span className="highlight">tech</span> professionals with
-                  insights from the industry's leading experts.
+                  Serving a community of engineers, students and tech
+                  professionals with insights from the industry's leading
+                  experts.
                 </div>
               </div>
             </div>
             <div className="hero" />
+            <div className="onlyDesktop">
+              <Waypoint
+                onEnter={() => setTheme(THEMES.DARK)}
+                onLeave={() => setTheme(THEMES.LIGHT)}
+              />
+            </div>
           </div>
-          <div className="onlyDesktop">
-            <Waypoint
-              onEnter={() => setNavigationStyle("homePage")}
-              onLeave={() => setNavigationStyle("homePageAlt")}
-            />
-          </div>
-          <Event />
+          <Event setTheme={changeTheme} theme={theme} />
           <CookieBanner />
         </div>
       </div>
+      {isMobile && <Waypoint onEnter={() => setTheme(THEMES.DARK)} /> }
     </main>
   );
 };
