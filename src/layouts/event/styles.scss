@@ -97,6 +97,7 @@
                 border-radius: 2rem;
               }
 
+              &.dark:before,
               &.red:before {
                 background: $light-gray;
               }
@@ -113,6 +114,7 @@
               font-size: 1.1rem;
               height: 8rem;
 
+              &.dark,
               &.red {
                 border-left: 3px solid $light-gray;
               }
@@ -736,7 +738,6 @@
                 top: 0;
                 bottom: 0;
                 border-radius: 4rem;
-                border: solid;
                 width: 4.5rem;
                 z-index: -1;
                 border-color: $edgy-black;
