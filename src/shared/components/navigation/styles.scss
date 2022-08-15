@@ -1,4 +1,4 @@
-@import "../../styles/variables.css";
+@import "shared/styles/variables.scss";
 
 .nav {
   top: 0;
@@ -18,59 +18,59 @@
 
 .nav.eventPage,
 .nav.videosPage {
-  background: var(--light-gray);
+  background: $light-gray;
 }
 
 .wave.eventPage,
 .drawer.eventPage {
-  background: var(--edgy-red);
-  fill: var(--edgy-red);
+  background: $edgy-red;
+  fill: $edgy-red;
 }
 
 .wave.videosPage,
 .drawer.videosPage {
-  background: var(--light-gray);
-  fill: var(--light-gray);
+  background: $light-gray;
+  fill: $light-gray;
 }
 
 .nav.bluePage {
-  background: var(--light-blue);
+  background: $light-blue;
 }
 
 .wave.bluePage,
 .drawer.bluePage {
-  background: var(--light-blue);
-  fill: var(--light-blue);
+  background: $light-blue;
+  fill: $light-blue;
 }
 
 .nav.manifestoPage {
-  background: var(--edgy-red);
+  background: $edgy-red;
 }
 
 .wave.manifestoPage,
 .drawer.manifestoPage {
-  background: var(--edgy-red);
-  fill: var(--edgy-red);
+  background: $edgy-red;
+  fill: $edgy-red;
 }
 
 .nav.partnerPage {
-  background: var(--edgy-red);
+  background: $edgy-red;
 }
 
 .wave.partnerPage,
 .drawer.partnerPage {
-  background: var(--edgy-black);
-  fill: var(--edgy-black);
+  background: $edgy-black;
+  fill: $edgy-black;
 }
 
 .nav.partnersPage {
-  background: var(--edgy-black);
+  background: $edgy-black;
 }
 
 .wave.partnersPage,
 .drawer.partnersPage {
-  background: var(--edgy-black);
-  fill: var(--edgy-black);
+  background: $edgy-black;
+  fill: $edgy-black;
 }
 
 .nav.homePage {
@@ -83,23 +83,23 @@
 
 // @keyframes mymove {
 //   0% {
-//     background-color: var(--edgy-black);
-//     fill: var(--edgy-black);
+//     background-color: $edgy-black;
+//     fill: $edgy-black;
 //   }
 //   100% {
-//     background-color: var(--light-gray);
-//     fill: var(--light-gray);
+//     background-color: $light-gray;
+//     fill: $light-gray;
 //   }
 // }
 
 // @keyframes mymove2 {
 //   0% {
-//     background-color: var(--light-gray);
-//     fill: var(--light-gray);
+//     background-color: $light-gray;
+//     fill: $light-gray;
 //   }
 //   100% {
-//     background-color: var(--edgy-black);
-//     fill: var(--edgy-black);
+//     background-color: $edgy-black;
+//     fill: $edgy-black;
 //   }
 // }
 
@@ -107,8 +107,8 @@
 .drawer.homePage,
 .wave.homePageAlt,
 .drawer.homePageAlt {
-  background: var(--edgy-red);
-  fill: var(--edgy-red);
+  background: $edgy-red;
+  fill: $edgy-red;
 }
 
 .logo {
@@ -128,7 +128,7 @@
   width: 30px;
   height: 1px;
   display: none;
-  background-color: var(--light-gray);
+  background-color: $light-gray;
   content: "";
 }
 
@@ -138,61 +138,61 @@
   cursor: pointer;
 
   &:first-child.eventPage {
-    color: var(--edgy-black);
+    color: $edgy-black;
   }
 
   &:first-child.eventPage.open {
-    color: var(--light-gray);
+    color: $light-gray;
   }
 
   &:first-child.videosPage {
-    color: var(--edgy-black);
+    color: $edgy-black;
   }
 
   &:first-child.videosPage.open {
-    color: var(--edgy-black);
+    color: $edgy-black;
   }
 
   &:first-child.bluePage {
-    color: var(--light-gray);
+    color: $light-gray;
   }
 
   &:first-child.bluePage.open {
-    color: var(--light-gray);
+    color: $light-gray;
   }
 
   &:first-child.manifestoPage {
-    color: var(--light-gray);
+    color: $light-gray;
   }
 
   &:first-child.manifestoPage.open {
-    color: var(--light-gray);
+    color: $light-gray;
   }
 
   &:first-child.partnerPage {
-    color: var(--light-gray);
+    color: $light-gray;
   }
 
   &:first-child.partnerPage.open {
-    color: var(--light-gray);
+    color: $light-gray;
   }
 
   &:first-child.partnersPage {
-    color: var(--light-gray);
+    color: $light-gray;
   }
 
   &:first-child.partnersPage.open {
-    color: var(--light-gray);
+    color: $light-gray;
   }
 
   &:first-child.homePage,
   &:first-child.homePageAlt {
-    color: var(--light-gray);
+    color: $light-gray;
   }
 
   &:first-child.homePage.open,
   &:first-child.homePageAlt.open {
-    color: var(--light-gray);
+    color: $light-gray;
   }
 }
 
@@ -201,7 +201,7 @@
   width: 100vw;
   height: calc(100vh - 12rem);
   position: absolute;
-  background: var(--light-blue);
+  background: $light-blue;
   left: 0;
   padding-left: 0;
   display: flex;
@@ -220,7 +220,7 @@
 }
 
 .drawer > a {
-  color: var(--light-gray);
+  color: $light-gray;
   text-decoration: none;
   font-size: 2rem;
   padding-bottom: 1rem;
@@ -230,7 +230,7 @@
 }
 
 .drawer.videosPage > a {
-  color: var(--edgy-black);
+  color: $edgy-black;
 }
 
 a[aria-current="page"] {
@@ -243,61 +243,61 @@ a[aria-current="page"] {
   left: 4rem;
 
   &.eventPage > a > svg {
-    color: var(--edgy-black);
+    color: $edgy-black;
   }
 
   &.open.eventPage > a > svg {
-    color: var(--light-gray);
+    color: $light-gray;
   }
 
   &.videosPage > a > svg {
-    color: var(--edgy-black);
+    color: $edgy-black;
   }
 
   &.open.videosPage > a > svg {
-    color: var(--edgy-black);
+    color: $edgy-black;
   }
 
   &.bluePage > a > svg {
-    color: var(--light-gray);
+    color: $light-gray;
   }
 
   &.open.bluePage > a > svg {
-    color: var(--light-gray);
+    color: $light-gray;
   }
 
   &.manifestoPage > a > svg {
-    color: var(--light-gray);
+    color: $light-gray;
   }
 
   &.open.manifestoPage > a > svg {
-    color: var(--light-gray);
+    color: $light-gray;
   }
 
   &.partnerPage > a > svg {
-    color: var(--light-gray);
+    color: $light-gray;
   }
 
   &.open.partnerPage > a > svg {
-    color: var(--light-gray);
+    color: $light-gray;
   }
 
   &.partnersPage > a > svg {
-    color: var(--light-gray);
+    color: $light-gray;
   }
 
   &.open.partnersPage > a > svg {
-    color: var(--light-gray);
+    color: $light-gray;
   }
 
   &.homePage > a > svg,
   &.homePageAlt > a > svg {
-    color: var(--light-gray);
+    color: $light-gray;
   }
 
   &.open.homePage > a > svg,
   &.open.homePageAlt > a > svg {
-    color: var(--light-gray);
+    color: $light-gray;
   }
 }
 
@@ -366,13 +366,13 @@ a[aria-current="page"] {
         align-items: center;
         font-size: 0.9rem;
         font-weight: 700;
-        color: var(--light-gray);
+        color: $light-gray;
         padding-right: 0;
         width: 9rem;
 
         & > .highlight {
           padding-left: 0.2rem;
-          color: var(--edgy-black);
+          color: $edgy-black;
         }
       }
 
@@ -386,7 +386,7 @@ a[aria-current="page"] {
           padding-left: 0.55rem;
 
           & > .counter-value {
-            background: var(--edgy-black);
+            background: $edgy-black;
             display: flex;
             width: 2.5rem;
             height: 2.5rem;
@@ -394,13 +394,13 @@ a[aria-current="page"] {
             align-items: center;
             font-size: 1rem;
             font-weight: 600;
-            color: var(--light-gray);
+            color: $light-gray;
           }
           & > .counter-label {
             font-size: 0.5rem;
             width: 2.5rem;
             text-align: center;
-            color: var(--edgy-black);
+            color: $edgy-black;
           }
         }
       }
@@ -417,8 +417,8 @@ a[aria-current="page"] {
         height: 3rem;
         font-size: 1rem;
         cursor: pointer;
-        color: var(--light-gray);
-        background: var(--edgy-black);
+        color: $light-gray;
+        background: $edgy-black;
         transition: all 0.2s ease 0s;
         font-weight: 600;
         font-family: "Manrope";
@@ -433,8 +433,8 @@ a[aria-current="page"] {
 
         &:hover {
           background: var(--eerie-black);
-          box-shadow: 5px 5px 5px -5px var(--edgy-black);
-          color: var(--light-gray);
+          box-shadow: 5px 5px 5px -5px $edgy-black;
+          color: $light-gray;
           transform: scale(1.01);
         }
       }
@@ -466,35 +466,35 @@ a[aria-current="page"] {
 
   .desktop.eventPage > a,
   .desktop.videosPage > a {
-    color: var(--edgy-black);
+    color: $edgy-black;
   }
 
   .desktop.bluePage > a {
-    color: var(--light-gray);
+    color: $light-gray;
   }
 
   .desktop.manifestoPage > a {
-    color: var(--light-gray);
+    color: $light-gray;
   }
 
   .desktop.partnerPage > a {
-    color: var(--light-gray);
+    color: $light-gray;
   }
 
   .desktop.partnersPage > a {
-    color: var(--light-gray);
+    color: $light-gray;
   }
 
   .desktop.homePage > a {
-    color: var(--light-gray);
+    color: $light-gray;
   }
 
   .desktop.homePageAlt > a {
-    color: var(--edgy-black);
+    color: $edgy-black;
   }
 
   .nav-socials.homePageAlt > a > svg {
-    color: var(--edgy-black);
+    color: $edgy-black;
   }
 
   .nav-socials > a > svg:hover,
@@ -602,8 +602,8 @@ a[aria-current="page"] {
 
           &:hover {
             background: var(--eerie-black);
-            box-shadow: 5px 5px 5px -5px var(--edgy-black);
-            color: var(--light-gray);
+            box-shadow: 5px 5px 5px -5px $edgy-black;
+            color: $light-gray;
             transform: scale(1.01);
           }
         }

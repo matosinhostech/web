@@ -123,51 +123,45 @@ const Navigation = ({ path, page = "bluePage" }) => {
         : darkRedLogo
       : whiteLogo;
 
-  const showCountdown = isMobile
-    ? page === "homePage" || page === "homePageAlt"
-    : true;
-
   return (
     <>
-      {showCountdown && (
-        <div className="countdown" id="countdown">
-          <div className="date-container">
-            <div className="date-month">OUT</div>
-            <div className="date-day">09</div>
-            <div className="date-year">2022</div>
+      <div className="countdown" id="countdown">
+        <div className="date-container">
+          <div className="date-month">OUT</div>
+          <div className="date-day">09</div>
+          <div className="date-year">2022</div>
+        </div>
+        <div className="counter-container">
+          <div className="counter-date">
+            <div className="counter-message">
+              We're getting <span className="highlight"> ready.</span>
+            </div>
+            <div className="counter-boxes">
+              <div className="counter-box">
+                <div className="counter-value">{countdownValues.days}</div>
+                <div className="counter-label">DAYS</div>
+              </div>
+              <div className="counter-box">
+                <div className="counter-value">{countdownValues.hours}</div>
+                <div className="counter-label">HOURS</div>
+              </div>
+              <div className="counter-box">
+                <div className="counter-value">{countdownValues.minutes}</div>
+                <div className="counter-label">MINUTES</div>
+              </div>
+              <div className="counter-box">
+                <div className="counter-value">{countdownValues.seconds}</div>
+                <div className="counter-label">SECONDS</div>
+              </div>
+            </div>
           </div>
-          <div className="counter-container">
-            <div className="counter-date">
-              <div className="counter-message">
-                We're getting <span className="highlight"> ready.</span>
-              </div>
-              <div className="counter-boxes">
-                <div className="counter-box">
-                  <div className="counter-value">{countdownValues.days}</div>
-                  <div className="counter-label">DAYS</div>
-                </div>
-                <div className="counter-box">
-                  <div className="counter-value">{countdownValues.hours}</div>
-                  <div className="counter-label">HOURS</div>
-                </div>
-                <div className="counter-box">
-                  <div className="counter-value">{countdownValues.minutes}</div>
-                  <div className="counter-label">MINUTES</div>
-                </div>
-                <div className="counter-box">
-                  <div className="counter-value">{countdownValues.seconds}</div>
-                  <div className="counter-label">SECONDS</div>
-                </div>
-              </div>
-            </div>
-            <div className="counter-cta">
-              <button onClick={() => scrollTo("#claim-ticket-anchor")}>
-                Claim your ticket
-              </button>
-            </div>
+          <div className="counter-cta">
+            <button onClick={() => scrollTo("#claim-ticket-anchor")}>
+              Claim your ticket
+            </button>
           </div>
         </div>
-      )}
+      </div>
       <div className={`nav ${page}`} id="navbar">
         <Link to="/">
           <img className="logo" src={logo} alt="logo" />
