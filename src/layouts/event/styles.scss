@@ -252,165 +252,165 @@
       }
 
       > .right {
-        > .ticket {
-          position: relative;
-          margin-right: 0;
-          background: $edgy-black;
-          border-radius: 1rem;
-          padding: 2rem;
-          top: 2rem;
-          margin-bottom: 4rem;
+        // > .ticket {
+        //   position: relative;
+        //   margin-right: 0;
+        //   background: $edgy-black;
+        //   border-radius: 1rem;
+        //   padding: 2rem;
+        //   top: 2rem;
+        //   margin-bottom: 4rem;
 
-          > .ticket-top {
-            > .ticket-header {
-              display: flex;
-              justify-content: space-between;
+        //   > .ticket-top {
+        //     > .ticket-header {
+        //       display: flex;
+        //       justify-content: space-between;
 
-              > .ticket-logo {
-                width: 5rem;
+        //       > .ticket-logo {
+        //         width: 5rem;
 
-                > img {
-                  width: 100%;
-                }
-              }
+        //         > img {
+        //           width: 100%;
+        //         }
+        //       }
 
-              > .date {
-                text-align: center;
+        //       > .date {
+        //         text-align: center;
 
-                > .month {
-                  color: #9a9da0;
-                  margin-bottom: -7px;
-                }
+        //         > .month {
+        //           color: #9a9da0;
+        //           margin-bottom: -7px;
+        //         }
 
-                > .day {
-                  color: #e8e8e8;
-                  font-size: 2rem;
-                  font-weight: bold;
-                }
+        //         > .day {
+        //           color: #e8e8e8;
+        //           font-size: 2rem;
+        //           font-weight: bold;
+        //         }
 
-                > .year {
-                  color: #9a9da0;
-                  line-height: 1;
-                  margin-top: -3px;
-                }
-              }
-            }
-          }
+        //         > .year {
+        //           color: #9a9da0;
+        //           line-height: 1;
+        //           margin-top: -3px;
+        //         }
+        //       }
+        //     }
+        //   }
 
-          > .ticket-center {
-            width: 100%;
-            padding: 3rem 1rem 2rem;
-            margin: 0 -1rem;
-            border-bottom: 1px #e8e8e8 dashed;
-            position: relative;
+        //   > .ticket-center {
+        //     width: 100%;
+        //     padding: 3rem 1rem 2rem;
+        //     margin: 0 -1rem;
+        //     border-bottom: 1px #e8e8e8 dashed;
+        //     position: relative;
 
-            &:before {
-              content: "";
-              width: 3rem;
-              height: 3rem;
-              left: -2.5rem;
-              bottom: -1.5rem;
-              border-radius: 2rem;
-              background: $light-gray;
-              position: absolute;
+        //     &:before {
+        //       content: "";
+        //       width: 3rem;
+        //       height: 3rem;
+        //       left: -2.5rem;
+        //       bottom: -1.5rem;
+        //       border-radius: 2rem;
+        //       background: $light-gray;
+        //       position: absolute;
 
-              .red & {
-                background: $edgy-red;
-              }
-            }
+        //       .red & {
+        //         background: $edgy-red;
+        //       }
+        //     }
 
-            &:after {
-              content: "";
-              width: 3rem;
-              height: 3rem;
-              right: -2.5rem;
-              bottom: -1.5rem;
-              border-radius: 2rem;
-              background: $light-gray;
-              position: absolute;
+        //     &:after {
+        //       content: "";
+        //       width: 3rem;
+        //       height: 3rem;
+        //       right: -2.5rem;
+        //       bottom: -1.5rem;
+        //       border-radius: 2rem;
+        //       background: $light-gray;
+        //       position: absolute;
 
-              .red & {
-                background: $edgy-red;
-              }
-            }
+        //       .red & {
+        //         background: $edgy-red;
+        //       }
+        //     }
 
-            > .ticket-name {
-              width: 75%;
-              font-size: 28px;
-              color: #e8e8e8;
-            }
-          }
+        //     > .ticket-name {
+        //       width: 75%;
+        //       font-size: 28px;
+        //       color: #e8e8e8;
+        //     }
+        //   }
 
-          > .ticket-bottom {
-            margin-top: 1rem;
+        //   > .ticket-bottom {
+        //     margin-top: 1rem;
 
-            > .ticket-location {
-              margin: 1rem 0;
+        //     > .ticket-location {
+        //       margin: 1rem 0;
 
-              > .label {
-                font-size: 0.8rem;
-                color: #9a9da0;
-              }
+        //       > .label {
+        //         font-size: 0.8rem;
+        //         color: #9a9da0;
+        //       }
 
-              > .value {
-                color: #e8e8e8;
-                margin-top: 0.2rem;
-                font-size: 1.2rem;
-              }
-            }
+        //       > .value {
+        //         color: #e8e8e8;
+        //         margin-top: 0.2rem;
+        //         font-size: 1.2rem;
+        //       }
+        //     }
 
-            > .ticket-time {
-              display: flex;
-              justify-content: space-between;
-              // margin: 2rem 0;
-              margin: 2rem 0 0;
+        //     > .ticket-time {
+        //       display: flex;
+        //       justify-content: space-between;
+        //       // margin: 2rem 0;
+        //       margin: 2rem 0 0;
 
-              > .left,
-              > .right {
-                > .label {
-                  font-size: 0.8rem;
-                  color: #9a9da0;
-                }
+        //       > .left,
+        //       > .right {
+        //         > .label {
+        //           font-size: 0.8rem;
+        //           color: #9a9da0;
+        //         }
 
-                > .value {
-                  color: #e8e8e8;
-                  margin-top: 0.2rem;
-                  font-size: 1.2rem;
-                }
-              }
-            }
+        //         > .value {
+        //           color: #e8e8e8;
+        //           margin-top: 0.2rem;
+        //           font-size: 1.2rem;
+        //         }
+        //       }
+        //     }
 
-            > .ticket-claim {
-              display: none;
+        //     > .ticket-claim {
+        //       display: none;
 
-              > button {
-                width: 100%;
-                border: 0;
-                height: 3rem;
-                font-size: 1rem;
-                cursor: pointer;
-                font-family: "Manrope";
-                font-weight: 600;
-                color: $edgy-black;
-                background: $light-gray;
-                transition: all 0.2s ease 0s;
+        //       > button {
+        //         width: 100%;
+        //         border: 0;
+        //         height: 3rem;
+        //         font-size: 1rem;
+        //         cursor: pointer;
+        //         font-family: "Manrope";
+        //         font-weight: 600;
+        //         color: $edgy-black;
+        //         background: $light-gray;
+        //         transition: all 0.2s ease 0s;
 
-                &:disabled {
-                  background: #c3c4c6;
-                  color: #3d4248;
-                  pointer-events: none;
-                }
+        //         &:disabled {
+        //           background: #c3c4c6;
+        //           color: #3d4248;
+        //           pointer-events: none;
+        //         }
 
-                &:hover {
-                  background: $eerie-black;
-                  color: $light-gray;
-                  box-shadow: 5px 5px 5px -5px $edgy-black;
-                  transform: scale(1.02);
-                }
-              }
-            }
-          }
-        }
+        //         &:hover {
+        //           background: $eerie-black;
+        //           color: $light-gray;
+        //           box-shadow: 5px 5px 5px -5px $edgy-black;
+        //           transform: scale(1.02);
+        //         }
+        //       }
+        //     }
+        //   }
+        // }
       }
 
       > .status-message {
@@ -664,15 +664,15 @@
 
           > .ticket {
             position: sticky;
-            margin-right: 0rem;
-            background: $edgy-black;
-            border-radius: 1rem;
-            padding: 2rem;
             top: 2rem;
-            margin-bottom: 4rem;
 
             > .ticket-top {
               display: flex;
+              background: $edgy-black;
+              margin-right: 0rem;
+              border-top-left-radius: 1rem;
+              border-top-right-radius: 1rem;
+              padding: 2rem;
 
               > .ticket-header {
                 display: flex;
@@ -710,42 +710,52 @@
               }
             }
 
-            > .ticket-center {
-              width: 100%;
-              padding: 3rem 1rem 2rem;
-              margin: 0 -1rem;
-              border-bottom: 1px #e8e8e8 dashed;
+            > .ticket-separator {
               position: relative;
+              overflow: hidden;
+              z-index: 1;
+              height: 3rem;
+              border-top: solid;
+              border-bottom: solid;
+              border-color: $edgy-black;
+              border-radius: 0;
+              width: 100%;
+              display: flex;
+              align-items: center;
+
+              & > div {
+                width: 100%;
+                border-top: 0.1rem dashed $light-gray;
+                margin: 0 1.75rem;
+              }
+
+              &:before,
+              &:after {
+                content: "";
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                border-radius: 4rem;
+                border: solid;
+                width: 4.5rem;
+                z-index: -1;
+                border-color: $edgy-black;
+                box-shadow: 0 0 0 300px $edgy-black;
+              }
 
               &:before {
-                content: "";
-                width: 3rem;
-                height: 3rem;
-                left: -2.5rem;
-                bottom: -1.5rem;
-                border-radius: 2rem;
-                background: $light-gray;
-                position: absolute;
-
-                .red & {
-                  background: $edgy-red;
-                }
+                left: -3rem;
               }
 
               &:after {
-                content: "";
-                width: 3rem;
-                height: 3rem;
-                right: -2.5rem;
-                bottom: -1.5rem;
-                border-radius: 2rem;
-                background: $light-gray;
-                position: absolute;
-
-                .red & {
-                  background: $edgy-red;
-                }
+                right: -3rem;
               }
+            }
+
+            > .ticket-center {
+              padding: 0rem 2rem;
+              position: relative;
+              background: $edgy-black;
 
               > .ticket-name {
                 width: 75%;
@@ -755,10 +765,12 @@
             }
 
             > .ticket-bottom {
-              margin-top: 1rem;
+              background: $edgy-black;
+              border-bottom-left-radius: 1rem;
+              border-bottom-right-radius: 1rem;
 
               > .ticket-location {
-                margin: 1rem 0;
+                margin: 0 2rem;
 
                 > .label {
                   font-size: 0.8rem;
@@ -775,7 +787,7 @@
               > .ticket-time {
                 display: flex;
                 justify-content: space-between;
-                margin: 2rem 0;
+                padding: 2rem;
 
                 > .left,
                 > .right {
@@ -793,6 +805,8 @@
               }
 
               > .ticket-claim {
+                display: none;
+
                 > button {
                   width: 100%;
                   border: 0;

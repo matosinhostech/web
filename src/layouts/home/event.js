@@ -245,6 +245,7 @@ const Event = ({ setTheme, theme }) => {
               <div className="ticket-center">
                 <div className="ticket-name">event.fish.market</div>
               </div>
+              <div className="ticket-separator"><div/></div>
               <div className="ticket-bottom">
                 <div className="ticket-location">
                   <div className="label">Location</div>
