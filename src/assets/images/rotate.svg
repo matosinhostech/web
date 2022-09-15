@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 585.39 526.29">
+	<defs>
+		<style>
+			.cls-1{fill:#dfe0e1;}.cls-2{fill:none;stroke:#dfe0e1;stroke-miterlimit:10;stroke-width:11.86px;}
+		</style>
+	</defs>
+	<g id="Layer_3" style="transform: translateX(100%) translateY(-5%) rotate(90deg)" data-name="Layer 3">
+		<path class="cls-1" d="M90.48,465.65V431.12H43.17V108.54H263.09V234.48h12.28V66.74a27,27,0,0,0-26.93-26.92H58.24A27,27,0,0,0,31.31,66.74V463.65a27,27,0,0,0,26.93,26.92H99A40.77,40.77,0,0,1,90.48,465.65Z" />
+		<path class="cls-1" d="M528.35,248.53H131.45a27,27,0,0,0-26.93,26.92v190.2a27,27,0,0,0,26.93,26.93h396.9a27,27,0,0,0,26.93-26.93V275.45A27,27,0,0,0,528.35,248.53ZM487.21,480.72H169.61V260.38h317.6Z" />
+	</g>
+</svg>

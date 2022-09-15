@@ -15,12 +15,7 @@ const ScannerLayout = ({ path }) => {
   return (
     <main className="scanContainer">
       <div className="scanMain">
-        <div style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          padding: '2rem 0',
-        }}>
+        <div className="scan">
           <img className="logo" src={whiteLogo} alt="logo" />
         </div>
         <Scan />

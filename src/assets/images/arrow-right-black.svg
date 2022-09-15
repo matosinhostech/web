@@ -3,6 +3,6 @@
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" fill="#131921">
 <g>
-	<polygon transform="scale(-1,1) translate(-512,0)" points="273.7,158.9 249.6,134.7 128.3,256 249.6,377.3 273.7,353.1 193.7,273.1 393.6,273.1 393.6,238.9 193.7,238.9 	"/>
+	<polygon style="transform:scale(-1,1) translate(-512,0);" points="273.7,158.9 249.6,134.7 128.3,256 249.6,377.3 273.7,353.1 193.7,273.1 393.6,273.1 393.6,238.9 193.7,238.9 	"/>
 </g>
 </svg>

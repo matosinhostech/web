@@ -69,7 +69,7 @@ body {
   padding-bottom: 0;
   background-image: url("assets/images/background/anemona-red.jpg");
   background-size: cover;
-  margin: 0 -2rem;
+  margin: 0;
 }
 
 .partner-footer > div {
@@ -78,9 +78,9 @@ body {
   flex-direction: column;
   align-items: center;
   background: $edgy-black;
-  margin: -10rem 0.9rem 2rem;
+  margin: -10rem 4rem 4rem;
   padding: 1rem;
-  box-shadow: 0px 0px 0px 15px rgb(239 239 239);
+  box-shadow: 0px 0px 0px 1rem $light-gray;
   max-width: 40%;
 }
 
@@ -138,11 +138,11 @@ body {
 }
 
 .partner-mission {
-  font-size: 5vw;
-  padding: 2rem 0rem 2rem 2rem;
+  font-size: 1.5rem;
+  padding: 0;
   display: flex;
-  justify-content: center;
-  align-items: flex-end;
+  justify-content: flex-start;
+  align-items: center;
   position: relative;
   margin-bottom: 2rem;
 
@@ -160,12 +160,10 @@ body {
 }
 
 .partnerArrowDown {
-  position: absolute;
-  width: 20vw;
+  width: 4rem;
   left: 0;
   bottom: 0;
-  max-height: 7rem;
-  margin: 1rem -1rem;
+  margin: 0rem 2rem 0 0;
 }
 
 .image {
@@ -318,7 +316,11 @@ body {
 
   .sponsors,
   .media {
-    padding: 5.1rem 2rem 0;
+    padding: 5rem 1rem 0 2rem;
+  }
+
+  .image {
+    margin: 0;
   }
 
   .card-invite {
@@ -328,12 +330,13 @@ body {
   .sponsors-title,
   .media-title {
     margin-bottom: 0;
+    margin-top: 2rem;
     font-size: 43px;
     padding: 0 0 2rem;
   }
 
   .secondImage {
-    margin: -8rem -2rem 0 -2rem;
+    margin: -8rem 0rem 0 0rem;
   }
 
   .sponsorMatrix {
@@ -342,16 +345,22 @@ body {
 
   .partnerMatrix {
     grid-template-columns: repeat(auto-fit, minmax(20%, 0.3fr));
+    padding-bottom: 7rem;
+  }
+
+  .partners-content {
+    padding-top: 1.4rem;
   }
 
   .partner-footer {
     align-items: flex-end;
-    padding-bottom: 3rem;
+    padding-bottom: 1rem;
   }
 
   .partner-description {
     padding: 4rem 4rem 14rem;
     font-size: 1.2rem;
+    margin: 0;
   }
 
   .partner-logo > a {
@@ -368,15 +377,14 @@ body {
   }
 
   .partnerArrowDown {
-    position: absolute;
     left: 0rem;
     bottom: 0;
-    max-height: 6rem;
-    width: 6rem;
-    margin: 1rem -1rem;
+    width: 4rem;
+    margin: 0rem 2rem 0rem 0rem;
   }
 
   .partner-mission {
+    padding: 0rem 0rem 2rem 0;
     justify-content: flex-start;
     font-size: 2rem;
 
@@ -388,9 +396,9 @@ body {
   }
 
   .partner-content {
-    height: calc(100vh - 12rem);
+    height: calc(100vh - 14rem);
     overflow: scroll;
-    padding: 12rem 2rem 0;
+    padding: 7rem 0 0 2rem;
   }
 
   .outcomes {

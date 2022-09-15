@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  padding-top: 6rem;
+  padding-top: 5rem;
   background: $light-gray;
 }
 
@@ -15,6 +15,7 @@
   display: flex;
   flex-direction: column;
   padding: 0 2rem;
+  position: relative;
 }
 
 .videos {
@@ -79,15 +80,6 @@
   display: none;
 }
 
-.eventWatch {
-  background: $light-gray;
-  color: #00b7f0;
-  padding: 10px;
-  cursor: pointer;
-  border-radius: 5px;
-  margin-top: 20px;
-}
-
 .eventPlay {
   padding-right: 10px;
 }
@@ -148,12 +140,16 @@
   color: $gray;
 }
 
+.showMiniPlayer {
+  z-index: 6;
+}
+
 .showMiniPlayer > div {
   width: 100% !important;
   height: 30vh !important;
   left: 0 !important;
-  background: black;
-  z-index: 5;
+  background: $edgy-black;
+  z-index: 6;
   bottom: 0 !important;
   position: fixed;
 }
@@ -170,7 +166,7 @@ div[data-swipeable] {
   flex-direction: column;
   justify-content: space-between;
   margin: 0;
-  border-top: 2px solid black;
+  border-top: 2px solid $edgy-black;
   padding-top: 2rem;
 }
 
@@ -264,10 +260,11 @@ div[data-swipeable] {
   height: 5rem;
   bottom: 0;
   display: flex;
-  justify-content: center;
   align-items: center;
   width: 100%;
   pointer-events: none;
+  justify-content: flex-end;
+  right: 1.75rem;
 }
 
 .sliderPaginationDot.active {
@@ -322,17 +319,22 @@ div[data-swipeable] {
   width: 105px;
   border-radius: 0;
   color: $edgy-black;
+  background-color: $light-gray;
   text-align: center;
   cursor: pointer;
   padding: 12px 24px;
-  font-size: 12px;
-  text-transform: lowercase;
-  letter-spacing: 2px;
+  font-size: 1rem;
   font-family: "Manrope";
+  font-weight: 600;
+  margin-top: 20px;
 }
 
 .eventWatch:hover {
+  background: $eerie-black;
+  box-shadow: 5px 5px 5px -5px $edgy-black;
+  color: $light-gray;
   transform: scale(1.02);
+  transform-origin: left;
 }
 
 .slider {
@@ -342,7 +344,8 @@ div[data-swipeable] {
 // Desktop
 @media (min-width: 1100px) {
   .videos {
-    width: calc(100vw - 11.8rem);
+    width: calc(100vw - 12rem);
+    padding-left: 1rem;
   }
 
   .videosContainer {
@@ -353,7 +356,7 @@ div[data-swipeable] {
   .bottomPlaceholder {
     background-image: url("assets/images/background/anemona-red.jpg");
     background-size: cover;
-    height: 30vh;
+    height: calc(30vh + 7rem);
     opacity: 1;
     margin-top: 0;
   }
@@ -364,7 +367,7 @@ div[data-swipeable] {
   }
 
   .topSection {
-    height: 60vh;
+    height: 55vh;
     margin: 0;
     padding-bottom: 0;
     position: relative;
@@ -403,7 +406,7 @@ div[data-swipeable] {
 
   .event {
     display: flex;
-    height: 60vh;
+    height: 55vh;
     margin: -5px;
     padding: 5px;
     align-items: center;
@@ -439,9 +442,9 @@ div[data-swipeable] {
 
   .eventDescription {
     display: flex;
-    padding: 1rem 0;
+    padding: 1rem 0 0;
     width: 80%;
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: $light-gray;
   }
 
@@ -479,7 +482,7 @@ div[data-swipeable] {
     right: 0 !important;
     z-index: 5;
     left: 0rem !important;
-    bottom: 0 !important;
+    bottom: 7rem !important;
     position: fixed;
   }
 
@@ -525,15 +528,17 @@ div[data-swipeable] {
     }
   }
 
+  .eventAuthorDate {
+    padding: 0;
+  }
+
   .eventAuthor {
     font-size: 1.2rem;
   }
 
   .sliderPagination {
-    width: 100%;
-    justify-content: flex-end;
-    right: 2.5rem;
     pointer-events: all;
+    right: 2.5rem;
   }
 
   .sliderPaginationDot {

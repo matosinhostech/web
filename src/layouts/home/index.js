@@ -1,12 +1,11 @@
-import React, { useState } from "react";
-import { Link } from "gatsby";
+import React, { useCallback, useEffect, useState } from "react";
 import Navigation from "shared/components/navigation";
-import Subscribe from "shared/components/subscribe";
 import { Waypoint } from "react-waypoint";
-import arrowRightBlack from "assets/images/arrow-right-black.svg";
-import arrowRightWhite from "assets/images/arrow-right-white.svg";
+import arrowDownLightSlim from "assets/images/arrow-down-light-slim.svg";
+import arrowDownDarkSlim from "assets/images/arrow-down-dark-slim.svg";
 import Loadable from "react-loadable";
-import ReactPlayer from "react-player/vimeo";
+import { Link } from "gatsby";
+import useInterval from "shared/hooks/useInterval";
 import "./styles.scss";
 
 const CookieBanner = Loadable({
@@ -14,127 +13,151 @@ const CookieBanner = Loadable({
   loading: () => null,
 });
 
+const windowGlobal = typeof window !== "undefined" && window;
+
+const THEMES = {
+  DARK: "dark",
+  LIGHT: "light",
+  RED: "red",
+};
+
+const getCountdownValues = (date) => {
+  const now = new Date().getTime();
+  const timeleft = date - now;
+
+  const days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
+  const hours = Math.floor(
+    (timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+  );
+  const minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
+
+  return { days, hours, minutes, seconds };
+};
+
 const HomeLayout = ({ path }) => {
-  const [navigationStyle, setNavigationStyle] = useState("homePage");
+  //TODO: change theme by context...
+  const [theme, setTheme] = useState(THEMES.DARK);
+  const changeTheme = useCallback((t) => setTheme(t), [theme]);
+  const [countdownValues, setCountdownValues] = useState({});
+  const countDownDate = new Date("Oct 09, 2022 12:00:00").getTime();
+
+  // TODO: remove this when event page is ready
+  const [width, setWidth] = useState(windowGlobal && windowGlobal.innerWidth);
+
+  function handleWindowSizeChange() {
+    if (windowGlobal) {
+      setWidth(windowGlobal.innerWidth);
+      if (windowGlobal.innerWidth >= 1100) {
+        window.onscroll = () => undefined;
+      }
+    }
+  }
+
+  useInterval(() => {
+    setCountdownValues(getCountdownValues(countDownDate));
+  }, 1000);
+
+  useEffect(() => {
+    if (windowGlobal) {
+      windowGlobal.addEventListener("resize", handleWindowSizeChange);
+      return () => {
+        windowGlobal.removeEventListener("resize", handleWindowSizeChange);
+      };
+    }
+  }, []);
+
+  const isMobile = width <= 1100;
 
   return (
     <main className="container">
-      <div className="home-main">
-        <Navigation path={path} page={navigationStyle} />
+      <div className={`home-main ${theme}`}>
+        <Navigation
+          path={path}
+          // TODO: Make themes standard in nav component
+          page={theme === THEMES.LIGHT ? "homePageAlt" : "homePage"}
+        />
         <div className="home-full" id="scrollable">
-          <div className="introFull">
+          <div className={`intro-full ${theme}`}>
             <div className="intro">
               <div className="top">
-                a tech <span className="justBorder">community</span> for people,
-                projects and companies
+                a tech <span className={`outline ${theme}`}>community</span> for
+                people, projects and companies
               </div>
               <div className="bottom">
-                <img src={arrowRightWhite} className="homeArrowRight" />
+                <Link className="homeArrowLink" to="/event">
+                  <img
+                    src={
+                      theme === THEMES.DARK
+                        ? arrowDownLightSlim
+                        : theme === THEMES.RED
+                        ? arrowDownLightSlim
+                        : arrowDownDarkSlim
+                    }
+                    className="homeArrowDown"
+                  />
+                </Link>
                 <div className="serving">
-                  Serving a <span className="highlight">community</span> of
-                  engineers, students and{" "}
-                  <span className="highlight">tech</span> professionals with
-                  insights from the industry's leading experts.
+                  Serving a community of engineers, students and tech
+                  professionals with insights from the industry's leading
+                  experts.
                 </div>
               </div>
             </div>
-            <div className="hero">
-              <a
-                href="https://forms.gle/PidZu3xHKJRxtyxA7"
-                target="_blank"
-                className="mailto"
-              >
-                <div className="call-out-container">
-                  <div className="highlight-gradient-text-dark">
-                    call for papers
-                  </div>
-                  <div className="deadline">
-                    talk submission deadline:{" "}
-                    <span className="deadline-date">august 31, 2022</span>
-                  </div>
-                </div>
-              </a>
-              <a
-                href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=matosinhos.tech%20🏖%20event%209.0&dates=20221009/20221009&details=On%20the%209th%20of%20October,%20in%20the%20Matosinhos%20fish%20market,%20we'll%20have%20a%20full%20day%20event%20of%20talks,%20network%20with%20our%20community%20and%20showcasing%20the%20companies%20around%20us%20that%20are%20growing%20our%20digital%20landscape.%20%20<br/><br/>%20Come%20join%20our%20party%20and%20share%20your%20knowledge.&location=Event%20Lochttps://goo.gl/maps/u3PTW5Vkz3h6T3uj9ation&trp=true"
-                target="_blank"
-                className="google-calendar"
-              >
-                <div className="save-the-date-container">
-                  <div className="highlight-gradient-text day">9</div>
-                  <div className="highlight-gradient-text month">OCT</div>
-                  <div className="highlight-gradient-text year">2022</div>
-                  <div className="venue">
-                    <div className="">MERCADO</div>
-                    <div className="">MUNICIPAL</div>
-                    <div className="">MATOSINHOS</div>
-                  </div>
-                </div>
-              </a>
-            </div>
+            <div className="hero" />
           </div>
-          <div className="upcomingEventFull">
-            <div className="upcomingEvent">
-              <div className="upcomingEventBanner">
-                <ReactPlayer
-                  url="https://vimeo.com/720184787"
-                  controls={true}
-                  config={{
-                    vimeo: {
-                      playerOptions: {
-                        playsinline: "true",
-                      },
-                    },
-                  }}
-                />
-                <div className="upcomingEventDate">last event</div>
+          <Link to="/event">
+            <div className="countdown" id="countdown">
+              <div className="date-container">
+                <div className="date-month">OUT</div>
+                <div className="date-day">09</div>
+                <div className="date-year">2022</div>
               </div>
-              <div className="upcomingEventAuthorDate">
-                <div className="upcomingEventAuthor">
-                  <a
-                    href="https://www.linkedin.com/in/tiago-m-fernandes/"
-                    target="_blank"
-                  >
-                    Tiago Fernandes
-                  </a>
-                  <span> / </span>
-                  <a
-                    href="https://www.linkedin.com/in/mparente/"
-                    target="_blank"
-                  >
-                    Manuel Parente
-                  </a>
+              <div className="counter-container">
+                <div className="counter-date">
+                  <div className="counter-message">
+                    We're getting <span className="highlight"> ready.</span>
+                  </div>
+                  <div className="counter-boxes">
+                    <div className="counter-box">
+                      <div className="counter-value">
+                        {countdownValues.days}
+                      </div>
+                      <div className="counter-label">DAYS</div>
+                    </div>
+                    <div className="counter-box">
+                      <div className="counter-value">
+                        {countdownValues.hours}
+                      </div>
+                      <div className="counter-label">HOURS</div>
+                    </div>
+                    <div className="counter-box">
+                      <div className="counter-value">
+                        {countdownValues.minutes}
+                      </div>
+                      <div className="counter-label">MINUTES</div>
+                    </div>
+                    <div className="counter-box">
+                      <div className="counter-value">
+                        {countdownValues.seconds}
+                      </div>
+                      <div className="counter-label">SECONDS</div>
+                    </div>
+                  </div>
                 </div>
-                {/* <div className="upcomingEventHour">
-                  <span>7:00 pm GMT</span>
-                </div> */}
-              </div>
-              <div className="upcomingEventName">
-                Compensation as a Service & Maritime Robots
-              </div>
-              <div className="upcomingEventClaim">
-                <Link to="/videos">
-                  <span className="claimMessage">watch the videos</span>
-                </Link>
-                <Link to="/videos">
-                  <img src={arrowRightBlack} className="claimArrowRight" />
-                </Link>
+                {/* <div className="counter-cta">
+                <button>
+                  <Link to="/event">Claim your ticket</Link>
+                </button>
+              </div> */}
               </div>
             </div>
-            <div className="filler" />
-            <div className="onlyDesktop">
-              <Waypoint
-                onEnter={() => setNavigationStyle("homePage")}
-                onLeave={() => setNavigationStyle("homePageAlt")}
-              />
-            </div>
-          </div>
-
-          <div className="bottomHomePlaceholder">
-            <Subscribe />
-          </div>
+          </Link>
+          {/* <Event setTheme={changeTheme} theme={theme} /> */}
           <CookieBanner />
         </div>
       </div>
+      {isMobile && <Waypoint onEnter={() => setTheme(THEMES.DARK)} />}
     </main>
   );
 };

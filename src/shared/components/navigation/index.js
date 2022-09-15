@@ -11,18 +11,27 @@ import "./styles.scss";
 
 const windowGlobal = typeof window !== "undefined" && window;
 
+const THEMES = {
+  DARK: "dark",
+  LIGHT: "light",
+  RED: "red",
+};
+
 const Links = (path) => {
   const handleNavigate = () => (document.body.style.overflow = "");
 
   return (
     <>
       {/* <Link onClick={handleNavigate} to="/event">Next Event</Link> */}
+      <Link onClick={handleNavigate} to="/event">
+        Event
+      </Link>
       <Link onClick={handleNavigate} to="/manifesto">
         Manifesto
       </Link>
-      <Link onClick={handleNavigate} to="/partners">
+      {/* <Link onClick={handleNavigate} to="/partners">
         Partners
-      </Link>
+      </Link> */}
       <Link onClick={handleNavigate} to="/videos">
         Videos
       </Link>
@@ -30,15 +39,21 @@ const Links = (path) => {
   );
 };
 
-const Navigation = ({ path, page = "bluePage" }) => {
+// TODO: remove this when theme is set via context
+const voidFunc = () => "";
+
+const Navigation = ({ path, page, theme = "", setTheme = voidFunc }) => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [width, setWidth] = useState(windowGlobal && windowGlobal.innerWidth);
 
   function handleWindowSizeChange() {
     if (windowGlobal) {
       setWidth(windowGlobal.innerWidth);
+
       if (windowGlobal.innerWidth >= 1100) {
         window.onscroll = () => undefined;
+      } else {
+        setTheme(THEMES.LIGHT);
       }
     }
   }
@@ -66,7 +81,11 @@ const Navigation = ({ path, page = "bluePage" }) => {
       let prevScrollpos = window.pageYOffset;
       window.onscroll = function () {
         const currentScrollPos = window.pageYOffset;
-        if (prevScrollpos > currentScrollPos || currentScrollPos === 0) {
+        if (
+          prevScrollpos < 100 ||
+          prevScrollpos > currentScrollPos ||
+          currentScrollPos === 0
+        ) {
           document.getElementById("navbar").style.top = "0";
         } else {
           document.getElementById("navbar").style.top = "-100px";
@@ -93,7 +112,11 @@ const Navigation = ({ path, page = "bluePage" }) => {
       : page === "eventPage"
       ? isDrawerOpen
         ? whiteLogo
-        : darkRedLogo
+        : isMobile
+        ? darkRedLogo
+        : theme === "light"
+        ? darkRedLogo
+        : whiteLogo
       : page === "homePageAlt"
       ? isMobile
         ? whiteLogo
@@ -101,12 +124,58 @@ const Navigation = ({ path, page = "bluePage" }) => {
       : whiteLogo;
 
   return (
-    <div className={`nav ${page}`} id="navbar">
-      <Link to="/">
-        <img className="logo" src={logo} alt="logo" />
-      </Link>
-      <div className={`desktop ${page}`}>
-        <Links />
+    <>
+      <div className={`nav ${page}`} id="navbar">
+        <Link to="/">
+          <img className="logo" src={logo} alt="logo" />
+        </Link>
+        <div className={`desktop ${page}`}>
+          <Links />
+        </div>
+        <div className="mobile">
+          <div
+            className={`menu ${isDrawerOpen && "open"} ${page}`}
+            onClick={handleMenuClick}
+            onKeyDown={handleMenuClick}
+            role="button"
+            tabIndex="-1"
+          >
+            {isDrawerOpen ? "✕" : <FontAwesomeIcon icon={faBars} />}
+          </div>
+          <div
+            className={isDrawerOpen ? `drawer open ${page}` : `drawer ${page}`}
+          >
+            <svg
+              viewBox="0 0 500 150"
+              preserveAspectRatio="none"
+              style={{
+                height: "100%",
+                width: "50%",
+                left: "100vw",
+                position: "absolute",
+                top: "0",
+                zIndex: "-1",
+                pointerEvents: "none",
+              }}
+            >
+              <path
+                d="M251.41,-48.84 C88.31,109.03 349.60,41.94 202.88,201.80 L0.00,150.00 L0.00,0.00 Z"
+                style={{ stroke: "none" }}
+                className={`wave ${page}`}
+              ></path>
+            </svg>
+            <Links path={path} />
+            <div className={`nav-socials ${isDrawerOpen && "open"} ${page}`}>
+              <Socials
+                slack="https://join.slack.com/t/matosinhostech/shared_invite/zt-mo49t1jm-QJE6skfu7Td~0yEO868HOg"
+                reddit="https://www.reddit.com/r/matosinhos"
+                email="mailto:hello@matosinhos.tech"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="desktop">
         <div className={`nav-socials ${page}`}>
           <Socials
             slack="https://join.slack.com/t/matosinhostech/shared_invite/zt-mo49t1jm-QJE6skfu7Td~0yEO868HOg"
@@ -115,49 +184,7 @@ const Navigation = ({ path, page = "bluePage" }) => {
           />
         </div>
       </div>
-      <div className="mobile">
-        <div
-          className={`menu ${isDrawerOpen && "open"} ${page}`}
-          onClick={handleMenuClick}
-          onKeyDown={handleMenuClick}
-          role="button"
-          tabIndex="-1"
-        >
-          {isDrawerOpen ? "✕" : <FontAwesomeIcon icon={faBars} />}
-        </div>
-        <div
-          className={isDrawerOpen ? `drawer open ${page}` : `drawer ${page}`}
-        >
-          <svg
-            viewBox="0 0 500 150"
-            preserveAspectRatio="none"
-            style={{
-              height: "100%",
-              width: "50%",
-              left: "100vw",
-              position: "absolute",
-              top: "0",
-              zIndex: "-1",
-              pointerEvents: "none",
-            }}
-          >
-            <path
-              d="M251.41,-48.84 C88.31,109.03 349.60,41.94 202.88,201.80 L0.00,150.00 L0.00,0.00 Z"
-              style={{ stroke: "none" }}
-              className={`wave ${page}`}
-            ></path>
-          </svg>
-          <Links path={path} />
-          <div className={`nav-socials ${isDrawerOpen && "open"} ${page}`}>
-            <Socials
-              slack="https://join.slack.com/t/matosinhostech/shared_invite/zt-mo49t1jm-QJE6skfu7Td~0yEO868HOg"
-              reddit="https://www.reddit.com/r/matosinhos"
-              email="mailto:hello@matosinhos.tech"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
+    </>
   );
 };
 

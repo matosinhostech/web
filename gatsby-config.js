@@ -1,3 +1,6 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
 module.exports = {
   siteMetadata: {
     siteUrl: "https://www.matosinhos.tech",
@@ -153,6 +156,7 @@ module.exports = {
         trackingId: "G-RBCCS5WMQW",
       },
     },
+    `gatsby-plugin-smoothscroll`,
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {

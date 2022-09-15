@@ -2,7 +2,7 @@ import * as React from "react";
 import Navigation from "shared/components/navigation";
 import Socials from "shared/components/socials";
 
-import arrowDownWhite from "assets/images/arrow-down-white.svg";
+import arrowDownWhite from "assets/images/arrow-down-light-slim.svg";
 
 import "./styles.scss";
 
@@ -44,7 +44,7 @@ const PartnerLayout = ({
           </div>
           <div className="partner-mission">
             <img src={arrowDownWhite} className="partnerArrowDown" />
-            <span> {mission}</span>
+            <div> {mission}</div>
           </div>
           <img className="image" src={images[0]} alt="" />
           <div className="outcomes">{outcomes.map(renderOutcome)}</div>
