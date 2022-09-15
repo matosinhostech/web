@@ -59,12 +59,12 @@ const TicketForm = ({ id, operationCallback }) => {
     }, [fetchOperationData.status])
 
     return (
-        <form id={id} class="form" onSubmit={getTicket}
+        <form id={id} class="form preceeds-menu" onSubmit={getTicket}
             style={{
                 display: 'flex',
                 flexDirection: 'column',
                 width: '100%',
-                padding: '0 0 4rem 1px',
+                padding: '0 0 0 1px',
             }}>
             <input
                 name="first_name"
@@ -102,7 +102,7 @@ const TicketForm = ({ id, operationCallback }) => {
                             'Check your email' :
                             fetchOperationData.status === 'error' ?
                                 'Error' :
-                                'Claim your ticket'}
+                                'Submit'}
                 </button>
             </div>
             <div>

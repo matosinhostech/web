@@ -15,10 +15,15 @@ body {
   font-family: "Manrope";
 }
 
+body * {
+  outline: 0;
+}
+
 .container {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  overflow: hidden;
 }
 
 .home-main {
@@ -27,16 +32,41 @@ body {
   color: $light-gray;
   display: flex;
   flex-direction: column;
-  padding: 8rem 2rem 0;
+  width: calc(100vw - 4rem);
+  padding: 0 2rem 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.dark,
+.light,
+.red {
+  transition: background-color 266ms ease-in-out, color 266ms ease-in-out,
+    background 266ms ease-in-out, -webkit-text-stroke 266ms ease-in-out;
+}
+
+.dark {
+  background: $edgy-black;
+  color: $light-gray;
+}
+
+.light {
+  background: $light-gray;
+  color: $edgy-black;
+}
+
+.red {
+  background: $edgy-red;
+  color: $light-gray;
 }
 
 .hero {
+  display: none;
   flex: 40% 0;
   background-image: url(assets/images/background/mercado-red.jpg);
   background-size: cover;
   background-position: center;
   position: relative;
-  display: flex;
   flex-direction: column-reverse;
   justify-content: space-between;
   min-height: auto;
@@ -59,15 +89,16 @@ body {
   justify-content: center;
 }
 
-.introFull {
-  min-height: calc(100vh - 8rem);
+.intro-full {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: flex-end;
+  height: 100%;
+  overflow: hidden;
 }
 
 .top {
-  font-size: 2.5em;
+  font-size: 5vh;
   padding-bottom: 2rem;
   max-width: 600px;
 }
@@ -79,16 +110,28 @@ body {
   justify-content: flex-start;
 }
 
-.homeArrowRight {
-  max-height: 7rem;
+.homeArrowDown {
+  height: 3rem;
+  cursor: pointer;
+  padding: 0 1rem;
+  animation: up-and-down 2.66s ease-in-out infinite;
 }
 
 .serving {
   max-width: 350px;
+  padding-left: 0.7rem;
 }
 
 .highlight {
   color: $edgy-red;
+
+  .red & {
+    color: $edgy-black;
+  }
+
+  .light & {
+    color: $edgy-red;
+  }
 }
 
 .deadline-date {
@@ -186,8 +229,8 @@ body {
   margin-top: 1rem;
   display: flex;
   align-items: center;
-  border-top: 2px solid black;
-  border-bottom: 2px solid black;
+  border-top: 2px solid $edgy-black;
+  border-bottom: 2px solid $edgy-black;
   position: relative;
   justify-content: space-between;
   margin-bottom: 5rem;
@@ -226,9 +269,16 @@ body {
   margin-top: 5px;
 }
 
-.justBorder {
+.outline.dark {
   -webkit-text-stroke: 1px $light-gray; /* width and color */
-  color: $edgy-black;
+  color: transparent;
+  background: transparent;
+}
+
+.outline.light {
+  -webkit-text-stroke: 1px $edgy-black; /* width and color */
+  color: transparent;
+  background: transparent;
 }
 
 .bottomHomePlaceholder {
@@ -267,17 +317,30 @@ body {
 }
 
 .getTicketButton {
-  margin-bottom: 3rem;
-
   > button {
-    width: 50%;
     border: 0;
     height: 3rem;
     font-size: 1rem;
+    font-weight: 600;
+    width: 33%;
+    min-width: 10rem;
     margin-top: 1rem;
+    font-family: "Manrope";
     cursor: pointer;
-    color: $light-gray;
-    background: $edgy-black;
+    color: $edgy-red;
+    background: $light-gray;
+    transition: all 0.2s ease 0s;
+
+    .dark &,
+    .red & {
+      color: $edgy-red;
+      background: $light-gray;
+    }
+
+    .light & {
+      color: $light-gray;
+      background: $edgy-black;
+    }
 
     &:disabled {
       background: #c3c4c6;
@@ -286,8 +349,21 @@ body {
     }
 
     &:hover {
-      background: $edgy-red;
-      color: #e8e8e8;
+      background: $eerie-black;
+      box-shadow: 5px 5px 5px -5px $edgy-black;
+      transform: scale(1.02);
+      transform-origin: left;
+
+      .dark &,
+      .red & {
+        color: $light-gray;
+        background: $eerie-black;
+      }
+
+      .light & {
+        color: $light-gray;
+        background: $eerie-black;
+      }
     }
   }
 }
@@ -298,15 +374,49 @@ body {
   margin-bottom: 1rem;
   font-size: 16px;
   padding: 1rem;
-  background: $light-gray;
+  background: transparent;
   border: 0;
-  border-left: 0.2rem solid $edgy-black;
-  color: $edgy-black;
-}
+  border: 0.1rem solid;
+  font-family: "Manrope";
+  padding-right: 0.9rem;
+  transition: all 0.266s ease-in-out;
 
-.getTicketInput:focus,
-.getTicketInput:focus-visible {
-  outline: transparent auto 0;
+  &:focus,
+  &.filled {
+    border-left: 1rem solid;
+    padding-right: 0;
+
+    .dark &,
+    .red & {
+      border-left-color: $light-gray;
+    }
+
+    .light & {
+      border-left-color: $edgy-black;
+    }
+  }
+
+  .dark &,
+  .red & {
+    border-color: $light-gray;
+    color: $light-gray;
+  }
+
+  .light & {
+    border-color: $edgy-black;
+    color: $edgy-black;
+  }
+
+  &::placeholder {
+    .dark &,
+    .red & {
+      color: $light-gray;
+    }
+
+    .light & {
+      color: $edgy-black;
+    }
+  }
 }
 
 .getTicketError {
@@ -332,9 +442,9 @@ body {
   opacity: 1;
 
   display: flex;
-    flex-direction: row;
-    align-items: end;
-    flex-wrap: wrap;
+  flex-direction: row;
+  align-items: end;
+  flex-wrap: wrap;
 }
 
 .save-the-date-container:hover {
@@ -373,7 +483,6 @@ body {
   align-items: flex-end;
   width: 100%;
   letter-spacing: 15x;
-  text-transform: lowercase;
 }
 
 .save-the-date-container > .venue > div:nth-of-type(1) {
@@ -435,6 +544,160 @@ body {
   justify-content: center;
 }
 
+.home-full {
+  height: calc(100% - 12rem);
+  overflow: hidden;
+}
+
+.event-outcomes-image {
+  width: 100%;
+}
+
+.event-outcomes-wrapper {
+  height: 100%;
+  margin: 2rem 0 5rem;
+  position: relative;
+}
+
+.event-outcomes {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  margin: 2rem -2rem;
+  padding: 4rem 0;
+  width: 100vw;
+  background-image: url("assets/images/background/mercado-2.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.event-outcomes-row {
+  background: $edgy-black;
+  color: $light-gray;
+  font-size: 5rem;
+  width: calc(100vw - 7rem);
+  height: 8rem;
+  padding: 1rem 1rem 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  margin: 1rem 0;
+  line-height: 1;
+  text-align: left;
+
+  .red & {
+    background: $edgy-red;
+  }
+
+  .dark & {
+    background: $edgy-black;
+  }
+}
+
+.event-outcomes-number {
+  font-size: 5rem;
+  font-weight: 600;
+}
+
+.event-outcomes-text {
+  font-size: 2.2rem;
+}
+
+.event-image-banner {
+  display: none;
+}
+
+.place-and-date {
+  > .place {
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin: 0.5rem 0 1rem;
+  }
+
+  > .date {
+    display: none;
+  }
+}
+
+.event-description {
+  font-size: 1.4rem;
+  margin: 0 0 4rem;
+}
+
+.event-map-wrapper {
+  overflow: hidden;
+  height: 15rem;
+  padding: 1rem 0 0;
+  margin: 0 -2rem 4rem;
+  position: relative;
+
+  &.scrolling {
+    pointer-events: none;
+  }
+
+  > #event-map {
+    width: 100vw;
+    position: absolute;
+    height: 25rem;
+    right: -5rem;
+    top: -4rem;
+    padding-right: 5rem;
+
+    > div {
+      transition: background 266ms ease-in-out;
+    }
+
+    > div:nth-child(2) {
+      display: none;
+      position: absolute;
+      width: 4rem;
+      left: 8rem;
+      background: $edgy-red;
+      height: 100%;
+
+      .light & {
+        background: $light-gray;
+      }
+
+      .dark & {
+        background: $edgy-black;
+      }
+    }
+
+    > div:nth-child(3) {
+      position: absolute;
+      width: 100%;
+      border: 0;
+      background: $edgy-red;
+      height: 4rem;
+      top: 0;
+      left: 0;
+
+      .light & {
+        background: $light-gray;
+      }
+    }
+
+    > div:nth-child(4) {
+      position: absolute;
+      width: 100%;
+      border: 0;
+      background: $edgy-red;
+      height: 1rem;
+      bottom: 0;
+      left: 0;
+
+      .light & {
+        background: $light-gray;
+      }
+    }
+  }
+}
+
 // Desktop
 @media (min-width: 1100px) {
   .onlyDesktop {
@@ -445,6 +708,240 @@ body {
     flex-direction: row;
     overflow-x: hidden;
     // border-left: 2rem solid white;
+  }
+
+  .highlight-water {
+    color: $cadet-blue;
+    font-size: 2.2rem;
+  }
+
+  .place-and-date {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+
+    > .place {
+      color: $edgy-black;
+      padding: 0 1rem 0 0;
+      font-size: 0.8rem;
+      display: inline;
+      z-index: 1;
+      transition: background 266ms ease-in-out;
+
+      .red & {
+        background: $edgy-red;
+      }
+
+      .light & {
+        background: $light-gray;
+      }
+
+      .dark & {
+        color: $light-gray;
+        background: $edgy-black;
+      }
+    }
+
+    > .place > a {
+      font-weight: 600;
+    }
+
+    > .date {
+      color: $quick-silver;
+      position: relative;
+      font-size: 0.8rem;
+      padding: 1rem 0 1rem 1rem;
+      display: inline !important;
+      z-index: 1;
+      background: $light-gray;
+      transition: background 266ms ease-in-out;
+
+      .red & {
+        background: $edgy-red;
+        color: $light-gray;
+      }
+
+      .light & {
+        background: $light-gray;
+      }
+
+      .dark & {
+        background: $edgy-black;
+      }
+    }
+
+    &:after {
+      content: "";
+      width: 100%;
+      position: absolute;
+      border-top: 2px solid #a5a5a5;
+      top: 1.6rem;
+    }
+  }
+
+  .event-description {
+    font-size: 1.7vw;
+    margin: 0 0 0 2vw;
+  }
+
+  .event-venue-description {
+    font-size: 0.7rem;
+  }
+
+  .address {
+    > div:nth-child(1) {
+      font-size: 0.9rem;
+    }
+    > div:nth-child(2) {
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+  }
+
+  .event-map-wrapper {
+    overflow: hidden;
+    height: 25rem;
+    padding: 1rem 0rem 0 0rem;
+    margin: 0 -4rem;
+    position: initial;
+
+    &.scrolling {
+      pointer-events: none;
+    }
+
+    > #event-map {
+      width: calc(100vw - 13rem);
+      position: absolute;
+      height: 25rem;
+      margin-left: -12rem;
+      padding-left: 16rem;
+      right: auto;
+      top: auto;
+      padding-right: 0;
+
+      > div {
+        transition: background 266ms ease-in-out;
+      }
+
+      > div:nth-child(2) {
+        position: absolute;
+        width: 4rem;
+        left: 8rem;
+        background: $edgy-red;
+        height: 100%;
+
+        .light & {
+          background: $light-gray;
+        }
+
+        .dark & {
+          background: $edgy-black;
+        }
+      }
+
+      > div:nth-child(3) {
+        position: absolute;
+        width: 16rem;
+        right: 0;
+        background: $edgy-red;
+        height: 100%;
+
+        .light & {
+          background: $light-gray;
+        }
+      }
+
+      > div:nth-child(4) {
+        position: absolute;
+        width: 100%;
+        border: 0;
+        background: $edgy-red;
+        height: 1rem;
+        bottom: 0;
+        left: 0;
+
+        .light & {
+          background: $light-gray;
+        }
+      }
+    }
+  }
+
+  .event-image-banner {
+    display: block;
+    position: relative;
+    margin: 5rem 0 0;
+    height: 30rem;
+
+    &::after {
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: calc(100vw - 13rem);
+      background-position: bottom !important;
+      background-size: cover !important;
+      background: url(assets/images/background/mercado-3.png);
+    }
+  }
+
+  .event-outcomes-image {
+    width: 100%;
+  }
+
+  .event-outcomes-wrapper {
+    height: 30rem;
+    margin: 10rem 0;
+    position: relative;
+  }
+
+  .event-outcomes {
+    position: absolute;
+    width: calc(100vw - 13rem);
+    background-image: url("assets/images/background/mercado-2.png");
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .event-outcomes-row {
+    width: 6vw;
+    padding: 1.75vw;
+    height: 6vw;
+    background: $light-gray;
+    color: $edgy-black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    margin: 0 1vw -5.5rem;
+    line-height: 1;
+    text-align: left;
+
+    .red & {
+      background: $edgy-red;
+      color: $light-gray;
+    }
+
+    .dark & {
+      background: $edgy-black;
+    }
+  }
+
+  .event-outcomes-number {
+    font-size: 3.75vw;
+    font-weight: 600;
+  }
+
+  .event-outcomes-text {
+    font-size: 1.2vw;
   }
 
   .upcomingEventClaim {
@@ -459,22 +956,24 @@ body {
   }
 
   .intro {
-    justify-content: center;
-    max-width: 20rem;
-    padding-right: 6rem;
-    padding-left: 2rem;
+    justify-content: space-between;
+    padding: 8.5rem 0 7rem 7.2rem;
+    width: 27.6rem;
     z-index: 2;
     height: auto;
+    position: relative;
   }
 
   .home-main {
     flex: 70%;
     flex-direction: row;
     padding: 0;
+    width: auto;
   }
 
   .hero {
-    flex: 30% 1;
+    visibility: visible;
+    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -497,7 +996,7 @@ body {
     align-items: flex-end;
     background: linear-gradient(111deg, transparent 50%, $light-gray 0);
     border: 0;
-    border-radius: 0;
+    border-radius: 1rem;
     box-shadow: 10px -10px 0 0 $edgy-black;
     color: #ffabab;
     display: flex;
@@ -508,7 +1007,7 @@ body {
     opacity: 1;
     padding: 1.5rem 1rem 1rem 1rem;
     text-align: right;
-    text-transform: lowercase;
+
     width: 11rem;
   }
 
@@ -566,13 +1065,14 @@ body {
     display: block;
     border: 0;
     background: $light-gray;
-    box-shadow: -10px 10px 0px 0px $edgy-black;
-    padding: 0.5rem 2rem 1rem;
-    margin: 0;
+    box-shadow: 10px 10px 0px 0px $edgy-black;
+    margin: 0 -1rem 4rem;
+    padding: 0.5rem 3rem 1rem 2rem;
+    border-radius: 0 1rem;
   }
 
   .call-out-container:hover {
-    box-shadow: -10px 10px 0px 0px $edgy-red;
+    box-shadow: 10px 10px 0px 0px $edgy-red;
     transform: scale(1.02);
     transform-origin: bottom;
     cursor: pointer;
@@ -586,12 +1086,12 @@ body {
 
   .deadline {
     text-align: left;
-    font-size: 0.8rem;
+    font-size: 0.6rem;
     letter-spacing: 1px;
   }
 
   .highlight-gradient-text-light {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     line-height: 2.5rem;
     letter-spacing: 2px;
     color: $edgy-red;
@@ -611,14 +1111,17 @@ body {
   }
 
   .top {
-    padding: 2rem 0;
-    font-size: 3.4em;
-    line-height: 3.5rem;
+    padding: 0 0 2rem 0;
+    font-size: 3.65em;
+    line-height: 4.5rem;
+    font-weight: 600;
+    width: 35rem;
   }
 
   .bottom {
     font-size: 18px;
     position: relative;
+    width: 29rem;
   }
 
   .home-full {
@@ -627,16 +1130,24 @@ body {
     width: calc(100vw - 14rem);
     overflow: scroll;
     overflow-x: hidden;
-    background: $light-gray;
   }
 
-  .home-full > .introFull {
+  .home-full > .intro-full.dark {
     display: flex;
-    background: $edgy-black;
   }
 
-  .introFull {
+  .home-full > .intro-full.light {
+    display: flex;
+  }
+
+  .home-full > .intro-full.red {
+    display: flex;
+  }
+
+  .intro-full {
     flex-direction: row;
+    height: 100vh;
+    min-height: auto;
   }
 
   .home-full > .upcomingEventFull {
@@ -645,13 +1156,19 @@ body {
     height: auto;
   }
 
-  .homeArrowRight {
-    width: 20%;
+  .homeArrowDown {
+    width: 4rem;
+    position: absolute;
+    animation: up-and-down 2.66s ease-in-out infinite;
   }
 
   .serving {
-    margin-left: 10px;
-    max-width: 25rem;
+    font-size: 1.22rem;
+    font-weight: 500;
+    line-height: 2rem;
+    margin-left: 7rem;
+    max-width: 19rem;
+    padding-left: 0;
   }
 
   .upcomingEvent {
@@ -728,18 +1245,16 @@ body {
 
   .getTicketButton {
     margin-bottom: 0;
+    width: 100%;
+
+    > button {
+      width: 33%;
+    }
   }
 
   .getTicketInput {
     height: 25px;
-    width: 50%;
-    margin-bottom: 1rem;
-    font-size: 16px;
-    padding: 1rem;
-    background: $light-gray;
-    border: 0;
-    border-left: 0.2rem solid $edgy-black;
-    color: $edgy-black;
+    width: 100%;
   }
 
   .mailto {
@@ -806,6 +1321,67 @@ body {
     }
     50% {
       transform: translate3d(0, 5px, 0);
+    }
+  }
+}
+
+@keyframes up-and-down {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(24px);
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+  html {
+    &:before {
+      content: "";
+      position: absolute;
+      background: $edgy-black;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 100;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      background: $edgy-black;
+      top: calc(50% - 7.5rem);
+      width: 17rem;
+      left: calc(50% - 6rem);
+      height: 16rem;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      z-index: 200;
+      background-image: url(assets/images/rotate.svg);
+    }
+  }
+
+  body {
+    overflow: hidden;
+
+    & > div {
+      display: none;
+      overflow: hidden;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      background-image: url(assets/images/logo-white.svg);
+      width: 2rem;
+      height: 1rem;
+      background-repeat: no-repeat;
+      top: calc(50% - 2.5rem);
+      background-position: center;
+      z-index: 300;
+      left: calc(50% - 2.8rem);
     }
   }
 }

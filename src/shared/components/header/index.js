@@ -1,17 +1,14 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-if (typeof window !== "undefined") {
-  // eslint-disable-next-line global-require
-  require("smooth-scroll")('a[href*="#"]')
-}
-
 const Header = () => (
   <header>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet" />
-    <meta name="theme-color" content="#00b7f0" />
+    <link href="https://fonts.googleapis.com/css2?family=Water+Brush&display=swap" rel="stylesheet" />
+    <meta name="theme-color" content="#25272d" />
+    <meta http-equiv="ScreenOrientation" content="autoRotate:disabled"/>
     <script id="mcjs" dangerouslySetInnerHTML={{
       __html: `!function (c, h, i, m, p) {
         m = c.createElement(h), p = c.getElementsByTagName(h)[0], m.async = 1, m.src = i, p.parentNode.insertBefore(m, p)
