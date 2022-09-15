@@ -13,19 +13,18 @@ body {
 }
 
 .banner {
-  height: 9rem;
+  height: 7rem;
   background-size: cover;
   background-position: center;
   margin: 0 -32px;
 }
 
 .banner-top {
-  margin-bottom: 4rem;
   background-image: url(assets/images/manifesto/hero-top.jpg);
 }
 
 .banner-bottom {
-  margin-top: 4rem;
+  margin-top: -1rem;
   background-image: url(assets/images/manifesto/hero-bottom.jpg);
 }
 
@@ -39,7 +38,7 @@ body {
 }
 
 .manifesto-content {
-  padding-top: 6.3rem;
+  padding-top: 4rem;
 }
 
 .content {
@@ -86,17 +85,18 @@ hr {
     flex: 70%;
     flex-direction: row;
     overflow: auto;
-    padding: 0 2rem 0 0;
+    padding: 0;
   }
 
   .banner {
-    height: 9rem;
+    height: 6.2rem;
+    margin: 0;
   }
 
   .manifesto-content {
-    padding-top: 0;
+    padding: 0 0 0 1rem;
     text-align: left;
-    width: 100%;
+    width: calc(100vw - 12rem);
   }
 
   .accordion {
@@ -106,21 +106,27 @@ hr {
 
   .accordion-content {
     font-weight: 300;
+    padding: 2.8rem 2rem 4rem 0rem;
   }
 
   .accordion-item {
     flex: auto;
     width: 30%;
-    padding: 0 1rem;
+    padding: 2.25rem 1rem 0 0;
   }
 
   .accordion-title {
     cursor: auto;
+    padding: 0;
   }
 
   hr,
   .accordion-button {
     display: none;
+  }
+
+  .banner-bottom {
+   padding-bottom: 7rem;
   }
 }
 

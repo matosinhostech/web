@@ -75,8 +75,12 @@ function Seo({ description, lang, meta, title }) {
         },
         {
           name: "theme-color",
-          content: "#00b7f0"
+          content: "#25272d"
         },
+        {
+          httpEquiv: "ScreenOrientation",
+          content: "autoRotate:disabled"
+        }
       ].concat(meta)}
     />
   )

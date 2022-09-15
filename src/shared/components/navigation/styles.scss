@@ -1,88 +1,124 @@
-@import "../../styles/variables.scss";
+@import "../../styles/variables.css";
 
 .nav {
   top: 0;
   margin: 0 -4rem;
   display: flex;
   justify-content: space-between;
-  background: #00b7f0;
-  z-index: 5;
-  padding: 1.5rem 4rem;
+  z-index: 6;
+  padding: 1rem 4rem;
   position: fixed;
-  transition: top 0.3s;
   width: calc(100% - 4rem);
+  transition: background-color 266ms ease-in-out, color 266ms ease-in-out,
+    background 266ms ease-in-out, fill 266ms ease-in-out, top 266ms ease-in-out;
 }
 
-.nav.eventPage,
+.nav.eventPage {
+  background: var(--light-gray);
+}
+
 .nav.videosPage {
-  background: $light-gray;
+  background: var(--light-gray);
 }
 
 .wave.eventPage,
 .drawer.eventPage {
-  background: $edgy-red;
-  fill: $edgy-red;
+  background: var(--edgy-red);
+  fill: var(--edgy-red);
+}
+
+.eventMain > .nav {
+  background: var(--light-gray);
 }
 
 .wave.videosPage,
 .drawer.videosPage {
-  background: $light-gray;
-  fill: $light-gray;
+  background: var(--light-gray);
+  fill: var(--light-gray);
 }
 
 .nav.bluePage {
-  background: $light-blue;
+  background: var(--light-blue);
 }
 
 .wave.bluePage,
 .drawer.bluePage {
-  background: $light-blue;
-  fill: $light-blue;
+  background: var(--light-blue);
+  fill: var(--light-blue);
 }
 
 .nav.manifestoPage {
-  background: $edgy-red;
+  background: var(--edgy-red);
 }
 
 .wave.manifestoPage,
 .drawer.manifestoPage {
-  background: $edgy-red;
-  fill: $edgy-red;
+  background: var(--edgy-red);
+  fill: var(--edgy-red);
 }
 
 .nav.partnerPage {
-  background: $edgy-red;
+  background: var(--edgy-red);
 }
 
 .wave.partnerPage,
 .drawer.partnerPage {
-  background: $edgy-black;
-  fill: $edgy-black;
+  background: var(--edgy-black);
+  fill: var(--edgy-black);
 }
 
-
 .nav.partnersPage {
-  background: $edgy-black;
+  background: var(--edgy-black);
 }
 
 .wave.partnersPage,
 .drawer.partnersPage {
-  background: $edgy-black;
-  fill: $edgy-black;
+  background: var(--edgy-black);
+  fill: var(--edgy-black);
 }
 
-.nav.homePageAlt,
 .nav.homePage {
-  background: $edgy-black;
-  // transition: background-color 150ms ease-in-out;
+  // animation: mymove2 266ms linear;
 }
+
+.nav.homePageAlt {
+  // animation: mymove 266ms linear;
+}
+
+// @keyframes mymove {
+//   0% {
+//     background-color: var(--edgy-black);
+//     fill: var(--edgy-black);
+//   }
+//   100% {
+//     background-color: var(--light-gray);
+//     fill: var(--light-gray);
+//   }
+// }
+
+// @keyframes mymove2 {
+//   0% {
+//     background-color: var(--light-gray);
+//     fill: var(--light-gray);
+//   }
+//   100% {
+//     background-color: var(--edgy-black);
+//     fill: var(--edgy-black);
+//   }
+// }
 
 .wave.homePage,
 .drawer.homePage,
 .wave.homePageAlt,
 .drawer.homePageAlt {
-  background: $edgy-red;
-  fill: $edgy-red;
+  background: var(--edgy-red);
+  fill: var(--edgy-red);
+}
+
+.wave.eventPage,
+.drawer.eventPage {
+  background: var(--edgy-red);
+  fill: var(--edgy-red);
 }
 
 .logo {
@@ -102,7 +138,7 @@
   width: 30px;
   height: 1px;
   display: none;
-  background-color: $light-gray;
+  background-color: var(--light-gray);
   content: "";
 }
 
@@ -112,62 +148,63 @@
   cursor: pointer;
 
   &:first-child.eventPage {
-    color: $edgy-black;
+    color: var(--edgy-black);
   }
 
   &:first-child.eventPage.open {
-    color: $light-gray;
+    color: var(--light-gray);
   }
-
   &:first-child.videosPage {
-    color: $edgy-black;
+    color: var(--edgy-black);
   }
 
   &:first-child.videosPage.open {
-    color: $edgy-black;
+    color: var(--edgy-black);
   }
 
   &:first-child.bluePage {
-    color: $light-gray;
+    color: var(--light-gray);
   }
 
   &:first-child.bluePage.open {
-    color: $light-gray;
+    color: var(--light-gray);
   }
 
   &:first-child.manifestoPage {
-    color: $light-gray;
+    color: var(--light-gray);
   }
 
   &:first-child.manifestoPage.open {
-    color: $light-gray;
+    color: var(--light-gray);
   }
 
   &:first-child.partnerPage {
-    color: $light-gray;
+    color: var(--light-gray);
   }
 
   &:first-child.partnerPage.open {
-    color: $light-gray;
+    color: var(--light-gray);
   }
 
   &:first-child.partnersPage {
-    color: $light-gray;
+    color: var(--light-gray);
   }
 
   &:first-child.partnersPage.open {
-    color: $light-gray;
+    color: var(--light-gray);
   }
 
   &:first-child.homePage,
   &:first-child.homePageAlt {
-    color: $light-gray;
+    color: var(--light-gray);
   }
 
   &:first-child.homePage.open,
   &:first-child.homePageAlt.open {
-    color: $light-gray;
+    color: var(--light-gray);
   }
+
+  
 }
 
 .drawer {
@@ -175,8 +212,8 @@
   width: 100vw;
   height: calc(100vh - 12rem);
   position: absolute;
-  background: $light-blue;
-  left: 0;
+  background: var(--light-blue);
+  left: -100vw;
   padding-left: 0;
   display: flex;
   flex-direction: column;
@@ -185,14 +222,17 @@
   z-index: -1;
   padding: 12rem 0 0 4rem;
   margin-left: 0;
+  visibility: hidden;
 }
 
 .open {
+  visibility: visible;
+  left: 0;
   transform: translateX(0);
 }
 
 .drawer > a {
-  color: $light-gray;
+  color: var(--light-gray);
   text-decoration: none;
   font-size: 2rem;
   padding-bottom: 1rem;
@@ -202,7 +242,7 @@
 }
 
 .drawer.videosPage > a {
-  color: $edgy-black;
+  color: var(--edgy-black);
 }
 
 a[aria-current="page"] {
@@ -215,61 +255,207 @@ a[aria-current="page"] {
   left: 4rem;
 
   &.eventPage > a > svg {
-    color: $edgy-black;
+    color: var(--edgy-black);
   }
 
   &.open.eventPage > a > svg {
-    color: $light-gray;
+    color: var(--light-gray);
   }
 
   &.videosPage > a > svg {
-    color: $edgy-black;
+    color: var(--edgy-black);
   }
 
   &.open.videosPage > a > svg {
-    color: $edgy-black;
+    color: var(--edgy-black);
   }
 
   &.bluePage > a > svg {
-    color: $light-gray;
+    color: var(--light-gray);
   }
 
   &.open.bluePage > a > svg {
-    color: $light-gray;
+    color: var(--light-gray);
   }
 
   &.manifestoPage > a > svg {
-    color: $light-gray;
+    color: var(--light-gray);
   }
 
   &.open.manifestoPage > a > svg {
-    color: $light-gray;
+    color: var(--light-gray);
   }
 
   &.partnerPage > a > svg {
-    color: $light-gray;
+    color: var(--light-gray);
   }
 
   &.open.partnerPage > a > svg {
-    color: $light-gray;
+    color: var(--light-gray);
   }
 
   &.partnersPage > a > svg {
-    color: $light-gray;
+    color: var(--light-gray);
   }
 
   &.open.partnersPage > a > svg {
-    color: $light-gray;
+    color: var(--light-gray);
   }
 
   &.homePage > a > svg,
   &.homePageAlt > a > svg {
-    color: $light-gray;
+    color: var(--light-gray);
   }
 
   &.open.homePage > a > svg,
   &.open.homePageAlt > a > svg {
-    color: $light-gray;
+    color: var(--light-gray);
+  }
+}
+
+.countdown {
+  display: flex;
+  z-index: 2;
+  position: fixed;
+  bottom: 0;
+  align-items: center;
+  width: 100vw;
+  background: var(--cadet-blue);
+  left: 0;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  height: 7rem;
+
+  & > .date-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    line-height: 1.5rem;
+    padding-left: 0;
+    margin-top: 0.4rem;
+    position: absolute;
+    left: 3.2rem;
+    top: 0.5rem; 
+
+    & > .date-day {
+      font-size: 2rem;
+      color: #f3f3f3;
+      font-weight: 600;
+    }
+
+    > .date-month {
+      color: #a0d5d5;
+    }
+
+    > .date-year {
+      color: #a0d5d5;
+    }
+  }
+
+  & > .counter-container {
+    display: flex;
+    justify-content: normal;
+    align-items: flex-end;
+    margin-right: 2rem;
+    width: 100%;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding-left: 0;
+    padding-bottom: 1rem;
+
+    & > .counter-date {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      width: calc(100% - 7rem);
+      padding-top: 0.6rem;
+
+      & > .counter-message {
+        display: flex;
+        align-items: center;
+        font-size: 0.9rem;
+        font-weight: 700;
+        color: var(--light-gray);
+        padding-right: 0;
+        padding-left: 0.6rem;
+        width: 9rem;
+
+        & > .highlight {
+          padding-left: 0.2rem;
+          color: var(--edgy-black);
+        }
+      }
+
+      & > .counter-boxes {
+        display: flex;
+        align-items: center;
+
+        & > .counter-box {
+          padding-top: 0.3rem;
+          padding-left: 0.55rem;
+
+          & > .counter-value {
+            background: var(--edgy-black);
+            display: flex;
+            width: 2.5rem;
+            height: 2.5rem;
+            justify-content: center;
+            align-items: center;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--light-gray);
+          }
+          & > .counter-label {
+            font-size: 0.5rem;
+            width: 2.5rem;
+            text-align: center;
+            color: var(--edgy-black);
+          }
+        }
+      }
+    }
+
+    & > .counter-cta {
+      display: flex;
+      align-items: center;
+      margin-top: 1rem;
+
+      > button {
+        width: calc(100vw - 4rem);
+        border: 0;
+        height: 3rem;
+        font-size: 1rem;
+        cursor: pointer;
+        color: var(--light-gray);
+        background: var(--edgy-black);
+        transition: all 0.2s ease 0s;
+        font-weight: 600;
+        font-family: "Manrope";
+        margin-right: 0;
+        margin-top: 0.5rem;
+
+        > a {
+          text-decoration: none;
+          color: var(--light-gray);
+        }
+
+        &:disabled {
+          background: #c3c4c6;
+          color: #3d4248;
+          pointer-events: none;
+        }
+
+        &:hover {
+          background: var(--eerie-black);
+          box-shadow: 5px 5px 5px -5px var(--edgy-black);
+          color: var(--light-gray);
+          transform: scale(1.01);
+        }
+      }
+    }
   }
 }
 
@@ -279,12 +465,14 @@ a[aria-current="page"] {
     position: sticky;
     flex-direction: column;
     justify-content: flex-start;
-    min-width: 10rem;
-    width: 10rem;
-    // margin: 0 -1px;
+    width: 9rem;
     margin: 0;
     padding: 2rem 0rem 2rem 2rem;
     height: calc(100vh - 4rem);
+  }
+
+  .eventMain > .nav {
+    background: initial;
   }
 
   .mobile {
@@ -294,44 +482,55 @@ a[aria-current="page"] {
   .desktop {
     display: flex;
     flex-direction: column;
-    padding-top: 8rem;
+    padding-top: 4.25rem;
   }
 
-  .desktop.eventPage > a,
   .desktop.videosPage > a {
-    color: $edgy-black;
+    color: var(--edgy-black);
+  }
+
+  .desktop.eventPage > a {
+    color: var(--edgy-black);
+
+    .red & {
+    color: var(--light-gray);
+    }
+  }
+
+  .nav-socials.eventPage > a > svg {
+    color: var(--edgy-black);
+
+    .red & {
+      color: var(--light-gray);
+      }
   }
 
   .desktop.bluePage > a {
-    color: $light-gray;
+    color: var(--light-gray);
   }
 
   .desktop.manifestoPage > a {
-    color: $light-gray;
+    color: var(--light-gray);
   }
 
   .desktop.partnerPage > a {
-    color: $light-gray;
+    color: var(--light-gray);
   }
 
   .desktop.partnersPage > a {
-    color: $light-gray;
+    color: var(--light-gray);
   }
 
   .desktop.homePage > a {
-    color: $light-gray;
+    color: var(--light-gray);
   }
 
   .desktop.homePageAlt > a {
-    color: $edgy-black;
-  }
-
-  .nav.homePageAlt {
-    background: $light-gray;
+    color: var(--edgy-black);
   }
 
   .nav-socials.homePageAlt > a > svg {
-    color: $edgy-black;
+    color: var(--edgy-black);
   }
 
   .nav-socials > a > svg:hover,
@@ -346,7 +545,7 @@ a[aria-current="page"] {
     transition: all 0.1s ease-in;
     position: relative;
     cursor: pointer;
-    font-weight: 200;
+    font-weight: 500;
     width: fit-content;
   }
 
@@ -356,12 +555,107 @@ a[aria-current="page"] {
   }
 
   .logo {
-    width: 6rem;
+    width: 4rem;
   }
 
   .nav-socials {
     position: absolute;
-    bottom: 1rem;
-    left: 2rem;
+    bottom: 0;
+    left: 0;
+    z-index: 6;
+    padding: 2.39rem 2rem 2rem;
+    min-width: 8rem;
+    max-height: 2.6rem;
+
+    .homePage & {
+      background: var(--cadet-blue);
+    }
+  }
+
+  .countdown {
+    position: absolute;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    height: 7rem;
+    bottom: 0;
+
+    & > .date-container {
+      padding-left: 20rem;
+      margin-top: 0;
+      left: 0;
+      position: relative;
+    }
+
+    & > .counter-container {
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: nowrap;
+      flex-direction: row;
+      padding-left: 2.75rem;
+      padding-bottom: 0;
+      margin-right: 0;
+
+      & > .counter-date {
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: auto;
+        padding-top: 0;
+
+        & > .counter-message {
+          padding-right: 1rem;
+          padding-left: 0;
+          height: 5.5rem;
+          width: auto;
+        }
+
+        & > .counter-boxes {
+          & > .counter-box {
+            padding-top: 1rem;
+            padding-right: 1rem;
+            padding-left: 0;
+
+            & > .counter-value {
+              width: 3.5rem;
+              height: 3.5rem;
+              font-size: 2rem;
+            }
+            & > .counter-label {
+              font-size: 0.6rem;
+              width: 3.5rem;
+            }
+          }
+        }
+      }
+
+      & > .counter-cta {
+        margin-top: 0;
+
+        > button {
+          width: 12.5rem;
+          margin-right: 3rem;
+          margin-top: 0;
+
+          > a {
+            color: var(--light-gray);
+            text-decoration: none;
+          }
+
+          &:disabled {
+            background: #c3c4c6;
+            color: #3d4248;
+            pointer-events: none;
+          }
+
+          &:hover {
+            background: var(--eerie-black);
+            box-shadow: 5px 5px 5px -5px var(--edgy-black);
+            color: var(--light-gray);
+            transform: scale(1.01);
+          }
+        }
+      }
+    }
   }
 }

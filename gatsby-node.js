@@ -1,4 +1,5 @@
 const path = require("path")
+
 const {
   siteMetadata: { partners },
 } = require("./gatsby-config.js")
