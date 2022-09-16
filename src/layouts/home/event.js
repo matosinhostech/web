@@ -219,17 +219,11 @@ const Event = ({ setTheme, theme }) => {
             </div>
             <div className="description">
               <p>
-                On the 9th of October, we're going to have a full day event of
-                talks from speakers around the globe discussing topics such as
-                open telemetry, anti-money laundering tech, reliability, and
-                mobile, plus the opportunity to meet and greet with each other
-                in the iconic Mercado de Matosinhos!
+              On the 9th of October, join us for matosinhos.tech biggest event ever.
               </p>
               <p>
-                Our concept with this event is to let you roam freely through
-                the market while exploring the one-of-a-kind ceramic panels and
-                beautiful arches, seeing the unique merchants' stalls and
-                connecting with the companies that shape our tech ecosystem.
+              We'll have a full day of talks from speakers around the globe discussing topics such as open telemetry, anti-money laundering tech, reliability, mobile, 
+              and the opportunity to meet and greet our community in person.
               </p>
               <p>
                 Please consider that the event starts at 1:00 PM with a fabulous
@@ -244,7 +238,7 @@ const Event = ({ setTheme, theme }) => {
                   <div className="event-outcomes-text">day</div>
                 </div>
                 <div className="event-outcomes-row">
-                  <div className="event-outcomes-number">4</div>
+                  <div className="event-outcomes-number">5</div>
                   <div className="event-outcomes-text">speakers</div>
                 </div>
                 <div className="event-outcomes-row">
@@ -252,7 +246,7 @@ const Event = ({ setTheme, theme }) => {
                   <div className="event-outcomes-text">companies</div>
                 </div>
                 <div className="event-outcomes-row">
-                  <div className="event-outcomes-number">80</div>
+                  <div className="event-outcomes-number">100</div>
                   <div className="event-outcomes-text">seats</div>
                 </div>
               </div>
@@ -285,13 +279,10 @@ const Event = ({ setTheme, theme }) => {
             <div className="event-description">
               <p>
                 Built in 1952,{" "}
-                <span className="highlight">Mercado de Matosinhos</span>, is
-                well known for their iconic ceramic panels and as the best
-                market to get the best from{" "}
-                <span className="highlight">land and sea</span>. Therefore, on
-                the 9th of October, it only makes sense that this will be the
-                place that does the same for{" "}
-                <span className="highlight">matosinhos.tech</span>
+                <span className="highlight">Our concept</span>, is to let you roam freely through the market 
+                while exploring the one-of-a-kind ceramic panels and beautiful arches, 
+                seeing the unique merchants' stalls and connecting with the companies that shape our tech{" "}
+                <span className="highlight">tech ecosystem</span>
               </p>
             </div>
             <div className={`event-map-wrapper ${isScrolling && "scrolling"}`}>
@@ -299,9 +290,8 @@ const Event = ({ setTheme, theme }) => {
             </div>
             <div className="event-description preceeds-menu">
               <p>
-                Here you’ll be able to learn about leading companies, the
-                industry they operate in, and{" "}
-                <span className="highlight">make valuable connections</span>.
+              We want to take you on a journey to the best market in our city, the 1952 iconic{" "}
+                <span className="highlight">Mercado de Matosinhos</span>.
               </p>
             </div>
             <div className="title" id="schedule" ref={programRef}>
