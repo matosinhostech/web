@@ -253,12 +253,11 @@ const Event = ({ setTheme, theme }) => {
             </div>
             <div className="event-description">
               On the 9th of October join the matosinhos.tech community{" "}
-              <span className="highlight">biggest event</span> ever! We’ll have
-              talks from phenomenal national and international technical leaders
-              and give you the <span className="highlight">opportunity</span> to
-              meet & greet the fantastic companies that are shaping our digital
-              landscape. Join us to gain insights, learnings and the opportunity
-              to <span className="highlight">expand your network</span>.
+              <span className="highlight">biggest event</span> ever! 
+              See international and national technical leaders showcasing their knowledge while you
+              <span className="highlight">meet & greet</span>
+               the fantastic companies that are shaping our 
+              <span className="highlight">digital landscape.</span>.
             </div>
             <Waypoint onEnter={() => setTheme(THEMES.LIGHT)} />
             <div className="event-image-banner" />
