@@ -128,7 +128,11 @@ const Event = ({ setTheme, theme }) => {
               <div className="speaker-info">
                 <div className="speaker-info-label">Company</div>
                 <div className="speaker-info-value">
-                  <a href={speaker.company_url} target="_blank">
+                  <a
+                    rel="noreferrer"
+                    href={speaker.company_url}
+                    target="_blank"
+                  >
                     {speaker.company}
                   </a>
                 </div>
@@ -148,7 +152,12 @@ const Event = ({ setTheme, theme }) => {
           </div>
         </div>
         <div className="speaker-name">
-          <a className="hyperlink" href={speaker.speaker_url} target="_blank">
+          <a
+            className="hyperlink"
+            rel="noreferrer"
+            href={speaker.speaker_url}
+            target="_blank"
+          >
             {speaker.speaker}
           </a>
         </div>
@@ -443,6 +452,7 @@ const Event = ({ setTheme, theme }) => {
                 <div className="brand-name">
                   <a
                     className="hyperlink"
+                    rel="noreferrer"
                     href="https://goo.gl/maps/QQTSkA2RVjrERZ2H7"
                     target="_blank"
                   >

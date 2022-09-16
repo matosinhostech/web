@@ -100,17 +100,17 @@ const PartnersListLayout = ({ path }) => {
             <div className="partnerMatrix">
               <Carousel show={numberOfCarouselItems}>
                 <div className="carousel-item">
-                  <a href="https://portotechhub.com/" target="_blank">
+                  <a rel="noreferrer" href="https://portotechhub.com/" target="_blank">
                     <Card image={portoTechHub} />
                   </a>
                 </div>
                 <div className="carousel-item">
-                  <a href="https://porto.io/" target="_blank">
+                  <a rel="noreferrer" href="https://porto.io/" target="_blank">
                     <Card image={portoIo} />
                   </a>
                 </div>
                 <div className="carousel-item">
-                  <a href="https://significa.co/" target="_blank">
+                  <a rel="noreferrer" href="https://significa.co/" target="_blank">
                     <Card image={significa} />
                   </a>
                 </div>

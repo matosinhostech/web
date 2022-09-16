@@ -15,37 +15,37 @@ import "./styles.scss"
 const Socials = ({ facebook, linkedin, twitter, instagram, slack, reddit, email }) => (
   <>
     {facebook && (
-      <a href={facebook}>
+      <a rel="noreferrer" target="_blank" href={facebook}>
         <FontAwesomeIcon icon={faFacebook} className="icon" />
       </a>
     )}
     {linkedin && (
-      <a href={linkedin}>
+      <a rel="noreferrer" target="_blank" href={linkedin}>
         <FontAwesomeIcon icon={faLinkedin} className="icon" />
       </a>
     )}
     {instagram && (
-      <a href={instagram}>
+      <a rel="noreferrer" target="_blank" href={instagram}>
         <FontAwesomeIcon icon={faInstagram} className="icon" />
       </a>
     )}
     {twitter && (
-      <a href={twitter}>
+      <a rel="noreferrer" target="_blank" href={twitter}>
         <FontAwesomeIcon icon={faTwitter} className="icon" />
       </a>
     )}
     {slack && (
-      <a href={slack}>
+      <a rel="noreferrer" target="_blank" href={slack}>
         <FontAwesomeIcon icon={faSlack} className="icon" />
       </a>
     )}
     {reddit && (
-      <a href={reddit}>
+      <a rel="noreferrer" target="_blank" href={reddit}>
         <FontAwesomeIcon icon={faReddit} className="icon" />
       </a>
     )}
     {email && (
-      <a href={email}>
+      <a rel="noreferrer" href={`mailto:${email}`}>
         <FontAwesomeIcon icon={faEnvelope} className="icon" />
       </a>
     )}
