@@ -267,9 +267,9 @@ const Event = ({ setTheme, theme }) => {
               On the 9th of October join the matosinhos.tech community{" "}
               <span className="highlight">biggest event</span> ever! See
               international and national technical leaders showcasing their
-              knowledge while you
+              knowledge while you{" "}
               <span className="highlight">meet & greet</span>
-              the fantastic companies that are shaping our
+              {" "}the fantastic companies that are shaping our{" "}
               <span className="highlight">digital landscape.</span>.
             </div>
             <Waypoint onEnter={() => setTheme(THEMES.LIGHT)} />
@@ -290,11 +290,11 @@ const Event = ({ setTheme, theme }) => {
             <Waypoint onEnter={() => setTheme(THEMES.RED)} />
             <div className="event-description">
               <p>
-                Built in 1952, <span className="highlight">Our concept</span>,
+                <span className="highlight">Our concept</span>,
                 is to let you roam freely through the market while exploring the
                 one-of-a-kind ceramic panels and beautiful arches, seeing the
                 unique merchants' stalls and connecting with the companies that
-                shape our tech <span className="highlight">tech ecosystem</span>
+                shape our tech{" "} <span className="highlight">tech ecosystem</span>.
               </p>
             </div>
             <div className={`event-map-wrapper ${isScrolling && "scrolling"}`}>
@@ -436,10 +436,7 @@ const Event = ({ setTheme, theme }) => {
                 actively participating, interacting and engaging with the
                 attendees during the event.
               </p>
-              <p>
-                All attendees are welcome to propose any subject they want
-                during the open spaces.
-              </p>
+              
             </div>
             <div className="title" id="about-us" ref={aboutRef}>
               About
