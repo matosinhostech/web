@@ -691,7 +691,7 @@ body {
 
             & > .ticket-claim {
               width: 100%;
-              > button {
+              > a > button {
                 width: calc(100% - 4rem);
                 margin: 0 2rem;
                 margin-bottom: 0rem;
@@ -816,7 +816,12 @@ body {
   cursor: pointer;
 
   .light & {
+    color: $edgy-black;
     border-color: $edgy-black;
+  }
+
+  .red & {
+    color: $light-gray;
   }
 
   &::after {

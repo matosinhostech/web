@@ -219,11 +219,14 @@ const Event = ({ setTheme, theme }) => {
             </div>
             <div className="description">
               <p>
-              On the 9th of October, join us for matosinhos.tech biggest event ever.
+                On the 9th of October, join us for matosinhos.tech biggest event
+                ever.
               </p>
               <p>
-              We'll have a full day of talks from speakers around the globe discussing topics such as open telemetry, anti-money laundering tech, reliability, mobile, 
-              and the opportunity to meet and greet our community in person.
+                We'll have a full day of talks from speakers around the globe
+                discussing topics such as open telemetry, anti-money laundering
+                tech, reliability, mobile, and the opportunity to meet and greet
+                our community in person.
               </p>
               <p>
                 Please consider that the event starts at 1:00 PM with a fabulous
@@ -253,10 +256,11 @@ const Event = ({ setTheme, theme }) => {
             </div>
             <div className="event-description">
               On the 9th of October join the matosinhos.tech community{" "}
-              <span className="highlight">biggest event</span> ever! 
-              See international and national technical leaders showcasing their knowledge while you
+              <span className="highlight">biggest event</span> ever! See
+              international and national technical leaders showcasing their
+              knowledge while you
               <span className="highlight">meet & greet</span>
-               the fantastic companies that are shaping our 
+              the fantastic companies that are shaping our
               <span className="highlight">digital landscape.</span>.
             </div>
             <Waypoint onEnter={() => setTheme(THEMES.LIGHT)} />
@@ -277,11 +281,11 @@ const Event = ({ setTheme, theme }) => {
             <Waypoint onEnter={() => setTheme(THEMES.RED)} />
             <div className="event-description">
               <p>
-                Built in 1952,{" "}
-                <span className="highlight">Our concept</span>, is to let you roam freely through the market 
-                while exploring the one-of-a-kind ceramic panels and beautiful arches, 
-                seeing the unique merchants' stalls and connecting with the companies that shape our tech{" "}
-                <span className="highlight">tech ecosystem</span>
+                Built in 1952, <span className="highlight">Our concept</span>,
+                is to let you roam freely through the market while exploring the
+                one-of-a-kind ceramic panels and beautiful arches, seeing the
+                unique merchants' stalls and connecting with the companies that
+                shape our tech <span className="highlight">tech ecosystem</span>
               </p>
             </div>
             <div className={`event-map-wrapper ${isScrolling && "scrolling"}`}>
@@ -289,7 +293,8 @@ const Event = ({ setTheme, theme }) => {
             </div>
             <div className="event-description preceeds-menu">
               <p>
-              We want to take you on a journey to the best market in our city, the 1952 iconic{" "}
+                We want to take you on a journey to the best market in our city,
+                the 1952 iconic{" "}
                 <span className="highlight">Mercado de Matosinhos</span>.
               </p>
             </div>
@@ -346,9 +351,7 @@ const Event = ({ setTheme, theme }) => {
               </div>
               <div className="schedule-slot">
                 <div className={`schedule-time ${theme}`}>3:45 PM</div>
-                <div className={`schedule-title ${theme}`}>
-                  Break
-                </div>
+                <div className={`schedule-title ${theme}`}>Break</div>
               </div>
               <div className="schedule-slot">
                 <div className={`schedule-time ${theme}`}>4:15 PM</div>
@@ -409,13 +412,6 @@ const Event = ({ setTheme, theme }) => {
               </div>
               <div className="fish" />
             </div>
-            <div className="title" id="claim-ticket-anchor" ref={ticketRef}>
-              Attend the event
-            </div>
-            <TicketForm
-              id="claim-ticket-form"
-              operationCallback={handleClaimTicket}
-            />
             <div className="title" id="sponsorships" ref={sponsorshipsRef}>
               Sponsorships
             </div>
@@ -479,12 +475,15 @@ const Event = ({ setTheme, theme }) => {
                 </div>
               </div> */}
             </div>
-            <div
-              className="arrow-button"
-              onClick={() => scrollTo("#claim-ticket-anchor")}
+            <a
+              rel="noreferrer"
+              href="https://www.eventbrite.com/e/matosinhostech-market-edition-tickets-417443553907"
+              target="_blank"
             >
-              <span className="text">claim your ticket</span>
-            </div>
+              <div className="arrow-button">
+                <span className="text">claim your ticket</span>
+              </div>
+            </a>
             <div className="arrow-button" onClick={() => scrollTo("#event")}>
               <span className="text">take me back</span>
             </div>
@@ -529,8 +528,13 @@ const Event = ({ setTheme, theme }) => {
                   </div>
                 </div>
                 <div className="ticket-claim">
+                <a
+                    href="https://www.eventbrite.com/e/matosinhostech-market-edition-tickets-417443553907"
+                    rel="noreferrer"
+                    target="_blank"
+                    disabled={operation.status !== "pristine"}
+                  >
                   <button
-                    onClick={() => scrollTo("#claim-ticket-anchor")}
                     disabled={operation.status !== "pristine"}
                   >
                     {operation.status === "pending" ? (
@@ -543,6 +547,7 @@ const Event = ({ setTheme, theme }) => {
                       "Claim your ticket"
                     )}
                   </button>
+                  </a>
                 </div>
               </div>
             </div>
