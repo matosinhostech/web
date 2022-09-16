@@ -48,11 +48,11 @@ const Videos = () => {
           <div className="eventTitle">{event.title}</div>
           <div className="eventAuthorDate">
             <div className="eventAuthor">
-              <a href={event.authors[0].url}>{event.authors[0].name}</a>
+              <a rel="noreferrer" target="_blank" href={event.authors[0].url}>{event.authors[0].name}</a>
               {event.authors[1] && (
                 <>
                   <span> / </span>
-                  <a href={event.authors[1].url}>{event.authors[1].name}</a>
+                  <a rel="noreferrer" target="_blank" href={event.authors[1].url}>{event.authors[1].name}</a>
                 </>
               )}
             </div>
@@ -207,7 +207,7 @@ const Videos = () => {
                     <img src={author.img} />
                   </div>
                   <div className="nowPlayingAuthor">
-                    from <a href={author.url}>{author.name}</a>
+                    from <a rel="noreferrer" target="_blank" href={author.url}>{author.name}</a>
                   </div>
                   <div className="nowPlayingDate">{event.date}</div>
                 </>

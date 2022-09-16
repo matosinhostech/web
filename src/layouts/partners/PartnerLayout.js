@@ -53,7 +53,7 @@ const PartnerLayout = ({
           <div className="partner-footer">
             <div>
               <div className="partner-logo">
-                <a href={site}>
+                <a rel="noreferrer" target="_blank" href={site}>
                   <img src={logo} alt="logo" />
                 </a>
               </div>
