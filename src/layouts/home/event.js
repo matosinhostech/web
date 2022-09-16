@@ -412,10 +412,10 @@ const Event = ({ setTheme, theme }) => {
             <div className="title" id="claim-ticket-anchor" ref={ticketRef}>
               Attend the event
             </div>
-            <TicketForm
-              id="claim-ticket-form"
-              operationCallback={handleClaimTicket}
-            />
+            <div
+              className="arrow-button"
+              onClick={() => window.open('https://www.eventbrite.co.uk/myevent?eid=417443553907')}
+            >
             <div className="title" id="sponsorships" ref={sponsorshipsRef}>
               Sponsorships
             </div>
@@ -481,7 +481,7 @@ const Event = ({ setTheme, theme }) => {
             </div>
             <div
               className="arrow-button"
-              onClick={() => scrollTo("#claim-ticket-anchor")}
+              onClick={() => window.open('https://www.eventbrite.co.uk/myevent?eid=417443553907')}
             >
               <span className="text">claim your ticket</span>
             </div>
