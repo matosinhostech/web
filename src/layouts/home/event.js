@@ -356,7 +356,21 @@ const Event = ({ setTheme, theme }) => {
               </div>
               <div className="schedule-slot">
                 <div className={`schedule-time ${theme}`}>3:15 PM</div>
-                <div className={`schedule-title ${theme}`}>(TBA)</div>
+                <div className={`schedule-title ${theme}`}>
+                  How SeatGeek Successfully Handle High Demand Ticket On-Sales
+                </div>
+                <div className={`schedule-description ${theme}`}>
+                  <p>
+                    High-demand online ticket on-sales are a core part of
+                    SeatGeek's business and pose a challenge to delivering a
+                    seamless user experience. SeatGeek's ability to handle large
+                    amounts of online traffic made the company the preferred
+                    ticketing solution for significant teams at the English
+                    Premier League. They use SeatGeek's primary ticketing
+                    software, SeatGeek Enterprise, to give supporters a
+                    best-in-class buying experience.
+                  </p>
+                </div>
               </div>
               <div className="schedule-slot">
                 <div className={`schedule-time ${theme}`}>3:45 PM</div>

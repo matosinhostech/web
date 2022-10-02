@@ -3,6 +3,7 @@ import joana from "assets/images/events/market/joana-carvalho.jpg";
 import felipe from "assets/images/events/market/filipe-conde-sales.jpg";
 import artjom from "assets/images/events/market/artjom-vassiljev.jpg";
 import antonio from "assets/images/events/market/antonio-capelo.jpg";
+import anderson from "assets/images/events/market/anderson-parra.jpeg";
 
 export default [
   {
@@ -71,5 +72,20 @@ export default [
     speaker: "António Capelo",
     speaker_url: "https://www.linkedin.com/in/antoniocapelo/",
     bio: "Originally a Civil Engineer, António Capelo switched careers and became a Frontend Engineer 10 years ago. Currently working as a Frontend Engineer and Team Lead at Remote, he's passionate about design-systems, performance, user experience, and accessibility.",
+  },
+  {
+    imgSrc: anderson,
+    jobTitle: "Staff Software Engineer",
+    company: "SeatGeek",
+    company_url: "https://seatgeek.com/",
+    tags: [
+      "Java",
+      "Scala",
+      "High-Scale Distributed Systems",
+      "Functional Programming",
+    ],
+    speaker: "Anderson Parra",
+    speaker_url: "https://www.linkedin.com/in/anderparra/",
+    bio: "Anderson is a software engineer with many years of experience in large distributed systems that support high-traffic and huge volumes of data. He has created solutions using Java, Scala, JavaScript, Ruby, Python and Golang for companies in Brazil, Ireland, Germany, UK, and US. He has a master’s degree based on his research “A Lightweight Reconfiguration Solution for Paxos”. Currently, he works as a Staff Software Engineer (API Platform) at SeatGeek where he helps to build scalable and reliable systems such as the Virtual Waiting Room solution, an online queuing system, used during major on-sales.",
   },
 ];

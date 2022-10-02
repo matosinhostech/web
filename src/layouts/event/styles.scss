@@ -239,7 +239,7 @@ body {
             width: 100%;
             transition: background 300ms ease-in-out;
 
-            &:not(:nth-of-type(1)):not(:nth-of-type(2)):not(:nth-of-type(5)):not(:nth-of-type(6)):hover {
+            &:not(:nth-of-type(1)):not(:nth-of-type(2)):not(:nth-of-type(6)):hover {
               > .schedule-description,
               > .schedule-title {
                 padding-left: 2.5rem;
@@ -276,14 +276,14 @@ body {
               }
             }
 
-            // &:nth-of-type(5):hover {
-            //   > .schedule-time {
-            //     &:before {
-            //       background: url(assets/images/events/market/tba.jpg);
-            //       background-size: cover;
-            //     }
-            //   }
-            // }
+            &:nth-of-type(5):hover {
+              > .schedule-time {
+                &:before {
+                  background: url(assets/images/events/market/anderson-parra.jpeg);
+                  background-size: cover;
+                }
+              }
+            }
 
             &:nth-of-type(7):hover {
               > .schedule-time {
