@@ -3,7 +3,7 @@ import joana from "assets/images/events/market/joana-carvalho.jpg";
 import felipe from "assets/images/events/market/filipe-conde-sales.jpg";
 import artjom from "assets/images/events/market/artjom-vassiljev.jpg";
 import antonio from "assets/images/events/market/antonio-capelo.jpg";
-import anderson from "assets/images/events/market/anderson-parra.jpeg";
+import anderson from "assets/images/events/market/anderson-parra.jpg";
 
 export default [
   {
