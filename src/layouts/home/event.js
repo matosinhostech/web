@@ -294,7 +294,7 @@ const Event = ({ setTheme, theme }) => {
                 is to let you roam freely through the market while exploring the
                 one-of-a-kind ceramic panels and beautiful arches, seeing the
                 unique merchants' stalls and connecting with the companies that
-                shape our tech{" "} <span className="highlight">tech ecosystem</span>.
+                shape our <span className="highlight">tech ecosystem</span>.
               </p>
             </div>
             <div className={`event-map-wrapper ${isScrolling && "scrolling"}`}>
