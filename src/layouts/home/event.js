@@ -90,6 +90,9 @@ const Event = ({ setTheme, theme }) => {
     } else if (isInViewport(programRef.current)) {
       setActiveMenu({ ...INITIAL_EVENT_MENU_STATE, PROGRAM: true });
       return;
+    } else if (isInViewport(sponsorshipsRef.current)) {
+      setActiveMenu({ ...INITIAL_EVENT_MENU_STATE, SPONSORSHIP: true });
+      return;
     } else if (isInViewport(ticketRef.current)) {
       setActiveMenu({ ...INITIAL_EVENT_MENU_STATE, TICKET: true });
       return;
