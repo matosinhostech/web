@@ -39,8 +39,8 @@ const HomeLayout = ({ path }) => {
   //TODO: change theme by context...
   const [theme, setTheme] = useState(THEMES.DARK);
   const changeTheme = useCallback((t) => setTheme(t), [theme]);
-  const [countdownValues, setCountdownValues] = useState({});
-  const countDownDate = new Date("Oct 09, 2022 12:00:00").getTime();
+  // const [countdownValues, setCountdownValues] = useState({});
+  // const countDownDate = new Date("Oct 09, 2022 12:00:00").getTime();
 
   // TODO: remove this when event page is ready
   const [width, setWidth] = useState(windowGlobal && windowGlobal.innerWidth);
@@ -54,9 +54,9 @@ const HomeLayout = ({ path }) => {
     }
   }
 
-  useInterval(() => {
-    setCountdownValues(getCountdownValues(countDownDate));
-  }, 1000);
+  // useInterval(() => {
+  //   setCountdownValues(getCountdownValues(countDownDate));
+  // }, 1000);
 
   useEffect(() => {
     if (windowGlobal) {
@@ -116,9 +116,9 @@ const HomeLayout = ({ path }) => {
               <div className="counter-container">
                 <div className="counter-date">
                   <div className="counter-message">
-                    We're getting <span className="highlight"> ready.</span>
+                    Welcome to the <span className="highlight"> Fish Market!</span>
                   </div>
-                  <div className="counter-boxes">
+                  {/* <div className="counter-boxes">
                     <div className="counter-box">
                       <div className="counter-value">
                         {countdownValues.days}
@@ -143,7 +143,7 @@ const HomeLayout = ({ path }) => {
                       </div>
                       <div className="counter-label">SECONDS</div>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
                 {/* <div className="counter-cta">
                 <button>

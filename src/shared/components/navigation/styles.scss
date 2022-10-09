@@ -371,7 +371,7 @@ a[aria-current="page"] {
       justify-content: center;
       align-items: flex-start;
       width: calc(100% - 7rem);
-      padding-top: 0.6rem;
+      padding-top: 0.4rem;
 
       & > .counter-message {
         display: flex;
@@ -381,7 +381,7 @@ a[aria-current="page"] {
         color: var(--light-gray);
         padding-right: 0;
         padding-left: 0.6rem;
-        width: 9rem;
+        width: 13rem;
 
         & > .highlight {
           padding-left: 0.2rem;
@@ -607,6 +607,7 @@ a[aria-current="page"] {
           padding-right: 1rem;
           padding-left: 0;
           height: 5.5rem;
+          padding-top: 1rem;
           width: auto;
         }
 
