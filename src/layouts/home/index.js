@@ -85,7 +85,7 @@ const HomeLayout = ({ path }) => {
                 people, projects and companies
               </div>
               <div className="bottom">
-                <Link className="homeArrowLink" to="/event">
+                {/* <Link className="homeArrowLink" to="/event">
                   <img
                     src={
                       theme === THEMES.DARK
@@ -96,7 +96,7 @@ const HomeLayout = ({ path }) => {
                     }
                     className="homeArrowDown"
                   />
-                </Link>
+                </Link> */}
                 <div className="serving">
                   Serving a community of engineers, students and tech
                   professionals with insights from the industry's leading
@@ -106,7 +106,7 @@ const HomeLayout = ({ path }) => {
             </div>
             <div className="hero" />
           </div>
-          <Link to="/event">
+          {/* <Link to="/event">
             <div className="countdown" id="countdown">
               <div className="date-container">
                 <div className="date-month">OUT</div>
@@ -116,9 +116,10 @@ const HomeLayout = ({ path }) => {
               <div className="counter-container">
                 <div className="counter-date">
                   <div className="counter-message">
-                    Welcome to the <span className="highlight"> Fish Market!</span>
+                    Welcome to the{" "}
+                    <span className="highlight"> Fish Market!</span>
                   </div>
-                  {/* <div className="counter-boxes">
+                  <div className="counter-boxes">
                     <div className="counter-box">
                       <div className="counter-value">
                         {countdownValues.days}
@@ -143,16 +144,16 @@ const HomeLayout = ({ path }) => {
                       </div>
                       <div className="counter-label">SECONDS</div>
                     </div>
-                  </div> */}
+                  </div>
                 </div>
-                {/* <div className="counter-cta">
-                <button>
-                  <Link to="/event">Claim your ticket</Link>
-                </button>
-              </div> */}
+                <div className="counter-cta">
+                  <button>
+                    <Link to="/event">Claim your ticket</Link>
+                  </button>
+                </div>
               </div>
             </div>
-          </Link>
+          </Link> */}
           {/* <Event setTheme={changeTheme} theme={theme} /> */}
           <CookieBanner />
         </div>
