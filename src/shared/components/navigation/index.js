@@ -173,6 +173,8 @@ const Navigation = ({ path, page, theme = "", setTheme = voidFunc }) => {
                 slack="https://join.slack.com/t/matosinhostech/shared_invite/zt-mo49t1jm-QJE6skfu7Td~0yEO868HOg"
                 reddit="https://www.reddit.com/r/matosinhos"
                 email="mailto:hello@matosinhos.tech"
+                instagram="https://www.instagram.com/matosinhos.tech/"
+                linkedin="https://www.linkedin.com/company/matosinhos-tech/"
               />
             </div>
           </div>
@@ -184,6 +186,8 @@ const Navigation = ({ path, page, theme = "", setTheme = voidFunc }) => {
             slack="https://join.slack.com/t/matosinhostech/shared_invite/zt-mo49t1jm-QJE6skfu7Td~0yEO868HOg"
             reddit="https://www.reddit.com/r/matosinhos"
             email="mailto:hello@matosinhos.tech"
+            instagram="https://www.instagram.com/matosinhos.tech/"
+            linkedin="https://www.linkedin.com/company/matosinhos-tech/"
           />
         </div>
       </div>
