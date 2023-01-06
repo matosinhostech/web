@@ -103,6 +103,11 @@ const HomeLayout = ({ path }) => {
                   experts.
                 </div>
               </div>
+              <div className="subscribe">
+                <a href="http://eepurl.com/hxXGTT" target="_blank">
+                  subscribe to our newsletter
+                </a>
+              </div>
             </div>
             <div className="hero" />
           </div>

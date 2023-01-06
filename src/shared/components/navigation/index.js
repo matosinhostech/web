@@ -26,9 +26,6 @@ const Links = (path) => {
       {/* <Link onClick={handleNavigate} to="/event">
         Event
       </Link> */}
-      <a href="https://www.eventbrite.com/e/event10-pull-requests-music-tickets-471765101117">
-        Next Event
-      </a>
       <Link onClick={handleNavigate} to="/manifesto">
         Manifesto
       </Link>
@@ -38,6 +35,7 @@ const Links = (path) => {
       <Link onClick={handleNavigate} to="/videos">
         Videos
       </Link>
+      <a href="https://forms.gle/6TTAkcffPqZhGGkN9">Call for speakers!</a>
     </>
   );
 };

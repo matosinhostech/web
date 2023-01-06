@@ -115,6 +115,25 @@ a {
   justify-content: flex-start;
 }
 
+.subscribe {
+  display: flex;
+  align-self: flex-end;
+}
+
+.subscribe > a {
+  background-color: $edgy-red;
+  border-radius: 0.5rem;
+  padding: 10px;
+  margin-right: 10px;
+  opacity: 0.9;
+  color: $light-white;
+  font-size: 1.5vh;
+}
+
+.subscribe > a:hover {
+  opacity: 1;
+}
+
 .homeArrowDown {
   height: 3rem;
   cursor: pointer;
