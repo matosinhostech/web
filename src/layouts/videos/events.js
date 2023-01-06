@@ -32,8 +32,28 @@ import {
 } from "assets/images/events/placeholder.jpeg"; //giddy-banner-dark.png';
 import tiagoSpeaker from "assets/images/events/tiago-fernandes-speaker.jpg";
 import ycSpeaker from "assets/images/events/yc-speaker-red.jpeg";
+import marceloSousa from "assets/images/events/marcelo-sousa.jpeg";
 
 export default [
+  {
+    title: "Fluid pull requests",
+    authors: [
+      {
+        name: "Marcelo Sousa",
+        url: "https://www.linkedin.com/in/mabsousa/",
+        img: marceloSousa,
+      },
+    ],
+    projectUrl: "",
+    description: "How to safely push code changes faster",
+    longDescription:
+      "Pull requests are the backbone of the devops infrastructure across many companies in the industry. However, they are fast becoming the #1 bottleneck in engineering teams negatively impacting the throughput, stability and culture of dev teams.\n\nFluid pull requests are an extension of pull requests with principles from trunk-based development. In this talk, I will show the current problems with pull requests and how fluid pull requests solve them.\n\nMarcelo is an open source and formal methods advocate. He holds a PhD from University of Oxford where he researched automated code analysis for concurrent programs. He worked in compilers at IBM and code analysers for malware detection at Google. He was also the principal designer of the first security analyser in SonarQube and SonarCloud. He is now building Reviewpad, a product that allows developers to safely push code changes faster.",
+    video: "https://vimeo.com/784353042",
+    bannerImg: mlBanner,
+    partnerSlug: "marceloSousa",
+    date: "2022-12-07",
+    duration: "36:46",
+  },
   {
     title: "Tracking: Not exactly what you think",
     authors: [
