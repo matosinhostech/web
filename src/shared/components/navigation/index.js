@@ -35,6 +35,7 @@ const Links = (path) => {
       <Link onClick={handleNavigate} to="/videos">
         Videos
       </Link>
+      <a href="https://forms.gle/6TTAkcffPqZhGGkN9">Call for speakers!</a>
     </>
   );
 };
