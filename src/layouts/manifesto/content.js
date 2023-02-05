@@ -1,11 +1,11 @@
 export const accordionData = [
   {
     title: 'mission',
-    content: `Serve a community of engineers, students and tech professionals with insights from the industry's leading experts.
+    content: `Connect a tech community in the north of Portugal with the world. 
 
-    The mission within this community is to grow a tech hub located in Matosinhos, which hosts some of the best tech companies in Portugal. 
+    By growing a tech hub in Matosinhos, we're serving a community of engineers, students and tech professionals with insights from the industry's leading experts.
     
-    Consequently, we create meaningful learning experiences for our members, allowing them to expand their knowledge through live events, networking and discovering the companies that shape our ecosystem.`
+    Through live events and original content, we create meaningful learning experiences for our members, allowing them to expand their knowledge and networks and discover the companies that shape our ecosystem.`
   },
   {
     title: 'why',
@@ -24,10 +24,14 @@ export const accordionData = [
     As a result, our community grows stronger together.`
   },
   {
-    title: 'matosinhos',
-    content: `In the vicinity of Porto, located in the north of Portugal, Matosinhos is a booming hub for successful technology businesses, and it has attracted investment by some of the most innovative companies. 
+    title: 'Matosinhos',
+    content: `In the vicinity of Porto, located in the north of Portugal, Matosinhos is a booming hub for successful technology businesses. 
 
-    National and international organisations are setting the foundation to attract and retain new talent by providing an excellent work-life balance in a vibrant city by the sea.`
+    National and international tech-based companies are setting the foundation to attract and retain new talent in a vibrant city by the sea. With proximity to many universities and by providing their employees with an ideal work-life balance, more and more companies are establishing themselves in Matosinhos.
+    
+    That was why matosinhos.tech was born.
+    To bridge people and companies together so we can grow stronger together.
+`
   },
   {
     title: 'events',
