@@ -26,6 +26,9 @@ const Links = (path) => {
       {/* <Link onClick={handleNavigate} to="/event">
         Event
       </Link> */}
+      <a href="https://www.eventbrite.com/e/event11-medical-ai-performance-culture-tickets-592568778167">
+        Next Event
+      </a>
       <Link onClick={handleNavigate} to="/manifesto">
         Manifesto
       </Link>
