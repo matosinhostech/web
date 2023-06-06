@@ -23,22 +23,23 @@ const Links = (path) => {
   return (
     <>
       {/* <Link onClick={handleNavigate} to="/event">Next Event</Link> */}
-      {/* <Link onClick={handleNavigate} to="/event">
-        Event
-      </Link> */}
-      <a href="https://www.eventbrite.com/e/event11-medical-ai-performance-culture-tickets-592568778167">
-        Next Event
-      </a>
+      {/* <Link onClick={handleNavigate} to="/event">Event</Link> */}
+      {/* <a href="https://www.eventbrite.com/e/event11-medical-ai-performance-culture-tickets-592568778167">Next Event</a> */}
+      {/* <Link onClick={handleNavigate} to="/partners">Partners</Link> */}
+      {/* <Link onClick={handleNavigate} to="/videos">Videos</Link> */}
+      
       <Link onClick={handleNavigate} to="/manifesto">
         Manifesto
       </Link>
-      {/* <Link onClick={handleNavigate} to="/partners">
-        Partners
-      </Link> */}
-      <Link onClick={handleNavigate} to="/videos">
+      <a href="https://vimeo.com/matosinhostech">
         Videos
-      </Link>
-      <a href="https://forms.gle/6TTAkcffPqZhGGkN9">Call for speakers!</a>
+      </a>
+      <a href="https://vimeo.com/showcase/10220120">
+        smallBytes
+      </a>
+      <a href="https://forms.gle/6TTAkcffPqZhGGkN9">
+        Call for speakers!
+      </a>
     </>
   );
 };
@@ -172,7 +173,6 @@ const Navigation = ({ path, page, theme = "", setTheme = voidFunc }) => {
             <div className={`nav-socials ${isDrawerOpen && "open"} ${page}`}>
               <Socials
                 slack="https://join.slack.com/t/matosinhostech/shared_invite/zt-mo49t1jm-QJE6skfu7Td~0yEO868HOg"
-                reddit="https://www.reddit.com/r/matosinhos"
                 email="mailto:hello@matosinhos.tech"
                 instagram="https://www.instagram.com/matosinhos.tech/"
                 linkedin="https://www.linkedin.com/company/matosinhos-tech/"
@@ -185,7 +185,6 @@ const Navigation = ({ path, page, theme = "", setTheme = voidFunc }) => {
         <div className={`nav-socials ${page}`}>
           <Socials
             slack="https://join.slack.com/t/matosinhostech/shared_invite/zt-mo49t1jm-QJE6skfu7Td~0yEO868HOg"
-            reddit="https://www.reddit.com/r/matosinhos"
             email="mailto:hello@matosinhos.tech"
             instagram="https://www.instagram.com/matosinhos.tech/"
             linkedin="https://www.linkedin.com/company/matosinhos-tech/"
