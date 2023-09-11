@@ -27,7 +27,10 @@ const Links = (path) => {
       {/* <a href="https://www.eventbrite.com/e/event11-medical-ai-performance-culture-tickets-592568778167">Next Event</a> */}
       {/* <Link onClick={handleNavigate} to="/partners">Partners</Link> */}
       {/* <Link onClick={handleNavigate} to="/videos">Videos</Link> */}
-      
+  
+      <a href="https://matosinhostech-night-at-the-theatre.eventbrite.com">
+        Next Event
+      </a>
       <Link onClick={handleNavigate} to="/manifesto">
         Manifesto
       </Link>
